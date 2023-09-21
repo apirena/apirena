@@ -10,6 +10,9 @@ API clients like Postman, Insomnia, and Hopscotch are awesome, but the API defin
 
 Swagger-UI is cumbersome, on large projects with 100s of routes the page is glitchy and you don't get the awesome features like easily switching environments with environment variables. Swagger-UI is also limiting when you want to quickly test adding params that aren't in your documentation, or more dynamic param keys like search filters. 
 
+![MacBook Pro 14_ - 1](https://github.com/apirena/apirena/assets/23046374/846601b9-eae2-496a-b2e1-f5d18c6e6421)
+
+
 ## Core Features
 
 ### 1. **Environment Variables**
