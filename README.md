@@ -65,6 +65,15 @@ Swagger-UI is cumbersome, on large projects with 100s of routes the page is glit
 3. **Tooling**: Build the resolver, live reload server, and other vital components.
 4. **Feedback & Testing**: Collaborate with developers, refine based on their input, and undergo rigorous performance evaluations.
 
+## Technical Stack
+
+- Framework Packages to generate files from a command. @nestjs/swagger, laravel-openapi etc.
+- Bun server that watches for file changes to OpenApi file
+- Bun app writes data to a PouchDB DB that syncs to a Qwik app
+- Bun serves a build of a standard Qwik App that's drives from a PouchDB connection
+- Docker configuration would define the location to the OpenAPI file (& supplemental files)
+- Bun app watches DB for changes and can write back to files that aren't code generated (environments/markdown docs)
+
 ## Conclusion
 
 Apirena reimagines the API documentation and testing landscape. By prioritizing modularization and cutting-edge functionalities, API development and testing have never been this streamlined and intuitive.
