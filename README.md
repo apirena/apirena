@@ -69,8 +69,8 @@ Swagger-UI is cumbersome, on large projects with 100s of routes the page is glit
 
 - Framework Packages to generate files from a command. @nestjs/swagger, laravel-openapi etc.
 - Bun server that watches for file changes to OpenApi file
-- Bun app writes data to a PouchDB DB that syncs to a Qwik app
-- Bun serves a build of a standard Qwik App that's drives from a PouchDB connection
+- Bun app writes data to a PPocketbase database (SQLite)
+- SvelteKit app for frontend connected to PocketBase app
 - Docker configuration would define the location to the OpenAPI file (& supplemental files)
 - Bun app watches DB for changes and can write back to files that aren't code generated (environments/markdown docs)
 
