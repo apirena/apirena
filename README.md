@@ -1,87 +1,234 @@
-# Apirena: Modular OpenAPI Superset
+# Apirena: The Code-Aware API Development Environment
 
-Welcome to **Apirena**! This project is a modular superset of the OpenAPI specification focusing on enhancing the API playground experience with intuitive, developer-centric tools and features. 
+Apirena is an intelligent API testing and development tool that understands your code, not just your specs. It watches your entire codebase, automatically discovers endpoints, and uses AI to generate tests and catch issues before you deploy.
 
-We take the enhanced functionality from industry leaders like Postman, Insomnia & Hopscotch, and the run an API client in the browser based where you write your documentaiton in code using a fork of your favourite OpenAPI generators.
+## Why Apirena?
 
-## Overview
+**The Problem**: Current API tools require manual setup, drift from your code, and treat your APIs as static endpoints rather than living code.
 
-API clients like Postman, Insomnia, and Hopscotch are awesome, but the API definitions & documentation live far away from your code and there it's easy to get out of sync from your code. 
+**Our Solution**: Apirena watches your actual source files, understands your code through AST parsing, and maintains a real-time, intelligent view of your API surface. No more outdated Postman collections or manual endpoint updates.
 
-Swagger-UI is cumbersome, on large projects with 100s of routes the page is glitchy and you don't get the awesome features like easily switching environments with environment variables. Swagger-UI is also limiting when you want to quickly test adding params that aren't in your documentation, or more dynamic param keys like search filters. 
+## ✨ Key Features
 
-![MacBook Pro 14_ - 1](https://github.com/apirena/apirena/assets/23046374/736622da-fdad-45b6-b18d-6c6f794318e9)
+### 🧠 **Smart Code Understanding**
+- Automatically discovers ALL endpoints - not just documented ones
+- Understands Express, FastAPI, Spring, Rails, and more
+- No OpenAPI required (but fully supported when available)
 
+### 📝 **Natural Documentation**
+Write docs how you think - our AI understands intent, not syntax:
+```javascript
+// Get user by ID - returns 404 if not found
+// Needs admin token or user's own ID
+app.get('/users/:id', ...)
 
-## Core Features
+// ANY comment style works - we understand them all
+```
+No strict formats. No special annotations. Just write what makes sense.
 
-### 1. **Environment Variables**
-- Define multiple environments like Production, Staging, and Development.
-- Switch between environments effortlessly, updating API endpoints, headers, and environment-specific values on-the-fly.
+### 🤖 **AI-Powered Testing**
+- Generates test scenarios from your code patterns
+- Learns from your API usage to suggest edge cases
+- "This endpoint usually fails when X is null - test it?"
 
-### 2. **Enhanced Authentication**
-- Wide-ranging support: Basic Auth, Bearer Token, OAuth1, OAuth2, and more.
-- Auto-refresh tokens ensuring a continuous, unhindered testing experience.
-- Auth drives from environment variables so you can switch between environments on the fly.
+### ⏰ **Time-Travel Debugging**
+- Records all API interactions with full request/response
+- Replay any session against current code
+- "Show me how this API behaved last Tuesday"
 
-### 3. **Parameter Management**
-- Intuitive UI for entering API parameters: easily toggle between form-data, raw JSON, multipart, and more.
-- Smart auto-suggestions based on history and integrated docs.
+### 🔄 **Real-Time Code Sync**
+- File watcher updates endpoints as you type
+- Git-aware diffing shows API changes per commit
+- Auto-detect environment variables from code
 
-### 4. **Testing & Supplemental Parameters**
-- Rapidly toggle optional parameters, streamlining different scenario tests.
-- Integrate response assertions and scripting for automated test workflows.
-- Easily add parameters that aren't doccumented for rapid development testing.
+### 👥 **Built for Teams**
+- Share replay sessions via URLs
+- Collaborative debugging with multiplayer cursors
+- "Click here to reproduce my bug"
 
-### 5. **In-Code Documentation**  
-- Write and update documentation directly within the codebase, ensuring it evolves with the code.
-- In-built parsing to present the latest documentation in the UI during testing.
+## 🚀 Getting Started
 
-### 6. **API Playground UI**
-- An immersive environment for developers to experiment with the API.
-- Quick, responsive, and user-friendly, drawing inspiration from top tools but tailored to our objectives.
+```bash
+# Download the latest release
+curl -L https://github.com/apirena/apirena/releases/latest/download/apirena-{os} -o apirena
+chmod +x apirena
 
-### 7. **OpenAPI 3 Superset**
-- Start with OpenAPI 3.
+# Run in your project directory
+./apirena
 
-### 8. **Focused Approach**
-- While tightly integrated with documentation, Apirena is primarily a hands on API testing tool.
-- Integrated documentation is a secondary advantage, ensuring developers have updated info at their fingertips.
+# Apirena automatically discovers your API surface
+```
 
-## Additional Advantages
+That's it. No configuration needed.
 
-- **Performance**: Enhanced responsiveness with faster load times.
-- **Maintainability**: Modularization promotes easier navigation and updates.
-- **Collaboration**: Modular design allows multiple developers to collaborate without conflicts.
+## 📝 Documentation That Just Works
 
-## Considerations
+Apirena's AI understands natural language comments. Document however feels right:
 
-- The enhanced structure may introduce complexity in file management and reference maintenance.
+```python
+# Old way (strict OpenAPI annotations)
+@swagger.doc({
+    'tags': ['users'],
+    'parameters': [{
+        'in': 'path',
+        'name': 'id',
+        'required': true,
+        'schema': {'type': 'integer'}
+    }]
+})
 
-## Implementation Roadmap
+# Apirena way (just write naturally)
+# Get user by ID
+# Returns user object or 404
+@app.route('/users/<id>')
+```
 
-1. **Initial Setup**: Lay out the directory structure and sample modularized specs.
-2. **Feature Development**: Incorporate Apirena's distinct functionalities.
-3. **Tooling**: Build the resolver, live reload server, and other vital components.
-4. **Feedback & Testing**: Collaborate with developers, refine based on their input, and undergo rigorous performance evaluations.
+```javascript
+// This creates user accounts
+// Requires: email, password
+// Optional: name, avatar
+// Returns: user object with JWT token
+router.post('/signup', ...)
 
-## Technical Stack
+// The AI understands this perfectly!
+```
 
-- Framework Packages to generate files from a command. @nestjs/swagger, laravel-openapi etc.
-- Bun server that watches for file changes to OpenApi file
-- Bun app writes data to a PPocketbase database (SQLite)
-- SvelteKit app for frontend connected to PocketBase app
-- Docker configuration would define the location to the OpenAPI file (& supplemental files)
-- Bun app watches DB for changes and can write back to files that aren't code generated (environments/markdown docs)
+Our LLM parses intent, not syntax. Write docs for humans, and Apirena handles the rest.
 
-## Conclusion
+## 🛠 Tech Stack
 
-Apirena reimagines the API documentation and testing landscape. By prioritizing modularization and cutting-edge functionalities, API development and testing have never been this streamlined and intuitive.
+- **Core Engine**: Rust with Tokio for performance and reliability
+- **Code Parser**: Tree-sitter for multi-language AST parsing
+- **UI Framework**: Svelte 5 with reactive runes
+- **Desktop**: Tauri 2 for native performance
+- **Storage**: Embedded DuckDB for analytics and history
+- **AI**: Local LLM integration (Ollama) with OpenAI fallback
 
-## Contributing
+## 📋 How It Works
 
-We encourage open-source contributions! Please refer to the `CONTRIBUTING.md` for guidelines.
+1. **Watch** - Apirena monitors your entire project directory
+2. **Parse** - Tree-sitter extracts API patterns from your code
+3. **Understand** - AI interprets natural language comments
+4. **Enhance** - Suggests tests and improvements
+5. **Learn** - Every request improves future recommendations
+
+```mermaid
+graph LR
+    A[File Change] --> B[AST Parse]
+    B --> C[Extract Comments]
+    C --> D[AI Interprets Intent]
+    D --> E[Update Endpoint Info]
+    E --> F[Generate Tests]
+    F --> G[Interactive UI]
+```
+
+## 🎯 Core Use Cases
+
+### For Individual Developers
+- Document as you code with natural comments
+- Instantly test changes without leaving your editor
+- Auto-generate test data that makes sense
+- Catch breaking changes before commits
+
+### For Teams
+- Everyone writes docs their way - AI normalizes understanding
+- Share exact API states for debugging
+- Maintain living documentation that's always current
+- Onboard new developers with interactive API exploration
+
+### For AI-Assisted Development
+- Perfect companion for Cursor/Copilot workflows
+- Validates AI-generated endpoints automatically
+- Human-in-the-loop testing for generated code
+
+## 🗺 Roadmap
+
+**Phase 1: Foundation** (Shipping now)
+- [x] Multi-language endpoint discovery
+- [x] Real-time file watching
+- [x] Natural language comment parsing
+- [x] Basic API testing UI
+- [ ] Local LLM integration
+
+**Phase 2: Intelligence** (Q1 2025)
+- [ ] Smart test generation
+- [ ] Pattern learning from usage
+- [ ] Time-travel debugging
+- [ ] Advanced code understanding
+
+**Phase 3: Collaboration** (Q2 2025)
+- [ ] Team sharing features
+- [ ] Cloud replay storage
+- [ ] Multiplayer debugging
+- [ ] API analytics dashboard
+
+## 💻 Development
+
+```bash
+# Clone the repository
+git clone https://github.com/apirena/apirena.git
+cd apirena
+
+# Install dependencies
+cargo build --release
+cd ui && npm install
+
+# Run in development
+cargo tauri dev
+```
+
+### Architecture
+
+```
+apirena/
+├── src-tauri/          # Rust backend
+│   ├── parser/         # Tree-sitter integration
+│   ├── ai/             # LLM integration
+│   ├── watcher/        # File system monitoring
+│   └── storage/        # DuckDB embedded
+├── src/                # Svelte 5 frontend
+│   ├── lib/            # Shared components
+│   ├── stores/         # Reactive state (runes)
+│   └── routes/         # UI views
+└── grammars/           # Tree-sitter language support
+```
+
+## 🤝 Contributing
+
+We're building the future of API development tooling. Contributors welcome!
+
+**Priority Areas:**
+- Additional language parsers (currently: JS/TS, Python, Rust, Go)
+- Framework-specific endpoint detection
+- AI model fine-tuning for API patterns
+- UI/UX improvements
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## 📊 Why Not Just Use...
+
+**Postman/Insomnia?** They're request builders. We understand your code.
+
+**OpenAPI/Swagger?** Great when you have it. We work without it. Plus, strict annotation formats are painful.
+
+**Bruno/Hoppscotch?** Still manual. We're automatic.
+
+**Your IDE?** We complement it with specialized API intelligence.
+
+## 📄 License
+
+MIT - see [LICENSE](LICENSE)
+
+## 🌟 Philosophy
+
+APIs are living code, not static specifications. Documentation should be natural, not ceremonial. Apirena embraces this reality by understanding human intent, staying connected to your source, and evolving with your application. 
+
+Write comments for humans. Let AI handle the machines.
+
+Stop managing collections. Start coding with confidence.
 
 ---
 
-*For an in-depth understanding, consult the project's detailed RFC.*
+Built with ❤️ by developers who were tired of "sync your Postman collection" messages in Slack.
+
+[Website](https://apirena.dev) | [Discord](https://discord.gg/apirena) | [Twitter](https://twitter.com/apirena)
