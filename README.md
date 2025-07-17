@@ -8,6 +8,8 @@ Apirena is an intelligent API testing and development tool that understands your
 
 **Our Solution**: Apirena watches your actual source files, understands your code through AST parsing, and maintains a real-time, intelligent view of your API surface. No more outdated Postman collections or manual endpoint updates.
 
+![MacBook Pro 14_ - 1](https://github.com/apirena/apirena/assets/23046374/736622da-fdad-45b6-b18d-6c6f794318e9)
+
 ## ✨ Key Features
 
 ### 🧠 **Smart Code Understanding**
