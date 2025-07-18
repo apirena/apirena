@@ -1,0 +1,70 @@
+{
+  "name": "parser",
+  "sourceRoot": "libs/parser/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@monodon/rust:build",
+      "outputs": ["{projectRoot}/target"],
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-parser"
+      }
+    },
+    "test": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-parser"
+      }
+    },
+    "integration-test": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-parser",
+        "testBinary": "integration_tests"
+      }
+    },
+    "test:javascript": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable", 
+        "package": "apirena-parser",
+        "testFilter": "javascript"
+      }
+    },
+    "test:python": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-parser", 
+        "testFilter": "python"
+      }
+    },
+    "test:php": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-parser",
+        "testFilter": "php"
+      }
+    },
+    "benchmark": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cargo bench --package apirena-parser",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "clippy": {
+      "executor": "@monodon/rust:clippy",
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-parser",
+        "fix": false
+      }
+    }
+  },
+  "tags": ["scope:backend", "type:lib", "lang:rust"]
+}

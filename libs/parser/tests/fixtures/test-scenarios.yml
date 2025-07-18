@@ -1,0 +1,361 @@
+# Test Scenarios Configuration
+# Defines expected results for each test fixture
+
+test_scenarios:
+  javascript:
+    express:
+      basic-routes.js:
+        language: "javascript"
+        framework: "express"
+        expected_endpoints:
+          - method: "GET"
+            path: "/users"
+            line: 8
+            handler: "8:5"
+          - method: "POST"
+            path: "/users"
+            line: 15
+            handler: "15:5"
+          - method: "PUT"
+            path: "/users/:id"
+            line: 20
+            handler: "20:5"
+          - method: "DELETE"
+            path: "/users/:id"
+            line: 25
+            handler: "25:5"
+          - method: "GET"
+            path: "/api/posts"
+            line: 31
+            handler: "31:5"
+          - method: "POST"
+            path: "/api/posts"
+            line: 35
+            handler: "35:5"
+          - method: "GET"
+            path: "/health"
+            line: 43
+            handler: "43:5"
+          - method: "GET"
+            path: "/admin/stats"
+            line: 48
+            handler: "48:5"
+        performance:
+          max_parse_time_ms: 10
+          memory_usage_kb: 100
+      
+      param-routes.js:
+        language: "javascript"
+        framework: "express"
+        expected_endpoints:
+          - method: "GET"
+            path: "/users/:id"
+            line: 7
+          - method: "GET"
+            path: "/users/:id/posts"
+            line: 11
+          - method: "GET"
+            path: "/users/:userId/posts/:postId"
+            line: 16
+          - method: "GET"
+            path: "/search"
+            line: 23
+          - method: "GET"
+            path: "/search/:category"
+            line: 27
+          - method: "GET"
+            path: "/files/*"
+            line: 34
+        edge_cases:
+          - regex_routes: true
+          - wildcard_routes: true
+          - parameter_constraints: true
+
+      nested-routers.js:
+        language: "javascript"
+        framework: "express"
+        expected_endpoints:
+          - method: "GET"
+            path: "/api/health"
+            line: 9
+          - method: "GET"
+            path: "/api/version"
+            line: 13
+          - method: "GET"
+            path: "/api/users/"
+            line: 18
+          - method: "POST"
+            path: "/api/users/"
+            line: 22
+          - method: "GET"
+            path: "/admin/dashboard"
+            line: 39
+        complexity: "high"
+        router_nesting: true
+
+  python:
+    flask:
+      basic-routes.py:
+        language: "python"
+        framework: "flask"
+        expected_endpoints:
+          - method: "GET"
+            path: "/users"
+            line: 8
+            handler: "get_users"
+          - method: "POST"
+            path: "/users"
+            line: 16
+            handler: "create_user"
+          - method: "GET"
+            path: "/users/<int:user_id>"
+            line: 22
+            handler: "get_user"
+          - method: "PUT"
+            path: "/users/<int:user_id>"
+            line: 27
+            handler: "update_user"
+          - method: "DELETE"
+            path: "/users/<int:user_id>"
+            line: 32
+            handler: "delete_user"
+          - method: "GET"
+            path: "/api/posts"
+            line: 37
+            handler: "get_posts"
+          - method: "POST"
+            path: "/api/posts"
+            line: 42
+            handler: "create_post"
+          - method: "GET"
+            path: "/health"
+            line: 52
+            handler: "health_check"
+        features:
+          - decorators: true
+          - method_lists: true
+          - parameter_types: true
+
+      methods.py:
+        language: "python"
+        framework: "flask"
+        expected_endpoints:
+          - method: "GET"
+            path: "/users"
+            line: 7
+            handler: "list_users"
+          - method: "POST"
+            path: "/users"
+            line: 11
+            handler: "create_user"
+          - method: "PUT"
+            path: "/users/<int:user_id>"
+            line: 15
+            handler: "update_user"
+          - method: "DELETE"
+            path: "/users/<int:user_id>"
+            line: 19
+            handler: "delete_user"
+          - method: "PATCH"
+            path: "/users/<int:user_id>"
+            line: 23
+            handler: "patch_user"
+        http_methods:
+          - standard: ["GET", "POST", "PUT", "DELETE", "PATCH"]
+          - advanced: ["HEAD", "OPTIONS"]
+
+    fastapi:
+      basic-routes.py:
+        language: "python"
+        framework: "fastapi"
+        expected_endpoints:
+          - method: "GET"
+            path: "/users"
+            line: 22
+            handler: "get_users"
+          - method: "POST"
+            path: "/users"
+            line: 31
+            handler: "create_user"
+          - method: "GET"
+            path: "/users/{user_id}"
+            line: 36
+            handler: "get_user"
+          - method: "PUT"
+            path: "/users/{user_id}"
+            line: 41
+            handler: "update_user"
+          - method: "DELETE"
+            path: "/users/{user_id}"
+            line: 46
+            handler: "delete_user"
+          - method: "GET"
+            path: "/posts"
+            line: 51
+            handler: "get_posts"
+        features:
+          - async_routes: true
+          - type_hints: true
+          - pydantic_models: true
+          - automatic_docs: true
+
+  php:
+    laravel:
+      basic-routes.php:
+        language: "php"
+        framework: "laravel"
+        expected_endpoints:
+          - method: "GET"
+            path: "/users"
+            line: 15
+            handler: "UserController@index"
+          - method: "POST"
+            path: "/users"
+            line: 16
+            handler: "UserController@store"
+          - method: "GET"
+            path: "/users/{id}"
+            line: 17
+            handler: "UserController@show"
+          - method: "PUT"
+            path: "/users/{id}"
+            line: 18
+            handler: "UserController@update"
+          - method: "DELETE"
+            path: "/users/{id}"
+            line: 19
+            handler: "UserController@destroy"
+          - method: "GET"
+            path: "/api/posts"
+            line: 22
+            handler: "PostController@index"
+          - method: "POST"
+            path: "/api/posts"
+            line: 23
+            handler: "PostController@store"
+          - method: "GET"
+            path: "/health"
+            line: 26
+            handler: "HealthController@check"
+        features:
+          - route_model_binding: true
+          - middleware: true
+          - resource_routes: true
+          - api_routes: true
+
+      controllers.php:
+        language: "php"
+        framework: "laravel"
+        expected_endpoints:
+          - method: "GET"
+            path: "/admin/dashboard"
+            line: 12
+            handler: "AdminController@dashboard"
+          - method: "GET"
+            path: "/admin/users"
+            line: 16
+            handler: "AdminController@users"
+          - method: "POST"
+            path: "/admin/users/{id}/ban"
+            line: 20
+            handler: "AdminController@banUser"
+        features:
+          - controller_methods: true
+          - route_parameters: true
+          - middleware_groups: true
+
+      api-routes.php:
+        language: "php"
+        framework: "laravel"
+        expected_endpoints:
+          - method: "GET"
+            path: "/api/v1/users"
+            line: 18
+            handler: "Api\\V1\\UserController@index"
+          - method: "POST"
+            path: "/api/v1/users"
+            line: 19
+            handler: "Api\\V1\\UserController@store"
+          - method: "GET"
+            path: "/api/v1/users/{user}"
+            line: 20
+            handler: "Api\\V1\\UserController@show"
+          - method: "PUT"
+            path: "/api/v1/users/{user}"
+            line: 21
+            handler: "Api\\V1\\UserController@update"
+        features:
+          - api_versioning: true
+          - namespace_controllers: true
+          - route_model_binding: true
+
+# Performance Benchmarks
+benchmarks:
+  targets:
+    parse_time_ms: 10
+    memory_usage_mb: 50
+    accuracy_percent: 95
+    false_positive_percent: 2
+
+  test_suites:
+    small: # < 100 lines
+      max_parse_time_ms: 5
+      files: ["basic-routes.*"]
+    
+    medium: # 100-500 lines  
+      max_parse_time_ms: 10
+      files: ["param-routes.*", "methods.*"]
+    
+    large: # 500+ lines
+      max_parse_time_ms: 20
+      files: ["nested-routers.*"]
+
+# Edge Cases to Test
+edge_cases:
+  javascript:
+    - dynamic_routes: "Generated at runtime"
+    - middleware_routes: "Routes defined in middleware"
+    - conditional_routes: "Routes based on environment"
+    - method_overrides: "HTTP method override headers"
+  
+  python:
+    - blueprint_routes: "Flask blueprints with prefixes"
+    - class_based_views: "Django class-based views"
+    - router_inclusion: "FastAPI router inclusion"
+    - dependency_injection: "FastAPI dependencies"
+  
+  php:
+    - route_caching: "Laravel route caching"
+    - closure_routes: "Routes defined with closures"
+    - resource_routes: "Laravel resource routes"
+    - route_model_binding: "Automatic model injection"
+
+# Framework Detection Rules
+framework_detection:
+  javascript:
+    express:
+      imports: ["express", "require('express')"]
+      patterns: ["app.get(", "app.post(", "router.use("]
+    fastify:
+      imports: ["fastify", "require('fastify')"]
+      patterns: ["fastify.get(", "fastify.register("]
+    koa:
+      imports: ["koa", "require('koa')"]
+      patterns: ["router.get(", "app.use("]
+
+  python:
+    flask:
+      imports: ["from flask import", "import flask"]
+      patterns: ["@app.route(", "app.add_url_rule("]
+    fastapi:
+      imports: ["from fastapi import", "import fastapi"]
+      patterns: ["@app.get(", "@app.post(", "APIRouter("]
+    django:
+      imports: ["from django", "django.urls"]
+      patterns: ["path(", "url(", "urlpatterns"]
+
+  php:
+    laravel:
+      imports: ["use Illuminate\\", "Route::", "<?php"]
+      patterns: ["Route::get(", "Route::post(", "Route::resource(", "Route::apiResource("]
+      files: ["routes/web.php", "routes/api.php", "*Controller.php"]

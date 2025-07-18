@@ -1,0 +1,190 @@
+{
+  "name": "cli",
+  "sourceRoot": "apps/cli/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@monodon/rust:build",
+      "outputs": ["{projectRoot}/target"],
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-cli"
+      }
+    },
+    "serve": {
+      "executor": "@monodon/rust:run",
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-cli"
+      }
+    },
+    "test": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-cli"
+      }
+    },
+    "integration-test": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:javascript": {
+      "executor": "nx:run-commands", 
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh javascript",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:javascript:express": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh javascript express",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:javascript:fastify": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh javascript fastify",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:typescript": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh typescript",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:typescript:express": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh typescript express",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:typescript:nestjs": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh typescript nestjs",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:python": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"], 
+      "options": {
+        "command": "./tools/test-runner.sh python",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:python:flask": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh python flask",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:python:fastapi": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh python fastapi",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:python:django": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh python django",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:php": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh php",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:php:laravel": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh php laravel",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:go": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh go",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:go:gin": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh go gin",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:go:echo": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh go echo",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:rust": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh rust",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:rust:axum": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh rust axum",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test:rust:actix": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "./tools/test-runner.sh rust actix",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "clippy": {
+      "executor": "@monodon/rust:clippy",
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-cli",
+        "fix": false
+      }
+    }
+  },
+  "tags": ["scope:cli", "type:app", "lang:rust"]
+}

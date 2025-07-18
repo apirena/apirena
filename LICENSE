@@ -1,71 +1,70 @@
-Business Source License 1.1
+Functional Source License, Version 1.1, Apache 2.0 Future License
 
-License text copyright (c) 2017 MariaDB Corporation Ab, All Rights Reserved.
-"Business Source License" is a trademark of MariaDB Corporation Ab.
+Copyright 2025 Apirena, Inc.
 
------------------------------------------------------------------------------
+The licensor of this software is Apirena, Inc. (the "Licensor").
 
-Parameters
+The software licensed under this license is Apirena (the "Software").
 
-Licensor:             Apirena Project Contributors
-Licensed Work:        Apirena
-                      The Licensed Work is (c) 2025 Apirena Project Contributors
-Additional Use Grant: You may make use of the Licensed Work, provided that you do
-                      not use the Licensed Work for a Commercial Purpose.
-                      
-                      A "Commercial Purpose" means use of the Licensed Work by any
-                      person or entity for direct or indirect financial gain or
-                      commercial advantage, EXCLUDING:
-                      
-                      1. Use by any person or entity with less than $100,000 USD
-                         in annual gross revenue in the preceding 12 months
-                      2. Use for evaluation, testing, or development purposes
-                      3. Use in open source projects licensed under an OSI-approved
-                         license
-                      4. Use for educational or academic research purposes
-                      5. Use by non-profit organizations
+Grant of License
+================
 
-Change Date:          2029-01-01
+The Licensor hereby grants you the right to use, copy, modify, create derivative 
+works, redistribute, and make non-production use of the Software, subject to the 
+conditions of this license.
 
-Change License:       Apache License, Version 2.0
+Limitations
+===========
 
------------------------------------------------------------------------------
+You may NOT use the Software for a Competing Use.
 
-Terms
+A "Competing Use" means making the Software available to others as a managed 
+service, a software-as-a-service (SaaS), a service bureau, or as part of an 
+application services provider (ASP) offering that is competitive with the 
+Software. For clarity, a Competing Use specifically includes:
 
-The Licensor hereby grants you the right to copy, modify, create derivative
-works, redistribute, and make non-production use of the Licensed Work. The
-Licensor may make an Additional Use Grant, above, permitting limited
-production use.
+- Offering the Software's API testing, discovery, or development capabilities as 
+  a service to third parties
+- Providing a hosted or managed version of the Software
+- Offering a service that substantially replicates the Software's core functionality
 
-Effective on the Change Date, or the fourth anniversary of the first publicly
-available distribution of a specific version of the Licensed Work under this
-License, whichever comes first, the Licensor hereby grants you rights under
-the terms of the Change License, and the rights granted in the paragraph
-above terminate.
+You may use the Software for a Competing Use if ALL of the following conditions 
+are met:
 
-If your use of the Licensed Work does not comply with the requirements
-currently in effect as described in this License, you must purchase a
-commercial license from the Licensor, its affiliated entities, or authorized
-resellers, or you must refrain from using the Licensed Work.
+(a) You are either:
+    - An individual person using the Software for personal, non-commercial purposes
+    - A non-profit organization, educational institution, or open source project
 
-All copies of the original and modified Licensed Work, and derivative works
-of the Licensed Work, are subject to this License. This License applies
-separately for each version of the Licensed Work and the Change Date may vary
-for each version of the Licensed Work released by Licensor.
+(b) You do not offer the Software as a multi-tenant service
 
-You must conspicuously display this License on each original or modified copy
-of the Licensed Work. If you receive the Licensed Work in original or
-modified form from a third party, the terms and conditions set forth in this
-License apply to your use of that work.
+Internal business use (using the Software to test your own APIs within your 
+organization) is expressly permitted and is NOT considered a Competing Use, 
+regardless of your company size or revenue.
 
-Any use of the Licensed Work in violation of this License will automatically
-terminate your rights under this License for the current and all other
-versions of the Licensed Work.
+Future License
+==============
 
-This License does not grant you any right in any trademark or logo of
-Licensor or its affiliates (provided that you may use a trademark or logo of
-Licensor as expressly required by this License).
+Effective on the fourth anniversary of the Software's first public release (the 
+"Future License Date"), the Licensor hereby grants you the right to use the 
+Software under the terms of the Apache License, Version 2.0 (the "Future License").
 
-TO THE EXTENT PERMITTED BY APPLICABLE LAW, THE LICENSED WORK IS PROVIDED ON
-AN "AS IS" BASIS. LICENSOR HEREBY DISCLAIMS ALL WARRANTIES AND CONDITIONS,
+The Future License Date for this Software is: [DATE FOUR YEARS FROM FIRST RELEASE]
+
+On or after the Future License Date, you may use the Software under either this 
+License or the Future License.
+
+Disclaimer
+==========
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Notice
+======
+
+This license is adapted from the Functional Source License (FSL) Version 1.1.
+For more information about the FSL, see https://fsl.software/

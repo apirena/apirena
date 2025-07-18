@@ -1,0 +1,47 @@
+{
+  "name": "core",
+  "sourceRoot": "libs/core/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@monodon/rust:build",
+      "outputs": ["{projectRoot}/target"],
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-core"
+      }
+    },
+    "test": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-core"
+      }
+    },
+    "integration-test": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-core",
+        "testBinary": "integration_tests"
+      }
+    },
+    "test:file-watcher": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-core",
+        "testFilter": "file_watcher"
+      }
+    },
+    "clippy": {
+      "executor": "@monodon/rust:clippy",
+      "options": {
+        "toolchain": "stable",
+        "package": "apirena-core",
+        "fix": false
+      }
+    }
+  },
+  "tags": ["scope:backend", "type:lib", "lang:rust"]
+}
