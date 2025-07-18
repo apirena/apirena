@@ -1,236 +1,150 @@
 # Apirena: The Code-Aware API Development Environment
 
-Apirena is an intelligent API testing and development tool that understands your code, not just your specs. It watches your entire codebase, automatically discovers endpoints, and uses AI to generate tests and catch issues before you deploy.
+Apirena is an intelligent API testing tool that understands your code, not just your specs. It watches your source files, automatically discovers endpoints through AST parsing, and uses AI to help you build better APIs—all in real-time as you code.
 
 ## Why Apirena?
 
-**The Problem**: Current API tools require manual setup, drift from your code, and treat your APIs as static endpoints rather than living code.
+**The Problem**: Current API tools are disconnected from your code. You manually maintain collections, copy-paste URLs, and hope your documentation matches reality.
 
-**Our Solution**: Apirena watches your actual source files, understands your code through AST parsing, and maintains a real-time, intelligent view of your API surface. No more outdated Postman collections or manual endpoint updates.
+**Our Solution**: Apirena watches your actual source files and understands your code structure. Change a route? Apirena knows instantly. Add a parameter? It's already in the test builder. Write a comment? That's your documentation.
 
 ![MacBook Pro 14_ - 1](https://github.com/apirena/apirena/assets/23046374/736622da-fdad-45b6-b18d-6c6f794318e9)
 
+# Apirena: The Code-Aware API Development Environment
+
+Apirena is an intelligent API testing tool that understands your code, not just your specs. It watches your source files, automatically discovers endpoints through AST parsing, and uses AI to help you build better APIs—all in real-time as you code.
+
+## Why Apirena?
+
+**The Problem**: Current API tools are disconnected from your code. You manually maintain collections, copy-paste URLs, and hope your documentation matches reality.
+
+**Our Solution**: Apirena watches your actual source files and understands your code structure. Change a route? Apirena knows instantly. Add a parameter? It's already in the test builder. Write a comment? That's your documentation.
+
 ## ✨ Key Features
 
-### 🧠 **Smart Code Understanding**
-- Automatically discovers ALL endpoints - not just documented ones
-- Understands Express, FastAPI, Spring, Rails, and more
-- No OpenAPI required (but fully supported when available)
-
-### 📝 **Natural Documentation**
-Write docs how you think - our AI understands intent, not syntax:
+### 🧠 **Automatic Endpoint Discovery**
 ```javascript
-// Get user by ID - returns 404 if not found
-// Needs admin token or user's own ID
-app.get('/users/:id', ...)
+// You write:
+app.post('/users/:id/avatar', uploadAvatar);
 
-// ANY comment style works - we understand them all
+// Apirena instantly shows:
+// POST /users/:id/avatar [Test]
 ```
-No strict formats. No special annotations. Just write what makes sense.
+No configuration. No manual updates. It just works.
 
-### 🤖 **AI-Powered Testing**
-- Generates test scenarios from your code patterns
-- Learns from your API usage to suggest edge cases
-- "This endpoint usually fails when X is null - test it?"
+### 📝 **Natural Language Documentation**
+```python
+# This endpoint sends a welcome email
+# Requires: user_id, template_name  
+# Returns: email_id or error
+@app.route('/emails/send', methods=['POST'])
+```
+Write comments naturally. AI understands your intent—no strict syntax required.
 
-### ⏰ **Time-Travel Debugging**
-- Records all API interactions with full request/response
-- Replay any session against current code
-- "Show me how this API behaved last Tuesday"
+### 🤖 **Intelligent Test Assistance**
+- Suggests test values based on your code patterns
+- Remembers recent tests for quick replay
+- Generates edge cases from parameter types
 
-### 🔄 **Real-Time Code Sync**
-- File watcher updates endpoints as you type
-- Git-aware diffing shows API changes per commit
-- Auto-detect environment variables from code
+### 🔄 **Git-Aware Development**
+```bash
+# See what changed between branches
+$ apirena diff main..feature/auth
+> Added: POST /auth/refresh
+> Modified: POST /login (added mfa_token field)
+```
 
-### 👥 **Built for Teams**
-- Share replay sessions via URLs
-- Collaborative debugging with multiplayer cursors
-- "Click here to reproduce my bug"
+### 🚀 **Zero-Latency Updates**
+File changes reflect instantly. No refresh. No rebuild. Just save and test.
 
-## 🚀 Getting Started
+## 🎯 Getting Started
 
 ```bash
-# Download the latest release
+# Download for your platform
 curl -L https://github.com/apirena/apirena/releases/latest/download/apirena-{os} -o apirena
 chmod +x apirena
 
-# Run in your project directory
+# Run in your project
 ./apirena
 
-# Apirena automatically discovers your API surface
+# That's it. Apirena finds your APIs automatically.
 ```
 
-That's it. No configuration needed.
+## 🛠 How It Works
 
-## 📝 Documentation That Just Works
+1. **Watch** - Monitors your source files using native file system events
+2. **Parse** - Tree-sitter extracts API patterns in <10ms
+3. **Understand** - AI interprets comments and suggests improvements
+4. **Test** - Interactive playground updates as you type
 
-Apirena's AI understands natural language comments. Document however feels right:
+No servers. No syncing. Everything runs locally on your machine.
 
-```python
-# Old way (strict OpenAPI annotations)
-@swagger.doc({
-    'tags': ['users'],
-    'parameters': [{
-        'in': 'path',
-        'name': 'id',
-        'required': true,
-        'schema': {'type': 'integer'}
-    }]
-})
+## 📚 Supported Frameworks
 
-# Apirena way (just write naturally)
-# Get user by ID
-# Returns user object or 404
-@app.route('/users/<id>')
-```
+**JavaScript/TypeScript**: Express, Fastify, Koa, Next.js, Hono  
+**Python**: FastAPI, Flask, Django  
+**Go**: Gin, Echo, Fiber  
+**Rust**: Actix, Rocket, Axum  
+**Ruby**: Rails, Sinatra  
+**Java**: Spring Boot  
+**PHP**: Laravel, Symfony
 
-```javascript
-// This creates user accounts
-// Requires: email, password
-// Optional: name, avatar
-// Returns: user object with JWT token
-router.post('/signup', ...)
+Don't see yours? [Open an issue](https://github.com/apirena/apirena/issues)—adding frameworks is easy with Tree-sitter.
 
-// The AI understands this perfectly!
-```
+## 💡 Perfect For
 
-Our LLM parses intent, not syntax. Write docs for humans, and Apirena handles the rest.
-
-## 🛠 Tech Stack
-
-- **Core Engine**: Rust with Tokio for performance and reliability
-- **Code Parser**: Tree-sitter for multi-language AST parsing
-- **UI Framework**: Svelte 5 with reactive runes
-- **Desktop**: Tauri 2 for native performance
-- **Storage**: Embedded DuckDB for analytics and history
-- **AI**: Local LLM integration (Ollama) with OpenAI fallback
-
-## 📋 How It Works
-
-1. **Watch** - Apirena monitors your entire project directory
-2. **Parse** - Tree-sitter extracts API patterns from your code
-3. **Understand** - AI interprets natural language comments
-4. **Enhance** - Suggests tests and improvements
-5. **Learn** - Every request improves future recommendations
-
-```mermaid
-graph LR
-    A[File Change] --> B[AST Parse]
-    B --> C[Extract Comments]
-    C --> D[AI Interprets Intent]
-    D --> E[Update Endpoint Info]
-    E --> F[Generate Tests]
-    F --> G[Interactive UI]
-```
-
-## 🎯 Core Use Cases
-
-### For Individual Developers
-- Document as you code with natural comments
-- Instantly test changes without leaving your editor
-- Auto-generate test data that makes sense
+### During Development
+- Test endpoints without leaving your flow
 - Catch breaking changes before commits
+- Document as you code with natural comments
 
-### For Teams
-- Everyone writes docs their way - AI normalizes understanding
-- Share exact API states for debugging
-- Maintain living documentation that's always current
-- Onboard new developers with interactive API exploration
+### Code Reviews  
+- See exact API changes in PRs
+- Share test sessions with teammates
+- Validate API design decisions
 
-### For AI-Assisted Development
-- Perfect companion for Cursor/Copilot workflows
-- Validates AI-generated endpoints automatically
-- Human-in-the-loop testing for generated code
+### AI-Assisted Coding
+- Validates Copilot/Cursor generated endpoints
+- Tests AI-written APIs automatically  
+- Human-in-the-loop verification
 
-## 🗺 Roadmap
+## 🏗 Architecture
 
-**Phase 1: Foundation** (Shipping now)
-- [x] Multi-language endpoint discovery
-- [x] Real-time file watching
-- [x] Natural language comment parsing
-- [x] Basic API testing UI
-- [ ] Local LLM integration
-
-**Phase 2: Intelligence** (Q1 2025)
-- [ ] Smart test generation
-- [ ] Pattern learning from usage
-- [ ] Time-travel debugging
-- [ ] Advanced code understanding
-
-**Phase 3: Collaboration** (Q2 2025)
-- [ ] Team sharing features
-- [ ] Cloud replay storage
-- [ ] Multiplayer debugging
-- [ ] API analytics dashboard
-
-## 💻 Development
-
-```bash
-# Clone the repository
-git clone https://github.com/apirena/apirena.git
-cd apirena
-
-# Install dependencies
-cargo build --release
-cd ui && npm install
-
-# Run in development
-cargo tauri dev
-```
-
-### Architecture
-
-```
-apirena/
-├── src-tauri/          # Rust backend
-│   ├── parser/         # Tree-sitter integration
-│   ├── ai/             # LLM integration
-│   ├── watcher/        # File system monitoring
-│   └── storage/        # DuckDB embedded
-├── src/                # Svelte 5 frontend
-│   ├── lib/            # Shared components
-│   ├── stores/         # Reactive state (runes)
-│   └── routes/         # UI views
-└── grammars/           # Tree-sitter language support
-```
+- **Core**: Rust for performance and reliability
+- **Parser**: Tree-sitter for language understanding  
+- **UI**: Svelte 5 with reactive state
+- **Desktop**: Tauri 2 for native feel
+- **AI**: Local LLM support (Ollama) with cloud fallback
 
 ## 🤝 Contributing
 
-We're building the future of API development tooling. Contributors welcome!
-
-**Priority Areas:**
-- Additional language parsers (currently: JS/TS, Python, Rust, Go)
-- Framework-specific endpoint detection
-- AI model fine-tuning for API patterns
+We welcome contributions! Priority areas:
+- Additional language parsers
+- Framework detection patterns
 - UI/UX improvements
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## 📊 Why Not Just Use...
-
-**Postman/Insomnia?** They're request builders. We understand your code.
-
-**OpenAPI/Swagger?** Great when you have it. We work without it. Plus, strict annotation formats are painful.
-
-**Bruno/Hoppscotch?** Still manual. We're automatic.
-
-**Your IDE?** We complement it with specialized API intelligence.
-
 ## 📄 License
 
-MIT - see [LICENSE](LICENSE)
+Apirena is licensed under the Business Source License 1.1 (BSL).
 
-## 🌟 Philosophy
+- ✅ **Free for**: Open source projects, personal use, testing, and evaluation
+- ✅ **Free for**: Companies with <$100k annual revenue  
+- 💰 **Paid license required for**: Commercial use by companies >$100k revenue
+- 🔄 **Converts to**: Apache 2.0 after 4 years
 
-APIs are living code, not static specifications. Documentation should be natural, not ceremonial. Apirena embraces this reality by understanding human intent, staying connected to your source, and evolving with your application. 
+See [LICENSE](LICENSE) for full terms.
 
-Write comments for humans. Let AI handle the machines.
+## 🙏 Acknowledgments
 
-Stop managing collections. Start coding with confidence.
+Built with amazing open source projects:
+- [Tree-sitter](https://tree-sitter.github.io/) for parsing
+- [Tauri](https://tauri.app/) for desktop apps
+- [Svelte](https://svelte.dev/) for reactive UI
 
 ---
 
-Built with ❤️ by developers who were tired of "sync your Postman collection" messages in Slack.
+**Stop syncing collections. Start shipping APIs.**
 
-[Website](https://apirena.dev) | [Discord](https://discord.gg/apirena) | [Twitter](https://twitter.com/apirena)
+[Website](https://apirena.dev) | [Discord](https://discord.gg/apirena) | [Documentation](https://docs.apirena.dev)
