@@ -26,6 +26,10 @@ impl FileWatcher {
         Self { watcher: None }
     }
 
+    pub fn is_watching(&self) -> bool {
+        self.watcher.is_some()
+    }
+
     pub async fn watch<P: AsRef<Path>>(
         &mut self,
         path: P,
