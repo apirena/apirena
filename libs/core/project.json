@@ -8,21 +8,21 @@
       "outputs": ["{projectRoot}/target"],
       "options": {
         "toolchain": "stable",
-        "package": "apirena-core"
+        "package": "hallwatch-core"
       }
     },
     "test": {
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "apirena-core"
+        "package": "hallwatch-core"
       }
     },
     "integration-test": {
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "apirena-core",
+        "package": "hallwatch-core",
         "testBinary": "integration_tests"
       }
     },
@@ -30,7 +30,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "apirena-core",
+        "package": "hallwatch-core",
         "testFilter": "file_watcher"
       }
     },
@@ -38,7 +38,7 @@
       "executor": "@monodon/rust:clippy",
       "options": {
         "toolchain": "stable",
-        "package": "apirena-core",
+        "package": "hallwatch-core",
         "fix": false
       }
     }

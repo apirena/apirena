@@ -8,21 +8,21 @@
       "outputs": ["{projectRoot}/target"],
       "options": {
         "toolchain": "stable",
-        "package": "apirena-cli"
+        "package": "hallwatch-cli"
       }
     },
     "serve": {
       "executor": "@monodon/rust:run",
       "options": {
         "toolchain": "stable",
-        "package": "apirena-cli"
+        "package": "hallwatch-cli"
       }
     },
     "test": {
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "apirena-cli"
+        "package": "hallwatch-cli"
       }
     },
     "integration-test": {
@@ -181,7 +181,7 @@
       "executor": "@monodon/rust:clippy",
       "options": {
         "toolchain": "stable",
-        "package": "apirena-cli",
+        "package": "hallwatch-cli",
         "fix": false
       }
     }

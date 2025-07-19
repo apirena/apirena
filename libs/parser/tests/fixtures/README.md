@@ -117,13 +117,13 @@ Each test file should have a corresponding entry in `test-scenarios.yml` that de
 ### For Development
 ```bash
 # Test specific framework
-apirena discover test-fixtures/javascript/express/
+hallwatch discover test-fixtures/javascript/express/
 
 # Test all JavaScript frameworks
-apirena discover test-fixtures/javascript/
+hallwatch discover test-fixtures/javascript/
 
 # Benchmark all languages
-apirena discover test-fixtures/ --format json > benchmark-results.json
+hallwatch discover test-fixtures/ --format json > benchmark-results.json
 ```
 
 ### For CI/CD

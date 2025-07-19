@@ -1,6 +1,6 @@
-# Apirena Technical Architecture
+# Hallwatch Technical Architecture
 
-This document describes the technical implementation of Apirena, a code-aware API development environment.
+This document describes the technical implementation of Hallwatch, a code-aware API development environment.
 
 ## Table of Contents
 - [Core Philosophy](#core-philosophy)
@@ -15,7 +15,7 @@ This document describes the technical implementation of Apirena, a code-aware AP
 
 ## Core Philosophy
 
-Apirena operates on three principles:
+Hallwatch operates on three principles:
 
 1. **Code is Truth** - API structure is derived from parsing source files, not from separate specifications
 2. **Zero Configuration** - Automatic detection of frameworks and patterns
@@ -52,7 +52,7 @@ Apirena operates on three principles:
 
 ## File Watching Pipeline
 
-The file watcher is the heart of Apirena's real-time capabilities:
+The file watcher is the heart of Hallwatch's real-time capabilities:
 
 ```rust
 pub struct FileWatcher {
@@ -264,7 +264,7 @@ impl HistoryBuffer {
         self.sessions.push_back(session);
         
         // Optionally persist to disk for crash recovery
-        if let Ok(mut file) = File::create(".apirena/history.json") {
+        if let Ok(mut file) = File::create(".hallwatch/history.json") {
             serde_json::to_writer(&mut file, &self.sessions).ok();
         }
     }
@@ -527,7 +527,7 @@ impl ParallelParser {
 
 ## Summary
 
-Apirena achieves real-time API understanding through:
+Hallwatch achieves real-time API understanding through:
 
 1. **Native file watching** with intelligent debouncing
 2. **Tree-sitter parsing** for instant code understanding

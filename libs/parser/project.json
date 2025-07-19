@@ -8,21 +8,21 @@
       "outputs": ["{projectRoot}/target"],
       "options": {
         "toolchain": "stable",
-        "package": "apirena-parser"
+        "package": "hallwatch-parser"
       }
     },
     "test": {
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "apirena-parser"
+        "package": "hallwatch-parser"
       }
     },
     "integration-test": {
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "apirena-parser",
+        "package": "hallwatch-parser",
         "testBinary": "integration_tests"
       }
     },
@@ -30,7 +30,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable", 
-        "package": "apirena-parser",
+        "package": "hallwatch-parser",
         "testFilter": "javascript"
       }
     },
@@ -38,7 +38,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "apirena-parser", 
+        "package": "hallwatch-parser", 
         "testFilter": "python"
       }
     },
@@ -46,14 +46,14 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "apirena-parser",
+        "package": "hallwatch-parser",
         "testFilter": "php"
       }
     },
     "benchmark": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo bench --package apirena-parser",
+        "command": "cargo bench --package hallwatch-parser",
         "cwd": "{workspaceRoot}"
       }
     },
@@ -61,7 +61,7 @@
       "executor": "@monodon/rust:clippy",
       "options": {
         "toolchain": "stable",
-        "package": "apirena-parser",
+        "package": "hallwatch-parser",
         "fix": false
       }
     }

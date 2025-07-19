@@ -2,7 +2,7 @@
 
 ## Overview
 
-Apirena is built as a modular, high-performance system for real-time API discovery and testing. The architecture follows these principles:
+Hallwatch is built as a modular, high-performance system for real-time API discovery and testing. The architecture follows these principles:
 
 1. **Modular Design** - Each library has a single responsibility
 2. **Performance First** - Sub-10ms parsing, minimal memory usage
@@ -22,23 +22,23 @@ Apirena is built as a modular, high-performance system for real-time API discove
 │             Core Libraries                  │
 │  ┌─────────────────────────────────────┐   │
 │  │      File System Watcher             │   │
-│  │        (apirena-core)               │   │
+│  │        (hallwatch-core)               │   │
 │  ├─────────────────────────────────────┤   │
 │  │    Tree-sitter Parser Pool          │   │
-│  │       (apirena-parser)              │   │
+│  │       (hallwatch-parser)              │   │
 │  ├─────────────────────────────────────┤   │
 │  │        Git Integration              │   │
-│  │        (apirena-git)                │   │
+│  │        (hallwatch-git)                │   │
 │  ├─────────────────────────────────────┤   │
 │  │     AI Analysis Layer               │   │
-│  │        (apirena-ai)                 │   │
+│  │        (hallwatch-ai)                 │   │
 │  └─────────────────────────────────────┘   │
 └─────────────────────────────────────────────┘
 ```
 
 ## Core Libraries
 
-### apirena-core
+### hallwatch-core
 
 **Responsibility**: File system monitoring and event handling
 
@@ -52,7 +52,7 @@ Apirena is built as a modular, high-performance system for real-time API discove
 - < 50MB memory usage
 - Support for 10,000+ files
 
-### apirena-parser
+### hallwatch-parser
 
 **Responsibility**: Source code parsing and endpoint extraction
 
@@ -66,7 +66,7 @@ Apirena is built as a modular, high-performance system for real-time API discove
 - Support for 20+ languages
 - 95%+ accuracy on real-world code
 
-### apirena-git (Future)
+### hallwatch-git (Future)
 
 **Responsibility**: Git integration for API change tracking
 
@@ -75,7 +75,7 @@ Apirena is built as a modular, high-performance system for real-time API discove
 - `DiffGenerator` - Compare endpoints between commits
 - `ChangeAnalyzer` - Semantic API change detection
 
-### apirena-ai (Future)
+### hallwatch-ai (Future)
 
 **Responsibility**: AI-powered analysis and test generation
 

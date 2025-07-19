@@ -41,7 +41,7 @@ async fn main() -> Result<()> {
     
     match cli.command {
         Commands::Watch { path, port } => {
-            info!("Starting Apirena watcher on {} (port {})", path.display(), port);
+            info!("Starting Hallwatch watcher on {} (port {})", path.display(), port);
             println!("🔍 Watching {} for API changes...", path.display());
             println!("🌐 Web interface available at http://localhost:{}", port);
             
