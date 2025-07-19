@@ -1,4 +1,4 @@
-use apirena_core::{FileWatcher, FileEventType};
+use hallwatch_core::{FileWatcher, FileEventType};
 use tempfile::TempDir;
 use tokio::fs;
 use tokio::time::{timeout, Duration};

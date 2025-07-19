@@ -1,6 +1,6 @@
-# Contributing to Apirena
+# Contributing to Hallwatch
 
-Thank you for your interest in contributing to Apirena! This guide will help you get started with our AI-powered API endpoint discovery tool.
+Thank you for your interest in contributing to Hallwatch! This guide will help you get started with our AI-powered API endpoint discovery tool.
 
 ## Quick Start
 
@@ -14,8 +14,8 @@ Thank you for your interest in contributing to Apirena! This guide will help you
 
 1. **Fork and clone the repository**
    ```bash
-   git clone https://github.com/your-username/apirena.git
-   cd apirena
+   git clone https://github.com/your-username/hallwatch.git
+   cd hallwatch
    ```
 
 2. **Install dependencies**
@@ -228,12 +228,12 @@ We use a comprehensive testing approach:
 
 ## Getting Help
 
-- **Discord**: Join our community at [discord.gg/apirena](https://discord.gg/apirena)
+- **Discord**: Join our community at [discord.gg/hallwatch](https://discord.gg/hallwatch)
 - **Issues**: Search existing issues before creating new ones
 - **Discussions**: Use GitHub Discussions for questions
 
 ## License
 
-By contributing to Apirena, you agree that your contributions will be licensed under the FSL 1.1 license.
+By contributing to Hallwatch, you agree that your contributions will be licensed under the FSL 1.1 license.
 
 Thank you for contributing! 🚀

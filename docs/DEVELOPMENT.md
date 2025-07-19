@@ -10,8 +10,8 @@
 
 2. **Installation**
    ```bash
-   git clone https://github.com/apirena/apirena.git
-   cd apirena
+   git clone https://github.com/hallwatch/hallwatch.git
+   cd hallwatch
    pnpm install
    ```
 
@@ -24,13 +24,13 @@
    pnpm nx build parser
    
    # Build CLI
-   cargo build -p apirena-cli
+   cargo build -p hallwatch-cli
    ```
 
 4. **Running**
    ```bash
    # Run CLI
-   ./target/debug/apirena --help
+   ./target/debug/hallwatch --help
    
    # Via NX (when configured)
    pnpm nx run cli:serve -- --help
@@ -46,10 +46,10 @@ pnpm nx run-many --target=test --all
 pnpm nx affected:test
 
 # Run specific Rust tests
-cargo test -p apirena-parser
+cargo test -p hallwatch-parser
 
 # Run with output
-cargo test -p apirena-core -- --nocapture
+cargo test -p hallwatch-core -- --nocapture
 ```
 
 ## Development Workflow

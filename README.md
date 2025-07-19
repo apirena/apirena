@@ -1,6 +1,6 @@
-# Apirena: The Code-Aware API Development Environment
+# Hallwatch: The Code-Aware API Development Environment
 
-Apirena is an intelligent API testing tool that understands your code, not just your specs. It watches your source files, automatically discovers endpoints through AST parsing, and uses AI to help you build better APIs—all in real-time as you code.
+Hallwatch is an intelligent API testing tool that understands your code, not just your specs. It watches your source files, automatically discovers endpoints through AST parsing, and uses AI to help you build better APIs—all in real-time as you code.
 
 ## 🏗️ Architecture
 
@@ -28,8 +28,8 @@ This is an NX monorepo containing:
 
 ```bash
 # Clone the repository
-git clone https://github.com/apirena/apirena.git
-cd apirena
+git clone https://github.com/hallwatch/hallwatch.git
+cd hallwatch
 
 # Install dependencies
 pnpm install
@@ -83,11 +83,11 @@ pnpm nx g @monodon/rust:library my-feature --directory=libs
 pnpm nx run-many --target=clippy --all
 ```
 
-## Why Apirena?
+## Why Hallwatch?
 
 **The Problem**: Current API tools are disconnected from your code. You manually maintain collections, copy-paste URLs, and hope your documentation matches reality.
 
-**Our Solution**: Apirena watches your actual source files and understands your code structure. Change a route? Apirena knows instantly. Add a parameter? It's already in the test builder. Write a comment? That's your documentation.
+**Our Solution**: Hallwatch watches your actual source files and understands your code structure. Change a route? Hallwatch knows instantly. Add a parameter? It's already in the test builder. Write a comment? That's your documentation.
 
 ## ✨ Key Features
 
@@ -96,7 +96,7 @@ pnpm nx run-many --target=clippy --all
 // You write:
 app.post('/users/:id/avatar', uploadAvatar);
 
-// Apirena instantly shows:
+// Hallwatch instantly shows:
 // POST /users/:id/avatar [Test]
 ```
 No configuration. No manual updates. It just works.
@@ -118,7 +118,7 @@ Write comments naturally. AI understands your intent—no strict syntax required
 ### 🔄 **Git-Aware Development**
 ```bash
 # See what changed between branches
-$ apirena diff main..feature/auth
+$ hallwatch diff main..feature/auth
 > Added: POST /auth/refresh
 > Modified: POST /login (added mfa_token field)
 ```
@@ -128,7 +128,7 @@ $ apirena diff main..feature/auth
 Monitor any public API for changes:
 
 ```javascript
-// .apirena/watch.json
+// .hallwatch/watch.json
 {
   "public_apis": [
     {
@@ -175,7 +175,7 @@ No servers. No syncing. Everything runs locally on your machine.
 **Java**: Spring Boot  
 **PHP**: Laravel, Symfony
 
-Don't see yours? [Open an issue](https://github.com/apirena/apirena/issues)—adding frameworks is easy with Tree-sitter.
+Don't see yours? [Open an issue](https://github.com/hallwatch/hallwatch/issues)—adding frameworks is easy with Tree-sitter.
 
 ## 💡 Perfect For
 
@@ -221,7 +221,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📄 License
 
-Apirena is licensed under the Functional Source License 1.1 (FSL).
+Hallwatch is licensed under the Functional Source License 1.1 (FSL).
 
 - ✅ **Free for**: Open source projects, personal use, testing, and evaluation
 - 💰 **Paid license required for**: Commercial use by companies >$100k revenue
@@ -241,4 +241,4 @@ Built with amazing open source projects:
 
 **Stop syncing collections. Start shipping APIs.**
 
-[Website](https://apirena.dev) | [Discord](https://discord.gg/apirena) | [Documentation](https://docs.apirena.dev)
+[Website](https://hallwatch.dev) | [Discord](https://discord.gg/hallwatch) | [Documentation](https://docs.hallwatch.dev)

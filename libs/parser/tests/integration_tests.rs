@@ -1,4 +1,4 @@
-use apirena_parser::{
+use hallwatch_parser::{
     languages::{javascript::JavaScriptParser, python::PythonParser, php::PhpParser},
     LanguageParser, HttpMethod,
 };

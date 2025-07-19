@@ -2,7 +2,7 @@
 
 ## Overview
 
-Apirena development is divided into 6 phases, each building on the previous. All development should be AI-agent friendly with clear boundaries and testable outcomes.
+Hallwatch development is divided into 6 phases, each building on the previous. All development should be AI-agent friendly with clear boundaries and testable outcomes.
 
 ## Phase 1: Foundation (Sprint 1-2) ✅ COMPLETE
 
@@ -13,7 +13,7 @@ Apirena development is divided into 6 phases, each building on the previous. All
 
 ### Libraries to Create
 
-#### `@apirena/core` ✅ Created & Implemented
+#### `@hallwatch/core` ✅ Created & Implemented
 ```bash
 nx build core  # ✅ Working
 ```
@@ -29,7 +29,7 @@ nx build core  # ✅ Working
 - [ ] Respect .gitignore patterns (TODO: Phase 2)
 - [x] Core functionality tested ✅
 
-#### `@apirena/parser` ✅ Created & Implemented
+#### `@hallwatch/parser` ✅ Created & Implemented
 ```bash
 nx build parser  # ✅ Working
 ```
@@ -49,8 +49,8 @@ nx build parser  # ✅ Working
 
 ### Deliverables
 - Working CLI that prints discovered endpoints ✅ COMPLETE
-  - `apirena discover` command working ✅
-  - `apirena watch` command working ✅
+  - `hallwatch discover` command working ✅
+  - `hallwatch watch` command working ✅
   - Real-time endpoint detection ✅
   - Table and JSON output formats ✅
 - Benchmark suite showing performance metrics ⏳ TODO: Phase 2
@@ -65,7 +65,7 @@ nx build parser  # ✅ Working
 
 ### Features to Add
 
-#### Language Support in `@apirena/parser`
+#### Language Support in `@hallwatch/parser`
 - Python (FastAPI, Flask, Django) ✅ Flask implemented
 - Go (Gin, Echo, Fiber) ⏳ TODO
 - Rust (Actix, Rocket, Axum) ⏳ TODO
@@ -94,7 +94,7 @@ pub trait FrameworkDetector {
 
 ### Apps to Create
 
-#### `@apirena/desktop`
+#### `@hallwatch/desktop`
 ```bash
 nx g @nx/react:app desktop --directory=apps --bundler=vite
 # Then add Tauri
@@ -124,7 +124,7 @@ pnpm tauri init
 
 ### Libraries to Create
 
-#### `@apirena/git`
+#### `@hallwatch/git`
 ```bash
 nx g @monodon/rust:library git --directory=libs
 ```
@@ -149,7 +149,7 @@ nx g @monodon/rust:library git --directory=libs
 
 ### Libraries to Create
 
-#### `@apirena/ai`
+#### `@hallwatch/ai`
 ```bash
 nx g @monodon/rust:library ai --directory=libs
 ```
@@ -243,14 +243,14 @@ nx run desktop:package
 **Verified Working Examples:**
 ```bash
 # Endpoint discovery
-./target/release/apirena discover test-app.js
+./target/release/hallwatch discover test-app.js
 📋 Found 6 endpoint(s):
 METHOD   PATH           HANDLER    LINE
 Get      /users         5:5        5
 Post     /users         9:5        9
 
 # Real-time watching  
-./target/release/apirena watch test-watch
+./target/release/hallwatch watch test-watch
 📄 Created: test.js
 📍 Found 1 endpoint(s): Get /test (line 1)
 ```

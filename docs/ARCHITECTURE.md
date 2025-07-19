@@ -1,4 +1,4 @@
-# Apirena Architecture
+# Hallwatch Architecture
 
 ## Overview
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide helps AI agents work effectively on the Apirena codebase. The project uses NX for monorepo management, Rust for backend logic, and Svelte 5 for the UI.
+This guide helps AI agents work effectively on the Hallwatch codebase. The project uses NX for monorepo management, Rust for backend logic, and Svelte 5 for the UI.
 
 ## Project Structure
 

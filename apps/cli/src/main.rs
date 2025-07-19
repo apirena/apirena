@@ -3,8 +3,8 @@ use clap::{Parser, Subcommand};
 use std::path::PathBuf;
 use tracing::info;
 use std::fs;
-use apirena_core::{FileWatcher, FileEvent, FileEventType};
-use apirena_parser::{detect_language, languages::{javascript::JavaScriptParser, python::PythonParser, php::PhpParser}, LanguageParser};
+use hallwatch_core::{FileWatcher, FileEvent, FileEventType};
+use hallwatch_parser::{detect_language, languages::{javascript::JavaScriptParser, python::PythonParser, php::PhpParser}, LanguageParser};
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
@@ -147,7 +147,7 @@ async fn analyze_file(path: &PathBuf) -> Result<()> {
     Ok(())
 }
 
-fn discover_endpoints(path: &PathBuf) -> Result<Vec<apirena_parser::Endpoint>> {
+fn discover_endpoints(path: &PathBuf) -> Result<Vec<hallwatch_parser::Endpoint>> {
     let mut all_endpoints = Vec::new();
     
     if path.is_file() {
@@ -170,7 +170,7 @@ fn discover_endpoints(path: &PathBuf) -> Result<Vec<apirena_parser::Endpoint>> {
     Ok(all_endpoints)
 }
 
-fn parse_file_content(content: &str, path: &PathBuf) -> Result<Vec<apirena_parser::Endpoint>> {
+fn parse_file_content(content: &str, path: &PathBuf) -> Result<Vec<hallwatch_parser::Endpoint>> {
     let extension = path.extension()
         .and_then(|ext| ext.to_str())
         .unwrap_or("");

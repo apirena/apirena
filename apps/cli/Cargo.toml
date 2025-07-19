@@ -1,11 +1,11 @@
 [package]
-name = "apirena-cli"
+name = "hallwatch-cli"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
 
 [[bin]]
-name = "apirena"
+name = "hallwatch"
 path = "src/main.rs"
 
 [dependencies]
@@ -16,5 +16,5 @@ tracing.workspace = true
 tracing-subscriber = "0.3"
 walkdir = "2.4"
 serde_json = "1.0"
-apirena-core = { path = "../../libs/core" }
-apirena-parser = { path = "../../libs/parser" }
+hallwatch-core = { path = "../../libs/core" }
+hallwatch-parser = { path = "../../libs/parser" }
