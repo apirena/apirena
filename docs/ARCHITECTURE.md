@@ -2,12 +2,12 @@
 
 ## Overview
 
-Hallwatch is built as a modular, high-performance system for real-time API discovery and testing. The architecture follows these principles:
+Hallwatch is built as a modular, high-performance system for code-first API testing. The architecture follows these principles:
 
-1. **Modular Design** - Each library has a single responsibility
+1. **Code-First Design** - Implementation is the source of truth
 2. **Performance First** - Sub-10ms parsing, minimal memory usage
-3. **Language Agnostic** - Extensible parser system
-4. **Local-First** - No external dependencies required
+3. **Smart Caching** - AI runs once per endpoint, not per file change
+4. **Local-First** - Privacy-preserving, no external dependencies required
 
 ## System Architecture
 
@@ -24,13 +24,10 @@ Hallwatch is built as a modular, high-performance system for real-time API disco
 │  │      File System Watcher             │   │
 │  │        (hallwatch-core)               │   │
 │  ├─────────────────────────────────────┤   │
-│  │    Tree-sitter Parser Pool          │   │
+│  │    AST Parser + Smart Caching       │   │
 │  │       (hallwatch-parser)              │   │
 │  ├─────────────────────────────────────┤   │
-│  │        Git Integration              │   │
-│  │        (hallwatch-git)                │   │
-│  ├─────────────────────────────────────┤   │
-│  │     AI Analysis Layer               │   │
+│  │  AI Enhancement Layer + Cache       │   │
 │  │        (hallwatch-ai)                 │   │
 │  └─────────────────────────────────────┘   │
 └─────────────────────────────────────────────┘
@@ -54,42 +51,42 @@ Hallwatch is built as a modular, high-performance system for real-time API disco
 
 ### hallwatch-parser
 
-**Responsibility**: Source code parsing and endpoint extraction
+**Responsibility**: AST-based endpoint discovery without annotations
 
 **Key Components**:
 - `LanguageParser` trait - Common interface for all languages
 - `ParserPool` - Concurrent parsing with caching
 - Language-specific parsers (JavaScript, Python, Go, etc.)
+- Framework pattern detection
 
 **Performance Targets**:
 - < 10ms parse time per file
 - Support for 20+ languages
 - 95%+ accuracy on real-world code
+- Zero configuration required
 
-### hallwatch-git (Future)
+### hallwatch-ai
 
-**Responsibility**: Git integration for API change tracking
-
-**Key Components**:
-- `GitWatcher` - Monitor branch changes
-- `DiffGenerator` - Compare endpoints between commits
-- `ChangeAnalyzer` - Semantic API change detection
-
-### hallwatch-ai (Future)
-
-**Responsibility**: AI-powered analysis and test generation
+**Responsibility**: Intelligent parameter analysis with smart caching
 
 **Key Components**:
-- `ModelClient` - Abstract interface for AI models
-- `TestGenerator` - Create test cases from endpoints
-- `DocumentationExtractor` - Parse natural language docs
+- `EndpointAnalyzer` - Context-aware parameter suggestions
+- `AICache` - Signature-based result caching
+- `ModelProvider` - Local/cloud AI abstraction
+- `UserStateManager` - Preserve playground values
+
+**Performance Targets**:
+- < 100ms cached responses
+- < 2s initial analysis
+- 90%+ cache hit rate
+- Graceful degradation without AI
 
 ## Data Flow
 
 ```
 File Change → FileWatcher → ParserPool → LanguageParser → Endpoints
      ↓              ↓            ↓            ↓             ↓
-  EventBus → CLI/Desktop → UI Update → User Action → Test Request
+  EventBus → CLI/Desktop → AI Analysis → Cached Results → UI Update
 ```
 
 ## Technology Stack
@@ -123,15 +120,28 @@ All communication between components uses an event system:
 pub enum ApiEvent {
     FileChanged { path: PathBuf },
     EndpointsDiscovered { path: PathBuf, endpoints: Vec<Endpoint> },
-    GitBranchChanged { from: String, to: String },
+    AIAnalysisComplete { endpoint: Endpoint, analysis: Analysis },
 }
 ```
 
-### Incremental Processing
+### Smart Caching Strategy
 
-- Files are only re-parsed when changed
-- Tree-sitter provides incremental parsing
-- UI updates are batched for performance
+```rust
+// Endpoint signature for caching
+pub fn endpoint_signature(endpoint: &Endpoint) -> String {
+    format!("{}-{}-{}", 
+        endpoint.method, 
+        endpoint.path, 
+        endpoint.middleware_hash()
+    )
+}
+
+// Cache structure
+pub struct AICache {
+    entries: HashMap<String, CachedAnalysis>,
+    ttl: Duration,
+}
+```
 
 ## Error Handling
 
@@ -139,13 +149,7 @@ pub enum ApiEvent {
 - Errors are propagated up with context using `anyhow`
 - Critical errors are logged, non-critical are handled gracefully
 - Parsing errors don't crash the application
-
-## Testing Strategy
-
-- **Unit Tests**: Every public function
-- **Integration Tests**: End-to-end workflows
-- **Property Tests**: Parser accuracy with random inputs
-- **Performance Tests**: Benchmark parsing speed and memory usage
+- AI failures gracefully degrade to basic functionality
 
 ## Security Considerations
 
@@ -153,10 +157,11 @@ pub enum ApiEvent {
 - File system access is limited to watched directories
 - AI features require explicit user consent
 - No sensitive data is logged or transmitted
+- Local AI models preferred for privacy
 
 ## Future Extensions
 
 - **Language Server Protocol**: IDE integration
-- **Plugin System**: Third-party parser plugins
-- **Distributed Mode**: Team collaboration features
-- **API Mocking**: Generate mock servers from discovered APIs
+- **Plugin System**: Third-party parser plugins  
+- **Team Collaboration**: Shared playground sessions
+- **Advanced Testing**: Load testing, contract testing

@@ -85,12 +85,12 @@ pub trait FrameworkDetector {
 - [x] Maintain < 10ms parse time ✅
 - [x] Real-time parsing of file changes ✅
 
-## Phase 3: Desktop Application (Sprint 5-6)
+## Phase 3: Desktop Playground (Sprint 5-6)
 
 ### Goals
-- Create Tauri desktop app
+- Create Tauri desktop app with intelligent playground
 - Implement real-time UI updates
-- Basic API testing functionality
+- Add smart parameter suggestions with AI caching
 
 ### Apps to Create
 
@@ -105,47 +105,24 @@ pnpm tauri init
 
 **Features:**
 - Endpoint list with real-time updates
-- Request builder UI
-- Response viewer
-- WebSocket connection to Rust backend
+- Request builder UI with AI suggestions
+- Response viewer with history
+- Persistent playground state
 
 ### Success Criteria
 - [ ] See endpoints appear as you type
+- [ ] AI suggests parameters on first view (cached afterward)
 - [ ] Send test requests to discovered endpoints
 - [ ] < 16ms UI update latency
 - [ ] Smooth 60fps scrolling with 1000+ endpoints
+- [ ] User's test values persist between sessions
 
-## Phase 4: Git Integration (Sprint 7-8)
-
-### Goals
-- Track API changes across branches
-- Show endpoint diffs
-- Historical API evolution
-
-### Libraries to Create
-
-#### `@hallwatch/git`
-```bash
-nx g @monodon/rust:library git --directory=libs
-```
-
-**Features:**
-- Monitor .git/HEAD for branch changes
-- Compare endpoints between commits
-- Generate API change reports
-
-### Success Criteria
-- [ ] Detect branch switches automatically
-- [ ] Show added/removed/modified endpoints
-- [ ] Work with any git workflow
-- [ ] No performance impact on git operations
-
-## Phase 5: AI Enhancement (Sprint 9-10)
+## Phase 4: AI Enhancement Layer (Sprint 7-8)
 
 ### Goals
-- Integrate local and cloud AI models
-- Generate test cases automatically
-- Extract documentation from code
+- Implement smart AI caching system
+- Add local AI model support (Ollama)
+- Build intelligent parameter analysis
 
 ### Libraries to Create
 
@@ -155,16 +132,36 @@ nx g @monodon/rust:library ai --directory=libs
 ```
 
 **Features:**
-- Ollama integration for local models
-- OpenAI/Anthropic API support
-- Prompt engineering for test generation
-- Documentation extraction
+- Endpoint signature generation for caching
+- Local and cloud AI model support
+- Context-aware parameter suggestions
+- User override preservation
 
 ### Success Criteria
-- [ ] Generate valid test cases 80%+ of the time
-- [ ] Extract meaningful documentation
-- [ ] Sub-second response time with local models
-- [ ] Graceful fallback between AI providers
+- [ ] AI analyzes endpoint once, caches results
+- [ ] <100ms response time for cached suggestions
+- [ ] <2s for initial analysis with local model
+- [ ] 90%+ cache hit rate on subsequent runs
+- [ ] User values always override AI suggestions
+
+## Phase 5: Advanced Configuration (Sprint 9-10)
+
+### Goals
+- Optional configuration system
+- Environment management
+- Custom parameter hints
+
+### Features to Add
+- Optional `.hallwatch/config.js` file
+- Environment switching (local/staging/prod)
+- Custom parameter generators
+- Advanced ignore patterns
+
+### Success Criteria
+- [ ] Works with zero config by default
+- [ ] Optional config enhances experience
+- [ ] Environment switching in playground
+- [ ] Custom parameter hints working
 
 ## Phase 6: Polish & Distribution (Sprint 11-12)
 

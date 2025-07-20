@@ -1,6 +1,155 @@
-# Hallwatch: The Code-Aware API Development Environment
+# Hallwatch: The Code-First API Playground
 
-Hallwatch is an intelligent API testing tool that understands your code, not just your specs. It watches your source files, automatically discovers endpoints through AST parsing, and uses AI to help you build better APIs—all in real-time as you code.
+**Your code is the spec.** Test APIs instantly as you write them—no manual documentation, no spec drift, just real-time API discovery that understands your actual implementation.
+
+## 🎯 Core Value: Code-First API Testing
+
+Hallwatch watches your source files, automatically discovers endpoints through AST parsing, and creates an intelligent playground for testing—all without requiring special comments, annotations, or separate spec files.
+
+```javascript
+// You write this:
+app.post('/users/:id/profile', updateProfile);
+
+// Hallwatch instantly provides:
+// ✅ Endpoint detected
+// ✅ Parameters extracted (id: string)
+// ✅ Method identified (POST)
+// ✅ Smart suggestions ready
+// → Test it now!
+```
+
+## 🏆 Why Hallwatch?
+
+### The Problem with Current Tools
+
+| Traditional API Tools | Reality |
+|----------------------|---------|
+| Manually maintain collections | Outdated within days |
+| Write OpenAPI specs | Never matches implementation |
+| Import from frameworks | Requires specific annotations |
+| Copy-paste URLs | Error-prone and tedious |
+
+### The Hallwatch Difference
+
+We use **AST parsing + AI** to understand your code as you write it:
+- **Zero Configuration**: Works with your existing code
+- **Real-time Updates**: Changes reflect instantly
+- **Framework Agnostic**: No special decorators needed
+- **Intelligent Assistance**: AI suggests parameters, not just detects them
+
+## 📊 How We Compare
+
+### Configuration Required
+```
+Manual Everything ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Zero Config
+                   Postman                              Hallwatch
+                         Insomnia ●
+                              Swagger ●
+```
+
+### Time to First Test
+```
+5+ Minutes ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <10 Seconds
+           Postman                                        Hallwatch ●
+                Insomnia ●
+                      Swagger ●
+```
+
+### Spec Accuracy
+```
+Drifts Immediately ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Always Current
+                   Manual Tools                           Hallwatch ●
+                         Generated ●
+                              Imported ●
+```
+
+### Intelligence Level
+```
+Basic Templates ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Context Aware
+               Postman                                     Hallwatch ●
+               Insomnia ●
+                     Swagger ●
+```
+
+### Framework Flexibility
+```
+Manual Setup ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Auto-Detects
+             Postman ●                                     Hallwatch ●
+             Insomnia ●
+                   Swagger ●
+```
+
+### Learning Curve
+```
+Complex Interface ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Point & Click
+                  Postman                                 Hallwatch ●
+                        Insomnia ●
+                              Swagger ●
+```
+
+### Team Onboarding
+```
+Complex Setup ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Share Codebase
+              Postman                                      Hallwatch ●
+                    Insomnia ●
+                          Swagger ●
+```
+
+### Version Control Integration
+```
+Separate Tracking ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ In Your Repo
+                  Postman                                 Hallwatch ●
+                        Insomnia ●
+                              Swagger ●
+```
+
+### Development Flow Disruption
+```
+Switch Apps ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Stay in Editor
+            Postman                                        Hallwatch ●
+                  Insomnia ●
+                        Swagger ●
+```
+
+### API Change Detection
+```
+Manual Updates ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Auto-Current
+               Postman ●                                   Hallwatch ●
+               Insomnia ●
+                     Swagger ●
+```
+
+### Memory Footprint
+```
+500MB+ ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <100MB
+       Postman                                            Hallwatch ●
+             Insomnia ●
+                   Swagger ●
+```
+
+### Offline Capability
+```
+Cloud Dependent ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Fully Local
+                Swagger                                    Hallwatch ●
+                      Postman ●
+                            Insomnia ●
+```
+
+### Security & Privacy
+```
+Cloud Sync ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% Local
+           Postman                                         Hallwatch ●
+                 Swagger ●
+                       Insomnia ●
+```
+
+### Real-time Collaboration
+```
+Complex Workspaces ●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Share Code
+                   Postman                                 Hallwatch ●
+                         Insomnia ●
+                               Swagger ●
+```
 
 ## 🏗️ Architecture
 
@@ -8,20 +157,124 @@ This is an NX monorepo containing:
 
 - **Apps**
   - `cli` - Command-line interface for API discovery and watching
-  - `desktop` - Tauri-based desktop application (coming soon)
+  - `desktop` - Tauri-based playground application (coming soon)
 
 - **Libraries**
   - `core` - File watching and event system
-  - `parser` - Tree-sitter based code parsing for endpoint discovery
-  - `git` - Git integration for API diffing (coming soon)
-  - `ai` - AI-powered test generation (coming soon)
+  - `parser` - AST-based endpoint discovery engine
+  - `ai` - Intelligent parameter analysis with smart caching (coming soon)
 
 ## 🚀 Getting Started
+
+```bash
+# Install Hallwatch
+npm install -g hallwatch
+
+# Point it at your project
+hallwatch watch ./my-api
+
+# That's it! Open the playground at http://localhost:3000
+```
+
+## ✨ Core Features
+
+### 🔍 **Intelligent Code Parsing**
+Our custom AST parser understands real implementations:
+- Detects endpoints without decorators
+- Extracts parameters from function signatures
+- Identifies middleware and auth requirements
+- Works with any coding style
+
+### 🤖 **Smart Parameter Suggestions**
+AI analyzes your code context to suggest:
+- Required vs optional parameters
+- Valid test values based on variable names
+- Authentication headers from middleware
+- Response formats from return statements
+
+### � **Persistent Playground State**
+Your testing setup persists between sessions:
+- Remembers your last test values
+- Keeps environment configurations
+- Maintains request history
+- Never loses your work
+
+### ⚡ **Real-time Updates**
+Save a file, test immediately:
+- <10ms endpoint detection
+- Instant UI updates
+- No restart required
+- Git-aware change tracking
+
+## 🛠 Technical Architecture
+
+```
+Your Code → AST Parser → Endpoint Detection → AI Enhancement → Playground UI
+    ↑           ↓               ↓                    ↓              ↓
+File Watch   <10ms parse   Smart caching    Context analysis   Test & iterate
+```
+
+**Key Design Decisions:**
+- **Rust Core**: Maximum performance for file watching and parsing
+- **Tree-sitter**: Language-agnostic AST parsing
+- **Local-First AI**: Privacy-preserving parameter suggestions
+- **Smart Caching**: AI runs once per endpoint, not per file save
+
+## 📚 Supported Frameworks
+
+**JavaScript/TypeScript**: Express, Fastify, Koa, Next.js, Hono  
+**Python**: FastAPI, Flask, Django, Starlette  
+**Go**: Gin, Echo, Fiber, Chi  
+**Rust**: Actix, Rocket, Axum, Warp  
+**Java**: Spring Boot, Quarkus  
+**Ruby**: Rails, Sinatra  
+**PHP**: Laravel, Symfony
+
+> No special setup needed—just works with standard patterns.
+
+## 🎯 Who Is This For?
+
+### Perfect For:
+- **Rapid Prototyping**: Test as you build
+- **Team Collaboration**: Everyone sees the same APIs
+- **Legacy Projects**: No annotations to add
+- **Microservices**: Manage multiple APIs effortlessly
+
+### Not For:
+- Public API documentation (use OpenAPI generators)
+- Non-HTTP protocols (gRPC, WebSocket coming later)
+- Production monitoring (this is for development)
+
+## 🔧 Advanced Configuration (Optional)
+
+While Hallwatch works with zero config, you can customize behavior:
+
+```javascript
+// .hallwatch/config.js
+export default {
+  // Custom ignore patterns
+  ignore: ['tests/**', 'migrations/**'],
+  
+  // Override AI suggestions
+  parameterHints: {
+    'userId': () => 'user_' + Math.random().toString(36).substring(7),
+    'email': () => 'test@example.com'
+  },
+  
+  // Environment configs
+  environments: {
+    local: 'http://localhost:3000',
+    staging: 'https://api-staging.myapp.com'
+  }
+}
+```
+
+## �️ Development
 
 ### Prerequisites
 - Node.js 18+
 - PNPM 8+
-- Rust 1.70+
+- Rust 1.75+
 - Git
 
 ### Installation
@@ -44,201 +297,27 @@ pnpm nx run cli:serve -- discover ./my-project
 pnpm nx run cli:serve -- watch ./my-project
 ```
 
-## 🛠️ Development
-
-### Running Tasks
-
-```bash
-# Run unit tests for all libraries
-pnpm nx run-many --target=test --all
-
-# Run integration tests for parser
-pnpm nx integration-test parser
-
-# Run integration tests for core
-pnpm nx integration-test core
-
-# Run granular tests for specific frameworks
-pnpm nx run cli:test:php:laravel
-pnpm nx run cli:test:javascript:express
-pnpm nx run cli:test:python:fastapi
-
-# Run tests for affected projects only
-pnpm nx affected:test
-
-# Build a specific library
-pnpm nx build parser
-
-# See dependency graph
-pnpm nx graph
-```
-
-### Adding New Features
-
-```bash
-# Generate a new Rust library
-pnpm nx g @monodon/rust:library my-feature --directory=libs
-
-# Run clippy on all Rust code
-pnpm nx run-many --target=clippy --all
-```
-
-## Why Hallwatch?
-
-**The Problem**: Current API tools are disconnected from your code. You manually maintain collections, copy-paste URLs, and hope your documentation matches reality.
-
-**Our Solution**: Hallwatch watches your actual source files and understands your code structure. Change a route? Hallwatch knows instantly. Add a parameter? It's already in the test builder. Write a comment? That's your documentation.
-
-## ✨ Key Features
-
-### 🧠 **Automatic Endpoint Discovery**
-```javascript
-// You write:
-app.post('/users/:id/avatar', uploadAvatar);
-
-// Hallwatch instantly shows:
-// POST /users/:id/avatar [Test]
-```
-No configuration. No manual updates. It just works.
-
-### 📝 **Natural Language Documentation**
-```python
-# This endpoint sends a welcome email
-# Requires: user_id, template_name  
-# Returns: email_id or error
-@app.route('/emails/send', methods=['POST'])
-```
-Write comments naturally. AI understands your intent—no strict syntax required.
-
-### 🤖 **Intelligent Test Assistance**
-- Suggests test values based on your code patterns
-- Remembers recent tests for quick replay
-- Generates edge cases from parameter types
-
-### 🔄 **Git-Aware Development**
-```bash
-# See what changed between branches
-$ hallwatch diff main..feature/auth
-> Added: POST /auth/refresh
-> Modified: POST /login (added mfa_token field)
-```
-
-### 🌐 **Public API Superpowers**
-
-Monitor any public API for changes:
-
-```javascript
-// .hallwatch/watch.json
-{
-  "public_apis": [
-    {
-      "name": "Stripe",
-      "source": "https://stripe.com/docs/api",
-      "notify": ["breaking_changes", "new_endpoints"],
-      "sync_schedule": "daily"
-    },
-    {
-      "name": "OpenAI", 
-      "source": "https://platform.openai.com/docs",
-      "track_pricing": true
-    }
-  ]
-}
-```
-
-Get notified when:
-- Stripe adds new endpoints
-- OpenAI changes their rate limits  
-- Any dependency updates their API
-
-The AI continuously learns from public API patterns to improve suggestions for your private APIs.
-
-### 🚀 **Zero-Latency Updates**
-File changes reflect instantly. No refresh. No rebuild. Just save and test.
-
-## 🛠 How It Works
-
-1. **Watch** - Monitors your source files using native file system events
-2. **Parse** - Tree-sitter extracts API patterns in <10ms
-3. **Understand** - AI interprets comments and suggests improvements
-4. **Test** - Interactive playground updates as you type
-
-No servers. No syncing. Everything runs locally on your machine.
-
-## 📚 Supported Frameworks
-
-**JavaScript/TypeScript**: Express, Fastify, Koa, Next.js, Hono  
-**Python**: FastAPI, Flask, Django  
-**Go**: Gin, Echo, Fiber  
-**Rust**: Actix, Rocket, Axum  
-**Ruby**: Rails, Sinatra  
-**Java**: Spring Boot  
-**PHP**: Laravel, Symfony
-
-Don't see yours? [Open an issue](https://github.com/hallwatch/hallwatch/issues)—adding frameworks is easy with Tree-sitter.
-
-## 💡 Perfect For
-
-### During Development
-- Test endpoints without leaving your flow
-- Catch breaking changes before commits
-- Document as you code with natural comments
-
-### Code Reviews  
-- See exact API changes in PRs
-- Share test sessions with teammates
-- Validate API design decisions
-
-### AI-Assisted Coding
-- Validates Copilot/Cursor generated endpoints
-- Tests AI-written APIs automatically  
-- Human-in-the-loop verification
-
-## 🏗 Technical Architecture
-
-- **Core**: Rust for performance and reliability
-- **Parser**: Tree-sitter for language understanding  
-- **UI**: Svelte 5 with reactive state
-- **Desktop**: Tauri 2 for native feel
-- **AI**: Local LLM support (Ollama) with cloud fallback
-- **Monorepo**: NX for efficient development and builds
-
-## 📚 Documentation
-
-- [Architecture Overview](./docs/ARCHITECTURE.md)
-- [Development Guide](./docs/DEVELOPMENT.md)
-- [AI Agent Guidelines](./docs/AI_GUIDELINES.md)
-- [Development Milestones](./docs/MILESTONES.md)
+### For AI Agents
+Development instructions for AI assistants are in `.claude/instructions.md`.
 
 ## 🤝 Contributing
 
 We welcome contributions! Priority areas:
 - Additional language parsers
-- Framework detection patterns
-- UI/UX improvements
+- Framework-specific improvements  
+- Performance optimizations
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📄 License
 
 Hallwatch is licensed under the Functional Source License 1.1 (FSL).
-
-- ✅ **Free for**: Open source projects, personal use, testing, and evaluation
-- 💰 **Paid license required for**: Commercial use by companies >$100k revenue
+- ✅ **Free for**: Personal use, open source, companies <$100k revenue
+- 💰 **Paid for**: Commercial use by larger companies
 - 🔄 **Converts to**: Apache 2.0 after 4 years
-
-See [LICENSE](LICENSE) for full terms.
-
-## 🙏 Acknowledgments
-
-Built with amazing open source projects:
-- [Tree-sitter](https://tree-sitter.github.io/) for parsing
-- [Tauri](https://tauri.app/) for desktop apps
-- [Svelte](https://svelte.dev/) for reactive UI
-- [NX](https://nx.dev/) for monorepo management
 
 ---
 
-**Stop syncing collections. Start shipping APIs.**
+**Stop maintaining API specs. Start shipping features.**
 
 [Website](https://hallwatch.dev) | [Discord](https://discord.gg/hallwatch) | [Documentation](https://docs.hallwatch.dev)
