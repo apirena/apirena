@@ -1,5 +1,5 @@
 // Auto-generated Hallwatch configuration
-// Generated: 2025-07-21T06:10:44.151872238+00:00
+// Generated: 2025-07-21T06:33:34.839653531+00:00
 // Version: 1.0.0
 // Debug Mode: true
 
@@ -7,16 +7,19 @@ export default {
   // Metadata
   _meta: {
     version: "1.0.0",
-    generated: "2025-07-21T06:10:44.151872238+00:00",
-    lastModified: "2025-07-21T06:10:44.151872238+00:00",
+    generated: "2025-07-21T06:33:34.839653531+00:00",
+    lastModified: "2025-07-21T06:33:34.839653531+00:00",
     debugMode: true,
   },
+
+  // Global configuration
+  debugMode: true,
 
   // Detected project structure
   structure: {
     type: "single",
     fileCount: 4,
-    totalSize: 2071,
+    totalSize: 4277,
     roots: [],
   },
 
@@ -36,7 +39,7 @@ export default {
       // Patterns for route detection
       patterns: [
         {
-          name: "express.app-routes",
+          name: "express.basic-routes",
           files: "**/*.{js,ts}",
           routes: ["app.{method}('{path}', {handler})", "app.{method}('{path}', {middlewares}, {handler})"],
           confidence: 0.95,

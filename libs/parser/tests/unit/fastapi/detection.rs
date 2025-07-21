@@ -8,5 +8,5 @@ async fn detects_fastapi_basic() {
     let config = discovery.discover(&project_path).await.unwrap();
     
     // FastAPI detection tests will be implemented here
-    assert!(config.frameworks.len() >= 0);
+    assert!(!config.frameworks.is_empty());
 }

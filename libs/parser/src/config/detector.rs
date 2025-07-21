@@ -120,6 +120,56 @@ impl Detector for ExpressDetector {
             }
         }
         
+        // Check for routes directory with express patterns
+        let routes_dir = path.join("routes");
+        if routes_dir.is_dir() {
+            if let Ok(entries) = fs::read_dir(&routes_dir) {
+                for entry in entries.flatten() {
+                    if let Some(extension) = entry.path().extension() {
+                        if extension == "js" || extension == "ts" {
+                            if let Ok(content) = fs::read_to_string(&entry.path()) {
+                                if content.contains("router.") || content.contains("app.") || content.contains("express") {
+                                    signals.push(DetectionSignal {
+                                        signal_type: "route_file".to_string(),
+                                        value: "express routes found".to_string(),
+                                        confidence_boost: 0.7,
+                                        source: entry.path().to_string_lossy().to_string(),
+                                    });
+                                    confidence += 0.7;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Also check for routes in nested src directories
+        let src_routes = path.join("src/routes");
+        if src_routes.is_dir() {
+            if let Ok(entries) = fs::read_dir(&src_routes) {
+                for entry in entries.flatten() {
+                    if let Some(extension) = entry.path().extension() {
+                        if extension == "js" || extension == "ts" {
+                            if let Ok(content) = fs::read_to_string(&entry.path()) {
+                                if content.contains("router.") || content.contains("app.") || content.contains("express") {
+                                    signals.push(DetectionSignal {
+                                        signal_type: "route_file".to_string(),
+                                        value: "express routes found in src".to_string(),
+                                        confidence_boost: 0.7,
+                                        source: entry.path().to_string_lossy().to_string(),
+                                    });
+                                    confidence += 0.7;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
         if confidence < 0.6 { return None; }
         
         Some(FrameworkDetection {
@@ -129,7 +179,7 @@ impl Detector for ExpressDetector {
             signals,
             patterns: vec![
                 RoutePattern {
-                    name: "express.app-routes".to_string(),
+                    name: "express.basic-routes".to_string(),
                     files: "**/*.{js,ts}".to_string(),
                     routes: vec![
                         "app.{method}('{path}', {handler})".to_string(),

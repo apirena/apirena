@@ -7,7 +7,7 @@ impl PatternLibrary {
     pub fn get_express_patterns() -> Vec<RoutePattern> {
         vec![
             RoutePattern {
-                name: "express.app-routes".to_string(),
+                name: "express.basic-routes".to_string(),
                 files: "**/*.{js,ts}".to_string(),
                 routes: vec![
                     "app.{method}('{path}', {handler})".to_string(),

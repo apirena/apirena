@@ -8,7 +8,7 @@
 // pub mod laravel_basic;
 
 use std::fs;
-use std::path::{Path, PathBuf};
+use std::path::Path;
 
 /// Helper function to create test file structures for single app scenarios
 pub fn create_test_structure<P: AsRef<Path>>(base_path: P, files: Vec<(&str, &str)>) {

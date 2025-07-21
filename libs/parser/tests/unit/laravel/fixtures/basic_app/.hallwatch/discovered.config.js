@@ -1,5 +1,5 @@
 // Auto-generated Hallwatch configuration
-// Generated: 2025-07-21T06:10:44.162249342+00:00
+// Generated: 2025-07-21T06:33:34.839513536+00:00
 // Version: 1.0.0
 // Debug Mode: false
 
@@ -7,22 +7,40 @@ export default {
   // Metadata
   _meta: {
     version: "1.0.0",
-    generated: "2025-07-21T06:10:44.162249342+00:00",
-    lastModified: "2025-07-21T06:10:44.162249342+00:00",
+    generated: "2025-07-21T06:33:34.839513536+00:00",
+    lastModified: "2025-07-21T06:33:34.839513536+00:00",
     debugMode: false,
   },
+
+  // Global configuration
+  debugMode: false,
 
   // Detected project structure
   structure: {
     type: "single",
-    fileCount: 1,
-    totalSize: 1082,
+    fileCount: 3,
+    totalSize: 2020,
     roots: [],
   },
 
   // Detected frameworks
   frameworks: [
+    {
+      path: "/var/deployment/hallwatch/libs/parser/tests/unit/laravel/fixtures/basic_app",
+      framework: "laravel",
+      confidence: 0.9,
 
+      // Patterns for route detection
+      patterns: [
+        {
+          name: "laravel.routes",
+          files: "routes/**/*.php",
+          routes: ["Route::{method}('{path}', {handler})"],
+          convention: "/api/users -> routes/api.php + UserController",
+          confidence: 0.95,
+        },
+      ],
+    }
   ],
 
   // Performance settings (auto-calculated)

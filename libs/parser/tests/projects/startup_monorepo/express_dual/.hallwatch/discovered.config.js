@@ -1,5 +1,5 @@
 // Auto-generated Hallwatch configuration
-// Generated: 2025-07-21T06:10:32.296980962+00:00
+// Generated: 2025-07-21T06:33:34.839587820+00:00
 // Version: 1.0.0
 // Debug Mode: true
 
@@ -7,16 +7,19 @@ export default {
   // Metadata
   _meta: {
     version: "1.0.0",
-    generated: "2025-07-21T06:10:32.296980962+00:00",
-    lastModified: "2025-07-21T06:10:32.296980962+00:00",
+    generated: "2025-07-21T06:33:34.839587820+00:00",
+    lastModified: "2025-07-21T06:33:34.839587820+00:00",
     debugMode: true,
   },
+
+  // Global configuration
+  debugMode: true,
 
   // Detected project structure
   structure: {
     type: "monorepo",
-    fileCount: 15,
-    totalSize: 6955,
+    fileCount: 16,
+    totalSize: 12813,
     roots: ["./apps", "./packages"],
   },
 
@@ -31,12 +34,13 @@ export default {
       _signals: [
         { type: "package.json", value: "express dependency found", confidence: 0.8, source: "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/package.json" },
         { type: "code_pattern", value: "express() or app.method() found", confidence: 0.9, source: "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/server.js" },
+        { type: "route_file", value: "express routes found in src", confidence: 0.7, source: "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/routes/users.js" },
       ],
 
       // Patterns for route detection
       patterns: [
         {
-          name: "express.app-routes",
+          name: "express.basic-routes",
           files: "**/*.{js,ts}",
           routes: ["app.{method}('{path}', {handler})", "app.{method}('{path}', {middlewares}, {handler})"],
           confidence: 0.95,
@@ -63,7 +67,7 @@ export default {
       // Patterns for route detection
       patterns: [
         {
-          name: "express.app-routes",
+          name: "express.basic-routes",
           files: "**/*.{js,ts}",
           routes: ["app.{method}('{path}', {handler})", "app.{method}('{path}', {middlewares}, {handler})"],
           confidence: 0.95,

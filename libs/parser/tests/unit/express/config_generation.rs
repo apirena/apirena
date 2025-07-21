@@ -1,15 +1,24 @@
 use super::fixtures;
 use hallwatch_parser::config::ConfigDiscovery;
 use std::fs;
+use tempfile::TempDir;
 
 #[tokio::test]
 async fn generates_valid_config() {
-    let project_path = fixtures::basic_app();
+    let temp_dir = TempDir::new().unwrap();
+    
+    // Copy fixture files to temp directory
+    let package_json_content = fs::read_to_string(fixtures::basic_app().join("package.json")).unwrap();
+    let app_js_content = fs::read_to_string(fixtures::basic_app().join("app.js")).unwrap();
+    
+    fs::write(temp_dir.path().join("package.json"), package_json_content).unwrap();
+    fs::write(temp_dir.path().join("app.js"), app_js_content).unwrap();
+    
     let discovery = ConfigDiscovery::new(false);
-    let config = discovery.discover(&project_path).await.unwrap();
+    let _config = discovery.discover(temp_dir.path()).await.unwrap();
     
     // Check that config file was created
-    let config_path = project_path.join(".hallwatch/discovered.config.js");
+    let config_path = temp_dir.path().join(".hallwatch/discovered.config.js");
     assert!(config_path.exists());
     
     let config_content = fs::read_to_string(&config_path).unwrap();
@@ -18,11 +27,19 @@ async fn generates_valid_config() {
 
 #[tokio::test]
 async fn includes_correct_patterns() {
-    let project_path = fixtures::basic_app();
-    let discovery = ConfigDiscovery::new(true);
-    let config = discovery.discover(&project_path).await.unwrap();
+    let temp_dir = TempDir::new().unwrap();
     
-    let config_path = project_path.join(".hallwatch/discovered.config.js");
+    // Copy fixture files to temp directory
+    let package_json_content = fs::read_to_string(fixtures::basic_app().join("package.json")).unwrap();
+    let app_js_content = fs::read_to_string(fixtures::basic_app().join("app.js")).unwrap();
+    
+    fs::write(temp_dir.path().join("package.json"), package_json_content).unwrap();
+    fs::write(temp_dir.path().join("app.js"), app_js_content).unwrap();
+    
+    let discovery = ConfigDiscovery::new(true);
+    let _config = discovery.discover(temp_dir.path()).await.unwrap();
+    
+    let config_path = temp_dir.path().join(".hallwatch/discovered.config.js");
     let config_content = fs::read_to_string(&config_path).unwrap();
     
     // Should include Express-specific patterns
@@ -32,11 +49,19 @@ async fn includes_correct_patterns() {
 
 #[tokio::test]
 async fn preserves_debug_info() {
-    let project_path = fixtures::basic_app();
-    let discovery = ConfigDiscovery::new(true);
-    let _config = discovery.discover(&project_path).await.unwrap();
+    let temp_dir = TempDir::new().unwrap();
     
-    let config_path = project_path.join(".hallwatch/discovered.config.js");
+    // Copy fixture files to temp directory
+    let package_json_content = fs::read_to_string(fixtures::basic_app().join("package.json")).unwrap();
+    let app_js_content = fs::read_to_string(fixtures::basic_app().join("app.js")).unwrap();
+    
+    fs::write(temp_dir.path().join("package.json"), package_json_content).unwrap();
+    fs::write(temp_dir.path().join("app.js"), app_js_content).unwrap();
+    
+    let discovery = ConfigDiscovery::new(true);
+    let _config = discovery.discover(temp_dir.path()).await.unwrap();
+    
+    let config_path = temp_dir.path().join(".hallwatch/discovered.config.js");
     let config_content = fs::read_to_string(&config_path).unwrap();
     
     // Debug mode should include signal information
@@ -46,11 +71,19 @@ async fn preserves_debug_info() {
 
 #[tokio::test]
 async fn generates_clean_production_config() {
-    let project_path = fixtures::basic_app();
-    let discovery = ConfigDiscovery::new(false);
-    let _config = discovery.discover(&project_path).await.unwrap();
+    let temp_dir = TempDir::new().unwrap();
     
-    let config_path = project_path.join(".hallwatch/discovered.config.js");
+    // Copy fixture files to temp directory
+    let package_json_content = fs::read_to_string(fixtures::basic_app().join("package.json")).unwrap();
+    let app_js_content = fs::read_to_string(fixtures::basic_app().join("app.js")).unwrap();
+    
+    fs::write(temp_dir.path().join("package.json"), package_json_content).unwrap();
+    fs::write(temp_dir.path().join("app.js"), app_js_content).unwrap();
+    
+    let discovery = ConfigDiscovery::new(false);
+    let _config = discovery.discover(temp_dir.path()).await.unwrap();
+    
+    let config_path = temp_dir.path().join(".hallwatch/discovered.config.js");
     let config_content = fs::read_to_string(&config_path).unwrap();
     
     // Production mode should not include debug info

@@ -8,5 +8,5 @@ async fn detects_laravel_basic() {
     let config = discovery.discover(&project_path).await.unwrap();
     
     // Laravel detection tests will be implemented here
-    assert!(config.frameworks.len() >= 0);
+    assert!(!config.frameworks.is_empty());
 }

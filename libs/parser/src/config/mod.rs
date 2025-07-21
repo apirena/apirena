@@ -181,14 +181,37 @@ impl ConfigDiscovery {
         // Check for common monorepo directory structure
         let monorepo_dirs = ["apps", "packages", "services", "libs"];
         let mut found_dirs = 0;
+        let mut has_multiple_frameworks = false;
         
         for dir in monorepo_dirs {
-            if root.join(dir).is_dir() {
+            let dir_path = root.join(dir);
+            if dir_path.is_dir() {
                 found_dirs += 1;
+                
+                // Check if this directory contains multiple different frameworks
+                if let Ok(entries) = fs::read_dir(&dir_path) {
+                    let mut framework_count = 0;
+                    for entry in entries.flatten() {
+                        if entry.file_type().map(|ft| ft.is_dir()).unwrap_or(false) {
+                            let app_path = entry.path();
+                            // Check for different framework indicators
+                            if app_path.join("package.json").exists() ||
+                               app_path.join("requirements.txt").exists() ||
+                               app_path.join("composer.json").exists() ||
+                               app_path.join("Cargo.toml").exists() {
+                                framework_count += 1;
+                            }
+                        }
+                    }
+                    if framework_count >= 2 {
+                        has_multiple_frameworks = true;
+                    }
+                }
             }
         }
 
-        Ok(found_dirs >= 2)
+        // Enhanced detection: monorepo if we have structure OR multiple frameworks
+        Ok(found_dirs >= 2 || has_multiple_frameworks)
     }
 
     fn is_potential_app_root(&self, dir_name: &str) -> bool {

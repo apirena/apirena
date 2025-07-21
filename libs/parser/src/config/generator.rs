@@ -7,6 +7,7 @@ use std::collections::HashMap;
 
 pub struct ConfigGenerator {
     debug_mode: bool,
+    #[allow(dead_code)]
     template: String,
 }
 
@@ -80,6 +81,9 @@ export default {{
     debugMode: {},
   }},
 
+  // Global configuration
+  debugMode: {},
+
   // Detected project structure
   structure: {{
     type: "{}",
@@ -97,6 +101,7 @@ export default {{
             config.version,
             config.generated_at,
             config.generated_at,
+            config.debug_mode,
             config.debug_mode,
             config.project_structure.project_type,
             config.project_structure.file_count,

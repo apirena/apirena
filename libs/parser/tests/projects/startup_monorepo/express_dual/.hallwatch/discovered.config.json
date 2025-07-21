@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "generated_at": "2025-07-21T06:10:32.296980962+00:00",
+  "generated_at": "2025-07-21T06:33:34.839587820+00:00",
   "debug_mode": true,
   "project_structure": {
     "project_type": "monorepo",
-    "file_count": 15,
-    "total_size": 6955,
+    "file_count": 16,
+    "total_size": 12813,
     "roots": [
       "./apps",
       "./packages"
@@ -28,11 +28,17 @@
           "value": "express() or app.method() found",
           "confidence_boost": 0.9,
           "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/server.js"
+        },
+        {
+          "signal_type": "route_file",
+          "value": "express routes found in src",
+          "confidence_boost": 0.7,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/routes/users.js"
         }
       ],
       "patterns": [
         {
-          "name": "express.app-routes",
+          "name": "express.basic-routes",
           "files": "**/*.{js,ts}",
           "routes": [
             "app.{method}('{path}', {handler})",
@@ -72,7 +78,7 @@
       ],
       "patterns": [
         {
-          "name": "express.app-routes",
+          "name": "express.basic-routes",
           "files": "**/*.{js,ts}",
           "routes": [
             "app.{method}('{path}', {handler})",

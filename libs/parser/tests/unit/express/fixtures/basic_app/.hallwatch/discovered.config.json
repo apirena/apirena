@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "generated_at": "2025-07-21T06:10:44.151852821+00:00",
+  "generated_at": "2025-07-21T06:33:34.839653531+00:00",
   "debug_mode": true,
   "project_structure": {
     "project_type": "single",
     "file_count": 4,
-    "total_size": 2071,
+    "total_size": 4277,
     "roots": []
   },
   "frameworks": [
@@ -29,7 +29,7 @@
       ],
       "patterns": [
         {
-          "name": "express.app-routes",
+          "name": "express.basic-routes",
           "files": "**/*.{js,ts}",
           "routes": [
             "app.{method}('{path}', {handler})",

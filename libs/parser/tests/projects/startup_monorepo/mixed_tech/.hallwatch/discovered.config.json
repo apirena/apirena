@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "generated_at": "2025-07-21T06:10:32.297482690+00:00",
+  "generated_at": "2025-07-21T06:33:34.840164417+00:00",
   "debug_mode": true,
   "project_structure": {
-    "project_type": "multi-app",
-    "file_count": 17,
-    "total_size": 8493,
+    "project_type": "monorepo",
+    "file_count": 18,
+    "total_size": 17451,
     "roots": [
       "./frontend",
       "./services",
@@ -94,7 +94,7 @@
       ],
       "patterns": [
         {
-          "name": "express.app-routes",
+          "name": "express.basic-routes",
           "files": "**/*.{js,ts}",
           "routes": [
             "app.{method}('{path}', {handler})",

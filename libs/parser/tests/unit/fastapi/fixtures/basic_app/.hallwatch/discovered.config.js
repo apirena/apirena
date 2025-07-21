@@ -1,5 +1,5 @@
 // Auto-generated Hallwatch configuration
-// Generated: 2025-07-21T06:10:44.152035533+00:00
+// Generated: 2025-07-21T06:33:34.828027198+00:00
 // Version: 1.0.0
 // Debug Mode: false
 
@@ -7,22 +7,39 @@ export default {
   // Metadata
   _meta: {
     version: "1.0.0",
-    generated: "2025-07-21T06:10:44.152035533+00:00",
-    lastModified: "2025-07-21T06:10:44.152035533+00:00",
+    generated: "2025-07-21T06:33:34.828027198+00:00",
+    lastModified: "2025-07-21T06:33:34.828027198+00:00",
     debugMode: false,
   },
+
+  // Global configuration
+  debugMode: false,
 
   // Detected project structure
   structure: {
     type: "single",
-    fileCount: 1,
-    totalSize: 1082,
+    fileCount: 3,
+    totalSize: 1784,
     roots: [],
   },
 
   // Detected frameworks
   frameworks: [
+    {
+      path: "/var/deployment/hallwatch/libs/parser/tests/unit/fastapi/fixtures/basic_app",
+      framework: "fastapi",
+      confidence: 1,
 
+      // Patterns for route detection
+      patterns: [
+        {
+          name: "fastapi.decorators",
+          files: "**/*.py",
+          routes: ["@app.{method}('{path}')", "@router.{method}('{path}')"],
+          confidence: 0.95,
+        },
+      ],
+    }
   ],
 
   // Performance settings (auto-calculated)
