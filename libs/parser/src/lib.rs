@@ -47,3 +47,5 @@ pub mod languages {
     pub mod python;
     pub mod php;
 }
+
+pub mod config;

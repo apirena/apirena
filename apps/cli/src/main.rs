@@ -5,6 +5,7 @@ use tracing::info;
 use std::fs;
 use hallwatch_core::{FileWatcher, FileEvent, FileEventType};
 use hallwatch_parser::{detect_language, languages::{javascript::JavaScriptParser, python::PythonParser, php::PhpParser}, LanguageParser};
+use hallwatch_parser::config::ConfigDiscovery;
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
@@ -29,6 +30,17 @@ enum Commands {
         path: PathBuf,
         /// Output format (json, table)
         #[arg(short, long, default_value = "table")]
+        format: String,
+    },
+    /// Generate configuration for a project
+    Config {
+        /// Path to analyze
+        path: PathBuf,
+        /// Enable debug mode for detailed output
+        #[arg(short, long)]
+        debug: bool,
+        /// Output format (json, js)
+        #[arg(short, long, default_value = "js")]
         format: String,
     },
 }
@@ -90,6 +102,52 @@ async fn main() -> Result<()> {
                             endpoint.line
                         );
                     }
+                }
+            }
+        }
+        Commands::Config { path, debug, format } => {
+            info!("Generating configuration for {}", path.display());
+            println!("🔧 Analyzing project structure in {}...", path.display());
+            
+            let discovery = ConfigDiscovery::new(debug);
+            let config = discovery.discover(&path).await?;
+            
+            match format.as_str() {
+                "json" => {
+                    println!("{}", serde_json::to_string_pretty(&config)?);
+                }
+                "js" => {
+                    let config_path = path.join(".hallwatch/discovered.config.js");
+                    if config_path.exists() {
+                        println!("✅ Configuration generated at: {}", config_path.display());
+                        println!("📊 Project Analysis:");
+                        println!("   Type: {}", config.project_structure.project_type);
+                        println!("   Files: {}", config.project_structure.file_count);
+                        println!("   Frameworks detected: {}", config.frameworks.len());
+                        
+                        for framework in &config.frameworks {
+                            println!("     - {} (confidence: {:.1}%)", framework.framework, framework.confidence * 100.0);
+                        }
+                        
+                        if debug {
+                            println!("\n🐛 Debug files created:");
+                            println!("   - {}", config_path.display());
+                            let json_path = path.join(".hallwatch/discovered.config.json");
+                            if json_path.exists() {
+                                println!("   - {}", json_path.display());
+                            }
+                        }
+                        
+                        println!("\n💡 You can now:");
+                        println!("   1. Review the generated configuration");
+                        println!("   2. Add custom patterns in the 'overrides' section");
+                        println!("   3. Run 'hallwatch discover {}' to test endpoint detection", path.display());
+                    } else {
+                        println!("❌ Failed to create configuration file");
+                    }
+                }
+                _ => {
+                    return Err(anyhow::anyhow!("Invalid format: {}. Use 'json' or 'js'", format));
                 }
             }
         }

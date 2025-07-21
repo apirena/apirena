@@ -1,0 +1,103 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2025-07-21T06:10:32.296980962+00:00",
+  "debug_mode": true,
+  "project_structure": {
+    "project_type": "monorepo",
+    "file_count": 15,
+    "total_size": 6955,
+    "roots": [
+      "./apps",
+      "./packages"
+    ]
+  },
+  "frameworks": [
+    {
+      "path": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api",
+      "framework": "express",
+      "confidence": 1.0,
+      "signals": [
+        {
+          "signal_type": "package.json",
+          "value": "express dependency found",
+          "confidence_boost": 0.8,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/package.json"
+        },
+        {
+          "signal_type": "code_pattern",
+          "value": "express() or app.method() found",
+          "confidence_boost": 0.9,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/server.js"
+        }
+      ],
+      "patterns": [
+        {
+          "name": "express.app-routes",
+          "files": "**/*.{js,ts}",
+          "routes": [
+            "app.{method}('{path}', {handler})",
+            "app.{method}('{path}', {middlewares}, {handler})"
+          ],
+          "convention": null,
+          "confidence": 0.95
+        },
+        {
+          "name": "express.router",
+          "files": "**/routes/**/*.{js,ts}",
+          "routes": [
+            "router.{method}('{path}', {handler})"
+          ],
+          "convention": null,
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "path": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin",
+      "framework": "express",
+      "confidence": 1.0,
+      "signals": [
+        {
+          "signal_type": "package.json",
+          "value": "express dependency found",
+          "confidence_boost": 0.8,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin/package.json"
+        },
+        {
+          "signal_type": "code_pattern",
+          "value": "express() or app.method() found",
+          "confidence_boost": 0.9,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin/app.js"
+        }
+      ],
+      "patterns": [
+        {
+          "name": "express.app-routes",
+          "files": "**/*.{js,ts}",
+          "routes": [
+            "app.{method}('{path}', {handler})",
+            "app.{method}('{path}', {middlewares}, {handler})"
+          ],
+          "convention": null,
+          "confidence": 0.95
+        },
+        {
+          "name": "express.router",
+          "files": "**/routes/**/*.{js,ts}",
+          "routes": [
+            "router.{method}('{path}', {handler})"
+          ],
+          "convention": null,
+          "confidence": 0.9
+        }
+      ]
+    }
+  ],
+  "performance": {
+    "threads": "auto",
+    "cache_strategy": "minimal",
+    "max_file_size": "1MB",
+    "estimated_scan_time": "<10 seconds"
+  },
+  "overrides": {}
+}

@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2025-07-21T06:10:44.162364492+00:00",
+  "debug_mode": true,
+  "project_structure": {
+    "project_type": "single",
+    "file_count": 4,
+    "total_size": 1927,
+    "roots": []
+  },
+  "frameworks": [
+    {
+      "path": "/var/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app",
+      "framework": "flask",
+      "confidence": 1.0,
+      "signals": [
+        {
+          "signal_type": "requirements.txt",
+          "value": "flask dependency found",
+          "confidence_boost": 0.8,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app/requirements.txt"
+        },
+        {
+          "signal_type": "code_pattern",
+          "value": "Flask(__name__) or @app.route found",
+          "confidence_boost": 0.9,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app/app.py"
+        }
+      ],
+      "patterns": [
+        {
+          "name": "flask.decorators",
+          "files": "**/*.py",
+          "routes": [
+            "@app.route('{path}', methods=['{method}'])"
+          ],
+          "convention": null,
+          "confidence": 0.95
+        }
+      ]
+    }
+  ],
+  "performance": {
+    "threads": "auto",
+    "cache_strategy": "minimal",
+    "max_file_size": "1MB",
+    "estimated_scan_time": "<10 seconds"
+  },
+  "overrides": {}
+}

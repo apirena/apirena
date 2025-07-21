@@ -29,17 +29,17 @@
     "test:javascript": {
       "executor": "@monodon/rust:test",
       "options": {
-        "toolchain": "stable", 
+        "toolchain": "stable",
         "package": "hallwatch-parser",
-        "testFilter": "javascript"
+        "args": ["javascript"]
       }
     },
     "test:python": {
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser", 
-        "testFilter": "python"
+        "package": "hallwatch-parser",
+        "args": ["python"]
       }
     },
     "test:php": {
@@ -47,7 +47,103 @@
       "options": {
         "toolchain": "stable",
         "package": "hallwatch-parser",
-        "testFilter": "php"
+        "args": ["php"]
+      }
+    },
+    "test:unit": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "hallwatch-parser",
+        "args": ["unit::"]
+      }
+    },
+    "test:unit:nextjs": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "hallwatch-parser",
+        "args": ["unit::nextjs"]
+      }
+    },
+    "test:unit:express": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "hallwatch-parser",
+        "args": ["unit::express"]
+      }
+    },
+    "test:unit:flask": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "hallwatch-parser",
+        "args": ["unit::flask"]
+      }
+    },
+    "test:unit:fastapi": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "hallwatch-parser",
+        "args": ["unit::fastapi"]
+      }
+    },
+    "test:unit:laravel": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "hallwatch-parser",
+        "args": ["unit::laravel"]
+      }
+    },
+    "test:projects": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "hallwatch-parser",
+        "args": ["projects::"]
+      }
+    },
+    "test:projects:startup-monorepo": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "hallwatch-parser",
+        "args": ["projects::startup_monorepo"]
+      }
+    },
+    "test:projects:single-app": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "hallwatch-parser",
+        "args": ["projects::single_app"]
+      }
+    },
+    "test:projects:performance": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "hallwatch-parser",
+        "args": ["projects::performance"]
+      }
+    },
+    "test:fast": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "hallwatch-parser",
+        "args": ["unit::", "--", "--test-threads=1"]
+      }
+    },
+    "test:ci": {
+      "executor": "@monodon/rust:test",
+      "options": {
+        "toolchain": "stable",
+        "package": "hallwatch-parser",
+        "args": ["--", "--nocapture", "--test-threads=1"]
       }
     },
     "benchmark": {
@@ -66,5 +162,5 @@
       }
     }
   },
-  "tags": ["scope:backend", "type:lib", "lang:rust"]
+  "tags": ["scope:backend", "type:lib", "lang:rust", "test:unit", "test:integration", "test:performance"]
 }

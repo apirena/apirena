@@ -1,0 +1,170 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2025-07-21T06:10:32.297482690+00:00",
+  "debug_mode": true,
+  "project_structure": {
+    "project_type": "multi-app",
+    "file_count": 17,
+    "total_size": 8493,
+    "roots": [
+      "./frontend",
+      "./services",
+      "./backend"
+    ]
+  },
+  "frameworks": [
+    {
+      "path": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/auth",
+      "framework": "flask",
+      "confidence": 1.0,
+      "signals": [
+        {
+          "signal_type": "requirements.txt",
+          "value": "flask dependency found",
+          "confidence_boost": 0.8,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/auth/requirements.txt"
+        },
+        {
+          "signal_type": "code_pattern",
+          "value": "Flask(__name__) or @app.route found",
+          "confidence_boost": 0.9,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/auth/app.py"
+        }
+      ],
+      "patterns": [
+        {
+          "name": "flask.decorators",
+          "files": "**/*.py",
+          "routes": [
+            "@app.route('{path}', methods=['{method}'])"
+          ],
+          "convention": null,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "path": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/ml",
+      "framework": "fastapi",
+      "confidence": 1.0,
+      "signals": [
+        {
+          "signal_type": "requirements.txt",
+          "value": "fastapi dependency found",
+          "confidence_boost": 0.8,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/ml/requirements.txt"
+        },
+        {
+          "signal_type": "code_pattern",
+          "value": "FastAPI() or @app.method decorator found",
+          "confidence_boost": 0.9,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/ml/main.py"
+        }
+      ],
+      "patterns": [
+        {
+          "name": "fastapi.decorators",
+          "files": "**/*.py",
+          "routes": [
+            "@app.{method}('{path}')",
+            "@router.{method}('{path}')"
+          ],
+          "convention": null,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "path": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/backend",
+      "framework": "express",
+      "confidence": 1.0,
+      "signals": [
+        {
+          "signal_type": "package.json",
+          "value": "express dependency found",
+          "confidence_boost": 0.8,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/backend/package.json"
+        },
+        {
+          "signal_type": "code_pattern",
+          "value": "express() or app.method() found",
+          "confidence_boost": 0.9,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/backend/src/app.js"
+        }
+      ],
+      "patterns": [
+        {
+          "name": "express.app-routes",
+          "files": "**/*.{js,ts}",
+          "routes": [
+            "app.{method}('{path}', {handler})",
+            "app.{method}('{path}', {middlewares}, {handler})"
+          ],
+          "convention": null,
+          "confidence": 0.95
+        },
+        {
+          "name": "express.router",
+          "files": "**/routes/**/*.{js,ts}",
+          "routes": [
+            "router.{method}('{path}', {handler})"
+          ],
+          "convention": null,
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "path": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/frontend",
+      "framework": "nextjs",
+      "confidence": 1.0,
+      "signals": [
+        {
+          "signal_type": "package.json",
+          "value": "next dependency found",
+          "confidence_boost": 0.9,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/frontend/package.json"
+        },
+        {
+          "signal_type": "config_file",
+          "value": "next.config.js found",
+          "confidence_boost": 0.8,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/frontend/next.config.js"
+        },
+        {
+          "signal_type": "directory",
+          "value": "pages/api directory found",
+          "confidence_boost": 0.85,
+          "source": "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/frontend/pages/api"
+        }
+      ],
+      "patterns": [
+        {
+          "name": "nextjs.pages-api",
+          "files": "pages/api/**/*.{js,ts}",
+          "routes": [
+            "export default function handler(req, res)"
+          ],
+          "convention": "file-based routing: /api/users -> pages/api/users.js",
+          "confidence": 0.95
+        },
+        {
+          "name": "nextjs.app-router",
+          "files": "app/api/**/route.{js,ts}",
+          "routes": [
+            "export async function {method}()"
+          ],
+          "convention": "file-based routing: /api/users -> app/api/users/route.js",
+          "confidence": 0.95
+        }
+      ]
+    }
+  ],
+  "performance": {
+    "threads": "auto",
+    "cache_strategy": "minimal",
+    "max_file_size": "1MB",
+    "estimated_scan_time": "<10 seconds"
+  },
+  "overrides": {}
+}
