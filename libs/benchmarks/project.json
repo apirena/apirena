@@ -1,0 +1,97 @@
+{
+  "name": "benchmarks",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/benchmarks/src",
+  "targets": {
+    "build": {
+      "executor": "@monodon/rust:check",
+      "outputs": [
+        "{options.target-dir}"
+      ],
+      "options": {
+        "target-dir": "dist/target/benchmarks"
+      }
+    },
+    "test": {
+      "cache": true,
+      "executor": "@monodon/rust:test",
+      "outputs": [
+        "{options.target-dir}"
+      ],
+      "options": {
+        "target-dir": "dist/target/benchmarks",
+        "package": "hallwatch-benchmarks"
+      },
+      "configurations": {
+        "production": {
+          "release": true
+        }
+      }
+    },
+    "lint": {
+      "cache": true,
+      "executor": "@monodon/rust:lint",
+      "outputs": [
+        "{options.target-dir}"
+      ],
+      "options": {
+        "target-dir": "dist/target/benchmarks"
+      }
+    },
+    "bench-demo": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cargo run --package hallwatch-benchmarks --bin bench_demo",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "bench-parser": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cargo bench --package hallwatch-benchmarks --bench parser_micro",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "bench-watcher": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cargo bench --package hallwatch-benchmarks --bench watcher_micro",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "bench-e2e": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cargo bench --package hallwatch-benchmarks --bench end_to_end",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "bench-scalability": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cargo bench --package hallwatch-benchmarks --bench scalability",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "bench-demo": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cargo run --package hallwatch-benchmarks --bin bench_demo",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "bench-all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run benchmarks:bench-parser",
+          "nx run benchmarks:bench-watcher", 
+          "nx run benchmarks:bench-e2e",
+          "nx run benchmarks:bench-scalability"
+        ],
+        "parallel": false
+      }
+    }
+  }
+}

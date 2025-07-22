@@ -1,5 +1,5 @@
 // Auto-generated Hallwatch configuration
-// Generated: 2025-07-22T04:22:49.098510+00:00
+// Generated: 2025-07-22T06:49:35.466769+00:00
 // Version: 1.0.0
 // Debug Mode: true
 
@@ -7,8 +7,8 @@ export default {
   // Metadata
   _meta: {
     version: "1.0.0",
-    generated: "2025-07-22T04:22:49.098510+00:00",
-    lastModified: "2025-07-22T04:22:49.098510+00:00",
+    generated: "2025-07-22T06:49:35.466769+00:00",
+    lastModified: "2025-07-22T06:49:35.466769+00:00",
     debugMode: true,
   },
 
@@ -19,7 +19,7 @@ export default {
   structure: {
     type: "single",
     fileCount: 6,
-    totalSize: 4481,
+    totalSize: 2434,
     roots: [],
   },
 

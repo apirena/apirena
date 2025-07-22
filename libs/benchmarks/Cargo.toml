@@ -1,0 +1,43 @@
+[package]
+name = "hallwatch-benchmarks"
+version = "0.1.0"
+edition = "2021"
+
+# Binary for the working benchmark demonstration
+[[bin]]
+name = "bench_demo"
+path = "src/bin/bench_demo.rs"
+
+[dependencies]
+# Core hallwatch libraries
+hallwatch-core = { path = "../core" }
+hallwatch-parser = { path = "../parser" }
+
+# Benchmarking
+criterion = { version = "0.5", features = ["html_reports"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+
+# Performance monitoring
+memory-stats = "1.0"
+
+# Utilities
+chrono = { version = "0.4", features = ["serde"] }
+walkdir = "2.3"
+
+[dev-dependencies]
+tempfile = "3.0"
+
+# Benchmark targets
+[[bench]]
+name = "parser_micro"
+
+[[bench]]
+name = "watcher_micro"
+
+[[bench]]
+name = "end_to_end"
+
+[[bench]]
+name = "scalability"

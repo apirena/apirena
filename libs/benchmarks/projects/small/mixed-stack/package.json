@@ -1,0 +1,21 @@
+{
+  "name": "mixed-stack-benchmark",
+  "version": "1.0.0", 
+  "description": "Mixed technology stack for Hallwatch benchmarks",
+  "scripts": {
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && python app.py",
+    "build": "cd frontend && npm run build",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && python -m pytest"
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.0",
+    "eslint": "^8.30.0"
+  }
+}

@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "generated_at": "2025-07-22T04:22:49.076035+00:00",
+  "generated_at": "2025-07-22T06:49:35.458662+00:00",
   "debug_mode": true,
   "project_structure": {
     "project_type": "monorepo",
     "file_count": 16,
-    "total_size": 15550,
+    "total_size": 11844,
     "roots": [
       "./packages",
       "./apps"
