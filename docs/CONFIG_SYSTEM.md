@@ -1,17 +1,33 @@
-# Auto-Generated Configuration System
+# Auto-Generated Configuration System ✅ IMPLEMENTED
 
 The Hallwatch config generation system automatically detects project frameworks and creates intelligent configuration files for optimal endpoint discovery.
+
+## Current Implementation Status ✅
+
+**✅ WORKING**: Full configuration generation system implemented and tested
+- **Framework Detection**: 5 frameworks supported (Express, Flask, FastAPI, Next.js, Laravel)
+- **Config File Generation**: `.hallwatch/discovered.config.js` created automatically
+- **Confidence Scoring**: Intelligent framework detection with 0.0-1.0 confidence
+- **Monorepo Support**: Multi-framework project detection
+- **Performance Optimization**: Auto-tuned settings based on project size
+- **Debug Mode**: Detailed detection signals for troubleshooting
+
+**⏳ CLI COMMAND PLANNED**: Direct config generation commands (currently integrated into discovery)
+- The system works automatically during `hallwatch discover` and `hallwatch watch`
+- Standalone `hallwatch config` command planned for Phase 3
 
 ## Quick Start
 
 ```bash
-# Generate configuration for your project
-hallwatch config /path/to/your/project
+# Current working method - config generated automatically
+hallwatch discover /path/to/your/project
+# ✅ Automatically generates .hallwatch/discovered.config.js
 
-# Generate with debug information (shows detection signals)
+hallwatch watch /path/to/your/project  
+# ✅ Generates config + monitors for changes
+
+# Planned for Phase 3
 hallwatch config /path/to/your/project --debug
-
-# Output as JSON for programmatic use
 hallwatch config /path/to/your/project --format json
 ```
 
@@ -29,28 +45,28 @@ A human-readable JavaScript configuration file that includes:
 ### `.hallwatch/discovered.config.json` (Debug Mode)
 A JSON version of the configuration for easy parsing and analysis.
 
-## Framework Detection
+## Framework Detection ✅ IMPLEMENTED
 
 The system automatically detects:
 
-### JavaScript/TypeScript
-- **Express.js**: Via package.json + code patterns like `app.get()`, `router.post()`
-- **Next.js**: Via package.json + `next.config.js` + API directories
-- **Fastify**: Via package.json + Fastify-specific patterns
-- **Koa**: Via package.json + Koa patterns
+### JavaScript/TypeScript ✅ WORKING
+- **Express.js**: ✅ Via package.json + code patterns like `app.get()`, `router.post()` 
+- **Next.js**: ✅ Via package.json + `next.config.js` + API directories (app router)
+- **Fastify**: ⏳ Patterns ready, integration pending
+- **Koa**: ⏳ Patterns ready, integration pending
 
-### Python
-- **FastAPI**: Via requirements.txt/pyproject.toml + `@app.get()` decorators
-- **Flask**: Via requirements.txt + `@app.route()` decorators
-- **Django**: Via settings.py and URL patterns
+### Python ✅ WORKING  
+- **FastAPI**: ✅ Via requirements.txt/pyproject.toml + `@app.get()` decorators
+- **Flask**: ✅ Via requirements.txt + `@app.route()` decorators
+- **Django**: ⏳ Patterns ready, integration pending
 
-### PHP
-- **Laravel**: Via composer.json + artisan file + Route:: patterns
+### PHP ✅ WORKING
+- **Laravel**: ✅ Via composer.json + artisan file + Route:: patterns
 
-### Other Languages
-- **Go**: Gin, Echo, Fiber patterns (coming soon)
-- **Rust**: Actix, Rocket, Axum patterns (coming soon)
-- **Java**: Spring Boot patterns (coming soon)
+### Other Languages ⏳ PLANNED
+- **Go**: Gin, Echo, Fiber patterns (framework detection ready, AST parser needed)
+- **Rust**: Actix, Rocket, Axum patterns (framework detection ready, AST parser needed)
+- **Java**: Spring Boot patterns (planned for Phase 3)
 
 ## Configuration Structure
 
@@ -188,8 +204,33 @@ Start with auto-detection, then add custom patterns only for missed endpoints.
 ### 4. Regenerate Periodically
 Regenerate config when adding new frameworks or significantly changing project structure.
 
-### 5. Version Control
-Commit the generated config to version control so your team shares the same patterns.
+### 5. Version Control ✅ RECOMMENDED
+**✅ DO COMMIT** `.hallwatch/discovered.config.js` to version control so your team shares the same patterns.
+
+**Why commit the generated config:**
+- **Team Consistency**: Everyone gets identical endpoint detection patterns
+- **CI/CD Compatibility**: Build systems use the same framework detection  
+- **Faster Onboarding**: New developers get working config immediately
+- **Deterministic Builds**: Same patterns across all environments
+- **Change Tracking**: See when frameworks are added/removed
+
+**Recommended .gitignore:**
+```gitignore
+# Keep generated configs (like package.json)
+# .hallwatch/discovered.config.js   # ✅ COMMIT THIS
+# .hallwatch/discovered.config.json # ✅ COMMIT THIS  
+
+# Ignore user-specific files (future)
+.hallwatch/cache/
+.hallwatch/logs/
+.hallwatch/user-settings.json
+```
+
+**Auto-Regeneration Triggers:**
+- `hallwatch discover` or `hallwatch watch` commands
+- Framework dependency changes (new package.json entries)
+- Major project structure changes
+- Manual config regeneration
 
 ## Troubleshooting
 

@@ -124,3 +124,14 @@ temp/
 # pnpm-lock.yaml
 # package-lock.json
 # yarn.lock
+
+# Hallwatch
+# Keep generated configs for team consistency (like package.json)
+# .hallwatch/discovered.config.js   # ✅ COMMIT - team needs same patterns
+# .hallwatch/discovered.config.json # ✅ COMMIT - debug information
+
+# Ignore user-specific Hallwatch files (when implemented)
+.hallwatch/cache/
+.hallwatch/logs/
+.hallwatch/.env
+.hallwatch/user-settings.json

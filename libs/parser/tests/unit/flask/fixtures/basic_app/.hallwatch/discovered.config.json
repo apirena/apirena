@@ -1,16 +1,16 @@
 {
   "version": "1.0.0",
-  "generated_at": "2025-07-21T06:33:34.839525970+00:00",
+  "generated_at": "2025-07-22T04:22:49.095525+00:00",
   "debug_mode": true,
   "project_structure": {
     "project_type": "single",
     "file_count": 4,
-    "total_size": 3451,
+    "total_size": 3961,
     "roots": []
   },
   "frameworks": [
     {
-      "path": "/var/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app",
+      "path": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app",
       "framework": "flask",
       "confidence": 1.0,
       "signals": [
@@ -18,13 +18,13 @@
           "signal_type": "requirements.txt",
           "value": "flask dependency found",
           "confidence_boost": 0.8,
-          "source": "/var/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app/requirements.txt"
+          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app/requirements.txt"
         },
         {
           "signal_type": "code_pattern",
           "value": "Flask(__name__) or @app.route found",
           "confidence_boost": 0.9,
-          "source": "/var/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app/app.py"
+          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app/app.py"
         }
       ],
       "patterns": [

@@ -1,5 +1,5 @@
 // Auto-generated Hallwatch configuration
-// Generated: 2025-07-21T06:33:34.839587820+00:00
+// Generated: 2025-07-22T04:22:49.076035+00:00
 // Version: 1.0.0
 // Debug Mode: true
 
@@ -7,8 +7,8 @@ export default {
   // Metadata
   _meta: {
     version: "1.0.0",
-    generated: "2025-07-21T06:33:34.839587820+00:00",
-    lastModified: "2025-07-21T06:33:34.839587820+00:00",
+    generated: "2025-07-22T04:22:49.076035+00:00",
+    lastModified: "2025-07-22T04:22:49.076035+00:00",
     debugMode: true,
   },
 
@@ -19,22 +19,21 @@ export default {
   structure: {
     type: "monorepo",
     fileCount: 16,
-    totalSize: 12813,
-    roots: ["./apps", "./packages"],
+    totalSize: 15550,
+    roots: ["./packages", "./apps"],
   },
 
   // Detected frameworks
   frameworks: [
     {
-      path: "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api",
+      path: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin",
       framework: "express",
       confidence: 1,
 
       // Detection signals (debug mode)
       _signals: [
-        { type: "package.json", value: "express dependency found", confidence: 0.8, source: "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/package.json" },
-        { type: "code_pattern", value: "express() or app.method() found", confidence: 0.9, source: "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/server.js" },
-        { type: "route_file", value: "express routes found in src", confidence: 0.7, source: "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/routes/users.js" },
+        { type: "package.json", value: "express dependency found", confidence: 0.8, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin/package.json" },
+        { type: "code_pattern", value: "express() or app.method() found", confidence: 0.9, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin/app.js" },
       ],
 
       // Patterns for route detection
@@ -54,14 +53,15 @@ export default {
       ],
     },
     {
-      path: "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin",
+      path: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api",
       framework: "express",
       confidence: 1,
 
       // Detection signals (debug mode)
       _signals: [
-        { type: "package.json", value: "express dependency found", confidence: 0.8, source: "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin/package.json" },
-        { type: "code_pattern", value: "express() or app.method() found", confidence: 0.9, source: "/var/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin/app.js" },
+        { type: "package.json", value: "express dependency found", confidence: 0.8, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/package.json" },
+        { type: "code_pattern", value: "express() or app.method() found", confidence: 0.9, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/server.js" },
+        { type: "route_file", value: "express routes found in src", confidence: 0.7, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/routes/users.js" },
       ],
 
       // Patterns for route detection

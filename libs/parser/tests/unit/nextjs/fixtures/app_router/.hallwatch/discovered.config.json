@@ -1,16 +1,16 @@
 {
   "version": "1.0.0",
-  "generated_at": "2025-07-21T06:33:34.836647019+00:00",
+  "generated_at": "2025-07-22T04:22:49.098510+00:00",
   "debug_mode": true,
   "project_structure": {
     "project_type": "single",
     "file_count": 6,
-    "total_size": 4428,
+    "total_size": 4481,
     "roots": []
   },
   "frameworks": [
     {
-      "path": "/var/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router",
+      "path": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router",
       "framework": "nextjs",
       "confidence": 1.0,
       "signals": [
@@ -18,19 +18,19 @@
           "signal_type": "package.json",
           "value": "next dependency found",
           "confidence_boost": 0.9,
-          "source": "/var/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router/package.json"
+          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router/package.json"
         },
         {
           "signal_type": "config_file",
           "value": "next.config.js found",
           "confidence_boost": 0.8,
-          "source": "/var/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router/next.config.js"
+          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router/next.config.js"
         },
         {
           "signal_type": "directory",
           "value": "app/api directory found (App Router)",
           "confidence_boost": 0.85,
-          "source": "/var/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router/app/api"
+          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router/app/api"
         }
       ],
       "patterns": [

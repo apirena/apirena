@@ -1,5 +1,5 @@
 // Auto-generated Hallwatch configuration
-// Generated: 2025-07-21T06:33:34.839653531+00:00
+// Generated: 2025-07-22T04:22:49.093457+00:00
 // Version: 1.0.0
 // Debug Mode: true
 
@@ -7,8 +7,8 @@ export default {
   // Metadata
   _meta: {
     version: "1.0.0",
-    generated: "2025-07-21T06:33:34.839653531+00:00",
-    lastModified: "2025-07-21T06:33:34.839653531+00:00",
+    generated: "2025-07-22T04:22:49.093457+00:00",
+    lastModified: "2025-07-22T04:22:49.093457+00:00",
     debugMode: true,
   },
 
@@ -19,21 +19,21 @@ export default {
   structure: {
     type: "single",
     fileCount: 4,
-    totalSize: 4277,
+    totalSize: 4343,
     roots: [],
   },
 
   // Detected frameworks
   frameworks: [
     {
-      path: "/var/deployment/hallwatch/libs/parser/tests/unit/express/fixtures/basic_app",
+      path: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/express/fixtures/basic_app",
       framework: "express",
       confidence: 1,
 
       // Detection signals (debug mode)
       _signals: [
-        { type: "package.json", value: "express dependency found", confidence: 0.8, source: "/var/deployment/hallwatch/libs/parser/tests/unit/express/fixtures/basic_app/package.json" },
-        { type: "code_pattern", value: "express() or app.method() found", confidence: 0.9, source: "/var/deployment/hallwatch/libs/parser/tests/unit/express/fixtures/basic_app/app.js" },
+        { type: "package.json", value: "express dependency found", confidence: 0.8, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/express/fixtures/basic_app/package.json" },
+        { type: "code_pattern", value: "express() or app.method() found", confidence: 0.9, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/express/fixtures/basic_app/app.js" },
       ],
 
       // Patterns for route detection

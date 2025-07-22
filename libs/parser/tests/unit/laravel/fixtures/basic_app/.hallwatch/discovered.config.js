@@ -1,5 +1,5 @@
 // Auto-generated Hallwatch configuration
-// Generated: 2025-07-21T06:33:34.839513536+00:00
+// Generated: 2025-07-22T04:22:49.095936+00:00
 // Version: 1.0.0
 // Debug Mode: false
 
@@ -7,8 +7,8 @@ export default {
   // Metadata
   _meta: {
     version: "1.0.0",
-    generated: "2025-07-21T06:33:34.839513536+00:00",
-    lastModified: "2025-07-21T06:33:34.839513536+00:00",
+    generated: "2025-07-22T04:22:49.095936+00:00",
+    lastModified: "2025-07-22T04:22:49.095936+00:00",
     debugMode: false,
   },
 
@@ -19,14 +19,14 @@ export default {
   structure: {
     type: "single",
     fileCount: 3,
-    totalSize: 2020,
+    totalSize: 2024,
     roots: [],
   },
 
   // Detected frameworks
   frameworks: [
     {
-      path: "/var/deployment/hallwatch/libs/parser/tests/unit/laravel/fixtures/basic_app",
+      path: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/laravel/fixtures/basic_app",
       framework: "laravel",
       confidence: 0.9,
 

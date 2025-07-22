@@ -15,15 +15,15 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser"
+        "package": "hallwatch-parser",
+        "args": ["--test-threads=1"]
       }
     },
     "integration-test": {
-      "executor": "@monodon/rust:test",
+      "executor": "nx:run-commands",
       "options": {
-        "toolchain": "stable",
-        "package": "hallwatch-parser",
-        "testBinary": "integration_tests"
+        "command": "cargo test --package hallwatch-parser --test integration_tests -- --test-threads=1",
+        "cwd": "{workspaceRoot}"
       }
     },
     "test:javascript": {
@@ -143,7 +143,7 @@
       "options": {
         "toolchain": "stable",
         "package": "hallwatch-parser",
-        "args": ["--", "--nocapture", "--test-threads=1"]
+        "args": ["--test-threads=1", "--nocapture"]
       }
     },
     "benchmark": {

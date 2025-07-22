@@ -1,5 +1,5 @@
 // Auto-generated Hallwatch configuration
-// Generated: 2025-07-21T06:33:34.839525970+00:00
+// Generated: 2025-07-22T04:22:49.095525+00:00
 // Version: 1.0.0
 // Debug Mode: true
 
@@ -7,8 +7,8 @@ export default {
   // Metadata
   _meta: {
     version: "1.0.0",
-    generated: "2025-07-21T06:33:34.839525970+00:00",
-    lastModified: "2025-07-21T06:33:34.839525970+00:00",
+    generated: "2025-07-22T04:22:49.095525+00:00",
+    lastModified: "2025-07-22T04:22:49.095525+00:00",
     debugMode: true,
   },
 
@@ -19,21 +19,21 @@ export default {
   structure: {
     type: "single",
     fileCount: 4,
-    totalSize: 3451,
+    totalSize: 3961,
     roots: [],
   },
 
   // Detected frameworks
   frameworks: [
     {
-      path: "/var/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app",
+      path: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app",
       framework: "flask",
       confidence: 1,
 
       // Detection signals (debug mode)
       _signals: [
-        { type: "requirements.txt", value: "flask dependency found", confidence: 0.8, source: "/var/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app/requirements.txt" },
-        { type: "code_pattern", value: "Flask(__name__) or @app.route found", confidence: 0.9, source: "/var/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app/app.py" },
+        { type: "requirements.txt", value: "flask dependency found", confidence: 0.8, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app/requirements.txt" },
+        { type: "code_pattern", value: "Flask(__name__) or @app.route found", confidence: 0.9, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/flask/fixtures/basic_app/app.py" },
       ],
 
       // Patterns for route detection

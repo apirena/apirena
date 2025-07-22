@@ -1,16 +1,16 @@
 {
   "version": "1.0.0",
-  "generated_at": "2025-07-21T06:33:34.839653531+00:00",
+  "generated_at": "2025-07-22T04:22:49.093457+00:00",
   "debug_mode": true,
   "project_structure": {
     "project_type": "single",
     "file_count": 4,
-    "total_size": 4277,
+    "total_size": 4343,
     "roots": []
   },
   "frameworks": [
     {
-      "path": "/var/deployment/hallwatch/libs/parser/tests/unit/express/fixtures/basic_app",
+      "path": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/express/fixtures/basic_app",
       "framework": "express",
       "confidence": 1.0,
       "signals": [
@@ -18,13 +18,13 @@
           "signal_type": "package.json",
           "value": "express dependency found",
           "confidence_boost": 0.8,
-          "source": "/var/deployment/hallwatch/libs/parser/tests/unit/express/fixtures/basic_app/package.json"
+          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/express/fixtures/basic_app/package.json"
         },
         {
           "signal_type": "code_pattern",
           "value": "express() or app.method() found",
           "confidence_boost": 0.9,
-          "source": "/var/deployment/hallwatch/libs/parser/tests/unit/express/fixtures/basic_app/app.js"
+          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/express/fixtures/basic_app/app.js"
         }
       ],
       "patterns": [
