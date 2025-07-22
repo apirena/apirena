@@ -1,0 +1,16 @@
+[package]
+name = "hallwatch-diff"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1.0", features = ["full"] }
+git2 = "0.18"
+similar = "2.5"  # For text diffing algorithms
+tracing = "0.1"
+
+[dev-dependencies]
+tempfile = "3.0"
+tokio-test = "0.4"

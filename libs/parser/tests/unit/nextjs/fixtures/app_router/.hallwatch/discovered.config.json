@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "generated_at": "2025-07-22T06:49:35.466769+00:00",
+  "generated_at": "2025-07-22T15:21:13.837676+00:00",
   "debug_mode": true,
   "project_structure": {
     "project_type": "single",
     "file_count": 6,
-    "total_size": 2434,
+    "total_size": 5142,
     "roots": []
   },
   "frameworks": [

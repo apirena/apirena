@@ -4,6 +4,7 @@ resolver = '2'
 members = [
 	'libs/core',
 	'libs/parser',
+	'libs/diff',
 	'apps/cli',
 	'libs/benchmarks',
 ]

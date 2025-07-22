@@ -18,3 +18,4 @@ walkdir = "2.4"
 serde_json = "1.0"
 hallwatch-core = { path = "../../libs/core" }
 hallwatch-parser = { path = "../../libs/parser" }
+hallwatch-diff = { path = "../../libs/diff" }

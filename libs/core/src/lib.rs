@@ -2,9 +2,12 @@ use std::path::{Path, PathBuf};
 use notify::{Event, RecommendedWatcher, RecursiveMode, Watcher};
 use tokio::sync::mpsc;
 use anyhow::Result;
+use std::time::SystemTime;
+use hallwatch_diff::{ChangeEvent, ChangeSource, DiffProcessor};
 
 pub struct FileWatcher {
     watcher: Option<RecommendedWatcher>,
+    diff_processor: Option<DiffProcessor>,
 }
 
 #[derive(Debug, Clone)]
@@ -21,9 +24,70 @@ pub enum FileEventType {
     Renamed { from: PathBuf, to: PathBuf },
 }
 
+/// Enhanced watcher that can emit both file events and change events
+pub struct EnhancedWatcher {
+    file_watcher: FileWatcher,
+    diff_processor: DiffProcessor,
+}
+
+impl EnhancedWatcher {
+    pub fn new(repo_path: Option<&Path>) -> Result<Self> {
+        Ok(Self {
+            file_watcher: FileWatcher::new(),
+            diff_processor: DiffProcessor::new(repo_path)?,
+        })
+    }
+
+    /// Watch for changes and emit enhanced change events
+    pub async fn watch_changes<P: AsRef<Path>>(
+        &mut self,
+        path: P,
+    ) -> Result<mpsc::Receiver<ChangeEvent>> {
+        let (tx, rx) = mpsc::channel(100);
+        let mut file_rx = self.file_watcher.watch(&path).await?;
+        
+        // For now, convert file events to basic change events without git integration
+        // TODO: Make this work with git in a thread-safe way
+        tokio::spawn(async move {
+            while let Some(file_event) = file_rx.recv().await {
+                let change_source = ChangeSource::FileSystem {
+                    path: file_event.path.clone(),
+                    modified: SystemTime::now(),
+                };
+                
+                // Create a simple change event without diff processing for now
+                let change_event = ChangeEvent {
+                    source: change_source,
+                    diffs: vec![], // Empty diffs for now
+                    timestamp: SystemTime::now(),
+                };
+                
+                if tx.send(change_event).await.is_err() {
+                    break;
+                }
+            }
+        });
+        
+        Ok(rx)
+    }
+
+    /// Process git changes directly
+    pub async fn process_git_diff(&self, from: &str, to: &str) -> Result<ChangeEvent> {
+        let source = ChangeSource::GitDiff {
+            from: from.to_string(),
+            to: to.to_string(),
+        };
+        
+        self.diff_processor.process_change(source).await
+    }
+}
+
 impl FileWatcher {
     pub fn new() -> Self {
-        Self { watcher: None }
+        Self { 
+            watcher: None,
+            diff_processor: None,
+        }
     }
 
     pub fn is_watching(&self) -> bool {

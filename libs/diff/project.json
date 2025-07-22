@@ -1,0 +1,17 @@
+{
+  "name": "hallwatch-diff",
+  "type": "library",
+  "sourceRoot": "libs/diff/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@monodon/rust:build",
+      "options": {}
+    },
+    "test": {
+      "executor": "@monodon/rust:test",
+      "options": {}
+    }
+  },
+  "tags": ["type:library", "scope:hallwatch"]
+}

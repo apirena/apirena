@@ -3,9 +3,10 @@ use clap::{Parser, Subcommand};
 use std::path::PathBuf;
 use tracing::info;
 use std::fs;
-use hallwatch_core::{FileWatcher, FileEvent, FileEventType};
-use hallwatch_parser::{detect_language, languages::{javascript::JavaScriptParser, python::PythonParser, php::PhpParser}, LanguageParser};
+use hallwatch_core::{FileWatcher, FileEvent, FileEventType, EnhancedWatcher};
+use hallwatch_parser::{detect_language, languages::{javascript::JavaScriptParser, python::PythonParser, php::PhpParser}, LanguageParser, IncrementalParser, EndpointChanges};
 use hallwatch_parser::config::ConfigDiscovery;
+use hallwatch_diff::{ChangeSource, DiffProcessor};
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
@@ -42,6 +43,41 @@ enum Commands {
         /// Output format (json, js)
         #[arg(short, long, default_value = "js")]
         format: String,
+    },
+    /// Incremental watching with diff-based parsing
+    WatchIncremental {
+        /// Path to watch
+        path: PathBuf,
+        /// State file for persistence
+        #[arg(long)]
+        state_file: Option<PathBuf>,
+        /// Enable git integration
+        #[arg(long)]
+        git: bool,
+    },
+    /// Analyze git commit changes
+    GitDiff {
+        /// From commit (default: HEAD~1)
+        #[arg(short, long, default_value = "HEAD~1")]
+        from: String,
+        /// To commit (default: HEAD)
+        #[arg(short, long, default_value = "HEAD")]
+        to: String,
+        /// Repository path
+        #[arg(short, long)]
+        repo: Option<PathBuf>,
+    },
+    /// Detect breaking API changes between commits
+    Breaking {
+        /// Base commit (default: main)
+        #[arg(short, long, default_value = "main")]
+        base: String,
+        /// Head commit (default: HEAD)
+        #[arg(short, long, default_value = "HEAD")]
+        head: String,
+        /// Repository path
+        #[arg(short, long)]
+        repo: Option<PathBuf>,
     },
 }
 
@@ -151,6 +187,84 @@ async fn main() -> Result<()> {
                 }
             }
         }
+        Commands::WatchIncremental { path, state_file, git } => {
+            info!("Starting incremental watcher on {}", path.display());
+            println!("🔍 Watching {} with incremental parsing...", path.display());
+            
+            let repo_path = if git { Some(path.as_path()) } else { None };
+            let mut watcher = EnhancedWatcher::new(repo_path)?;
+            let mut change_rx = watcher.watch_changes(&path).await?;
+            
+            // Load previous state if specified
+            let mut incremental_parser = if let Some(state_path) = &state_file {
+                load_parser_state(state_path)?
+            } else {
+                IncrementalParser::new()
+            };
+            
+            println!("👁️  Incremental watcher started. Press Ctrl+C to stop.");
+            
+            loop {
+                tokio::select! {
+                    change_event = change_rx.recv() => {
+                        if let Some(event) = change_event {
+                            let changes = incremental_parser.parse_changes(event).await?;
+                            print_endpoint_changes(&changes);
+                            
+                            // Save state if specified
+                            if let Some(state_path) = &state_file {
+                                save_parser_state(&incremental_parser, state_path)?;
+                            }
+                        }
+                    }
+                    _ = tokio::signal::ctrl_c() => {
+                        break;
+                    }
+                }
+            }
+            
+            println!("\n👋 Goodbye!");
+        }
+        Commands::GitDiff { from, to, repo } => {
+            let repo_path = repo.as_deref().unwrap_or_else(|| std::path::Path::new("."));
+            println!("🔍 Analyzing git diff {}..{} in {}", from, to, repo_path.display());
+            
+            let diff_processor = DiffProcessor::new(Some(repo_path))?;
+            let change_event = diff_processor.process_change(ChangeSource::GitDiff {
+                from: from.clone(),
+                to: to.clone(),
+            }).await?;
+            
+            let mut incremental_parser = IncrementalParser::new();
+            let changes = incremental_parser.parse_changes(change_event).await?;
+            
+            println!("\n📊 API Changes in {}..{}:", from, to);
+            print_endpoint_changes(&changes);
+        }
+        Commands::Breaking { base, head, repo } => {
+            let repo_path = repo.as_deref().unwrap_or_else(|| std::path::Path::new("."));
+            println!("🔍 Checking for breaking changes {}..{} in {}", base, head, repo_path.display());
+            
+            let diff_processor = DiffProcessor::new(Some(repo_path))?;
+            let change_event = diff_processor.process_change(ChangeSource::GitDiff {
+                from: base.clone(),
+                to: head.clone(),
+            }).await?;
+            
+            let mut incremental_parser = IncrementalParser::new();
+            let changes = incremental_parser.parse_changes(change_event).await?;
+            
+            let breaking_changes = detect_breaking_changes(&changes);
+            
+            if breaking_changes.is_empty() {
+                println!("✅ No breaking changes detected!");
+            } else {
+                println!("⚠️  Breaking changes detected:");
+                for breaking_change in breaking_changes {
+                    println!("   🚨 {}", breaking_change);
+                }
+            }
+        }
     }
     
     Ok(())
@@ -241,4 +355,113 @@ fn parse_file_content(content: &str, path: &PathBuf) -> Result<Vec<hallwatch_par
     };
     
     parser.parse(content)
+}
+
+/// Print endpoint changes in a formatted way
+fn print_endpoint_changes(changes: &EndpointChanges) {
+    if !changes.has_changes() && changes.unchanged.is_empty() {
+        println!("   No changes detected");
+        return;
+    }
+
+    if !changes.added.is_empty() {
+        println!("   ✅ Added {} endpoint(s):", changes.added.len());
+        for endpoint in &changes.added {
+            println!("      + {} {} (line {})", 
+                format!("{:?}", endpoint.method),
+                endpoint.path,
+                endpoint.line
+            );
+        }
+    }
+
+    if !changes.modified.is_empty() {
+        println!("   📝 Modified {} endpoint(s):", changes.modified.len());
+        for change in &changes.modified {
+            println!("      ~ {} {} (line {} -> {})", 
+                format!("{:?}", change.new.method),
+                change.new.path,
+                change.old.line,
+                change.new.line
+            );
+        }
+    }
+
+    if !changes.removed.is_empty() {
+        println!("   ❌ Removed {} endpoint(s):", changes.removed.len());
+        for endpoint in &changes.removed {
+            println!("      - {} {} (line {})", 
+                format!("{:?}", endpoint.method),
+                endpoint.path,
+                endpoint.line
+            );
+        }
+    }
+
+    if !changes.unchanged.is_empty() {
+        println!("   📊 {} endpoint(s) unchanged", changes.unchanged.len());
+    }
+}
+
+/// Detect breaking changes from endpoint changes
+fn detect_breaking_changes(changes: &EndpointChanges) -> Vec<String> {
+    let mut breaking_changes = Vec::new();
+
+    // Removed endpoints are always breaking
+    for endpoint in &changes.removed {
+        breaking_changes.push(format!(
+            "Removed endpoint: {} {}",
+            format!("{:?}", endpoint.method),
+            endpoint.path
+        ));
+    }
+
+    // Modified endpoints might be breaking
+    for change in &changes.modified {
+        match change.change_type {
+            hallwatch_parser::ChangeType::PathChanged => {
+                breaking_changes.push(format!(
+                    "Changed path: {} {} -> {}",
+                    format!("{:?}", change.old.method),
+                    change.old.path,
+                    change.new.path
+                ));
+            }
+            hallwatch_parser::ChangeType::MethodChanged => {
+                breaking_changes.push(format!(
+                    "Changed method: {} {} -> {} {}",
+                    format!("{:?}", change.old.method),
+                    change.old.path,
+                    format!("{:?}", change.new.method),
+                    change.new.path
+                ));
+            }
+            _ => {
+                // Other changes are potentially breaking but less critical
+            }
+        }
+    }
+
+    breaking_changes
+}
+
+/// Load parser state from file
+fn load_parser_state(state_path: &std::path::Path) -> Result<IncrementalParser> {
+    if state_path.exists() {
+        let content = fs::read_to_string(state_path)?;
+        let state: hallwatch_parser::incremental::EndpointState = serde_json::from_str(&content)?;
+        Ok(IncrementalParser::with_state(state))
+    } else {
+        Ok(IncrementalParser::new())
+    }
+}
+
+/// Save parser state to file
+fn save_parser_state(parser: &IncrementalParser, state_path: &std::path::Path) -> Result<()> {
+    if let Some(parent) = state_path.parent() {
+        fs::create_dir_all(parent)?;
+    }
+    let content = serde_json::to_string_pretty(parser.get_state())?;
+    fs::write(state_path, content)?;
+    Ok(())
 }

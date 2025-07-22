@@ -49,3 +49,6 @@ pub mod languages {
 }
 
 pub mod config;
+pub mod incremental;
+
+pub use incremental::{IncrementalParser, EndpointChanges, EndpointChange, ChangeType};
