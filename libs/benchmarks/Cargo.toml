@@ -8,6 +8,16 @@ edition = "2021"
 name = "bench_demo"
 path = "src/bin/bench_demo.rs"
 
+# Binary for realistic development workflow benchmarks
+[[bin]]
+name = "realistic_benchmark"
+path = "src/bin/realistic_benchmark.rs"
+
+# Binary for stress testing and scalability analysis
+[[bin]]
+name = "stress_test"
+path = "src/bin/stress_test.rs"
+
 [dependencies]
 # Core hallwatch libraries
 hallwatch-core = { path = "../core" }

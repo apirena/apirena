@@ -8,6 +8,18 @@ members = [
 	'libs/benchmarks',
 ]
 
+[package]
+name = "hallwatch-debug"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "debug_projects"
+path = "debug_projects.rs"
+
+[dependencies]
+walkdir = "2.0"
+
 [workspace.package]
 version = '0.1.0'
 edition = '2021'
