@@ -2,6 +2,10 @@
 
 **Your code is the spec.** Test APIs instantly as you write them—no manual documentation, no spec drift, just real-time API discovery that understands your actual implementation.
 
+Prototype: https://theme-yoga-27205403.figma.site/
+
+<img width="3594" height="1954" alt="CleanShot 2025-08-05 at 19 43 41@2x" src="https://github.com/user-attachments/assets/62ebdc33-ffd2-47ef-a1ed-294584047be0" />
+
 ## 🎯 Core Value: Code-First API Testing
 
 Hallwatch watches your source files, automatically discovers endpoints through AST parsing, and creates an intelligent playground for testing—all without requiring special comments, annotations, or separate spec files.
