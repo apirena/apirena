@@ -150,8 +150,21 @@ impl FileWatcher {
                     });
                 }
             }
+            EventKind::Access(_) => {
+                // Access events can indicate file reads, but we typically don't want these
+                // for basic file watching. Skip them.
+            }
+            EventKind::Any => {
+                // Generic event - convert to Modified as a fallback
+                for path in event.paths {
+                    file_events.push(FileEvent {
+                        path: path.clone(),
+                        event_type: FileEventType::Modified,
+                    });
+                }
+            }
             EventKind::Other => {
-                // Handle rename events
+                // Handle rename events or treat as generic modification
                 if event.paths.len() == 2 {
                     file_events.push(FileEvent {
                         path: event.paths[1].clone(),
@@ -160,10 +173,15 @@ impl FileWatcher {
                             to: event.paths[1].clone(),
                         },
                     });
+                } else if !event.paths.is_empty() {
+                    // Single path Other event - could be various things, treat as modified
+                    for path in event.paths {
+                        file_events.push(FileEvent {
+                            path: path.clone(),
+                            event_type: FileEventType::Modified,
+                        });
+                    }
                 }
-            }
-            _ => {
-                // Other event types we don't handle yet
             }
         }
         

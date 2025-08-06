@@ -1,25 +1,25 @@
 // Auto-generated Hallwatch configuration
-// Generated: 2025-07-22T15:21:13.837670+00:00
+// Generated: 2025-08-06T02:53:18.196441+00:00
 // Version: 1.0.0
-// Debug Mode: false
+// Debug Mode: true
 
 export default {
   // Metadata
   _meta: {
     version: "1.0.0",
-    generated: "2025-07-22T15:21:13.837670+00:00",
-    lastModified: "2025-07-22T15:21:13.837670+00:00",
-    debugMode: false,
+    generated: "2025-08-06T02:53:18.196441+00:00",
+    lastModified: "2025-08-06T02:53:18.196441+00:00",
+    debugMode: true,
   },
 
   // Global configuration
-  debugMode: false,
+  debugMode: true,
 
   // Detected project structure
   structure: {
     type: "single",
     fileCount: 6,
-    totalSize: 5142,
+    totalSize: 4481,
     roots: [],
   },
 
@@ -29,6 +29,13 @@ export default {
       path: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router",
       framework: "nextjs",
       confidence: 1,
+
+      // Detection signals (debug mode)
+      _signals: [
+        { type: "package.json", value: "next dependency found", confidence: 0.9, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router/package.json" },
+        { type: "config_file", value: "next.config.js found", confidence: 0.8, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router/next.config.js" },
+        { type: "directory", value: "app/api directory found (App Router)", confidence: 0.85, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router/app/api" },
+      ],
 
       // Patterns for route detection
       patterns: [

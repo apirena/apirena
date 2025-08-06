@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "generated_at": "2025-07-22T15:21:13.832539+00:00",
+  "generated_at": "2025-08-06T02:53:18.180967+00:00",
   "debug_mode": true,
   "project_structure": {
     "project_type": "monorepo",
     "file_count": 18,
-    "total_size": 14181,
+    "total_size": 19885,
     "roots": [
       "./frontend",
       "./backend",
