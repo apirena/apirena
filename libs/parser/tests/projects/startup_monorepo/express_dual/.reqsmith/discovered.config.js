@@ -1,5 +1,5 @@
 // Auto-generated Reqsmith configuration
-// Generated: 2025-08-06T02:53:18.167949+00:00
+// Generated: 2025-08-07T06:18:10.542707+00:00
 // Version: 1.0.0
 // Debug Mode: true
 
@@ -7,8 +7,8 @@ export default {
   // Metadata
   _meta: {
     version: "1.0.0",
-    generated: "2025-08-06T02:53:18.167949+00:00",
-    lastModified: "2025-08-06T02:53:18.167949+00:00",
+    generated: "2025-08-07T06:18:10.542707+00:00",
+    lastModified: "2025-08-07T06:18:10.542707+00:00",
     debugMode: true,
   },
 
@@ -19,7 +19,7 @@ export default {
   structure: {
     type: "monorepo",
     fileCount: 16,
-    totalSize: 15538,
+    totalSize: 15526,
     roots: ["./packages", "./apps"],
   },
 
