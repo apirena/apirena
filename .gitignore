@@ -125,13 +125,13 @@ temp/
 # package-lock.json
 # yarn.lock
 
-# Hallwatch
+# Reqsmith
 # Keep generated configs for team consistency (like package.json)
-# .hallwatch/discovered.config.js   # ✅ COMMIT - team needs same patterns
-# .hallwatch/discovered.config.json # ✅ COMMIT - debug information
+# .reqsmith/discovered.config.js   # ✅ COMMIT - team needs same patterns
+# .reqsmith/discovered.config.json # ✅ COMMIT - debug information
 
-# Ignore user-specific Hallwatch files (when implemented)
-.hallwatch/cache/
-.hallwatch/logs/
-.hallwatch/.env
-.hallwatch/user-settings.json
+# Ignore user-specific Reqsmith files (when implemented)
+.reqsmith/cache/
+.reqsmith/logs/
+.reqsmith/.env
+.reqsmith/user-settings.json

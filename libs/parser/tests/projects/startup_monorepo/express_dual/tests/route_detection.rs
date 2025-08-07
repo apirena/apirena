@@ -1,5 +1,5 @@
 use crate::projects::fixtures;
-use hallwatch_parser::config::ConfigDiscovery;
+use reqsmith_parser::config::ConfigDiscovery;
 
 #[tokio::test]
 async fn finds_api_routes() {

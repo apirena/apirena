@@ -45,17 +45,17 @@ impl ConfigGenerator {
     }
 
     async fn write_config_file(&self, project_root: &Path, config: &DiscoveredConfig) -> Result<()> {
-        let hallwatch_dir = project_root.join(".hallwatch");
-        fs::create_dir_all(&hallwatch_dir)?;
+        let reqsmith_dir = project_root.join(".reqsmith");
+        fs::create_dir_all(&reqsmith_dir)?;
         
-        let config_path = hallwatch_dir.join("discovered.config.js");
+        let config_path = reqsmith_dir.join("discovered.config.js");
         let js_content = self.render_template(config)?;
         
         fs::write(&config_path, js_content)?;
         
         // Also write JSON version for easy parsing
         if self.debug_mode {
-            let json_path = hallwatch_dir.join("discovered.config.json");
+            let json_path = reqsmith_dir.join("discovered.config.json");
             let json_content = serde_json::to_string_pretty(config)?;
             fs::write(json_path, json_content)?;
         }
@@ -67,7 +67,7 @@ impl ConfigGenerator {
         let mut content = String::new();
         
         content.push_str(&format!(
-            r#"// Auto-generated Hallwatch configuration
+            r#"// Auto-generated Reqsmith configuration
 // Generated: {}
 // Version: {}
 // Debug Mode: {}

@@ -1,5 +1,5 @@
-// Auto-generated Hallwatch configuration
-// Generated: 2025-08-06T02:53:18.190555+00:00
+// Auto-generated Reqsmith configuration
+// Generated: 2025-08-06T02:53:18.193549+00:00
 // Version: 1.0.0
 // Debug Mode: false
 
@@ -7,8 +7,8 @@ export default {
   // Metadata
   _meta: {
     version: "1.0.0",
-    generated: "2025-08-06T02:53:18.190555+00:00",
-    lastModified: "2025-08-06T02:53:18.190555+00:00",
+    generated: "2025-08-06T02:53:18.193549+00:00",
+    lastModified: "2025-08-06T02:53:18.193549+00:00",
     debugMode: false,
   },
 
@@ -19,23 +19,24 @@ export default {
   structure: {
     type: "single",
     fileCount: 3,
-    totalSize: 1788,
+    totalSize: 2024,
     roots: [],
   },
 
   // Detected frameworks
   frameworks: [
     {
-      path: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/fastapi/fixtures/basic_app",
-      framework: "fastapi",
-      confidence: 1,
+      path: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/unit/laravel/fixtures/basic_app",
+      framework: "laravel",
+      confidence: 0.9,
 
       // Patterns for route detection
       patterns: [
         {
-          name: "fastapi.decorators",
-          files: "**/*.py",
-          routes: ["@app.{method}('{path}')", "@router.{method}('{path}')"],
+          name: "laravel.routes",
+          files: "routes/**/*.php",
+          routes: ["Route::{method}('{path}', {handler})"],
+          convention: "/api/users -> routes/api.php + UserController",
           confidence: 0.95,
         },
       ],

@@ -1,5 +1,5 @@
 use super::fixtures;
-use hallwatch_parser::config::ConfigDiscovery;
+use reqsmith_parser::config::ConfigDiscovery;
 
 #[tokio::test]
 async fn detects_fastapi_basic() {

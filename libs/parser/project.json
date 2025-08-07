@@ -8,21 +8,21 @@
       "outputs": ["{projectRoot}/target"],
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser"
+        "package": "reqsmith-parser"
       }
     },
     "test": {
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["--test-threads=1"]
       }
     },
     "integration-test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo test --package hallwatch-parser --test integration_tests -- --test-threads=1",
+        "command": "cargo test --package reqsmith-parser --test integration_tests -- --test-threads=1",
         "cwd": "{workspaceRoot}"
       }
     },
@@ -30,7 +30,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["javascript"]
       }
     },
@@ -38,7 +38,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["python"]
       }
     },
@@ -46,7 +46,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["php"]
       }
     },
@@ -54,7 +54,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["unit::"]
       }
     },
@@ -62,7 +62,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["unit::nextjs"]
       }
     },
@@ -70,7 +70,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["unit::express"]
       }
     },
@@ -78,7 +78,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["unit::flask"]
       }
     },
@@ -86,7 +86,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["unit::fastapi"]
       }
     },
@@ -94,7 +94,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["unit::laravel"]
       }
     },
@@ -102,7 +102,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["projects::"]
       }
     },
@@ -110,7 +110,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["projects::startup_monorepo"]
       }
     },
@@ -118,7 +118,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["projects::single_app"]
       }
     },
@@ -126,7 +126,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["projects::performance"]
       }
     },
@@ -134,7 +134,7 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["unit::", "--", "--test-threads=1"]
       }
     },
@@ -142,14 +142,14 @@
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "args": ["--test-threads=1", "--nocapture"]
       }
     },
     "benchmark": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo bench --package hallwatch-parser",
+        "command": "cargo bench --package reqsmith-parser",
         "cwd": "{workspaceRoot}"
       }
     },
@@ -157,7 +157,7 @@
       "executor": "@monodon/rust:clippy",
       "options": {
         "toolchain": "stable",
-        "package": "hallwatch-parser",
+        "package": "reqsmith-parser",
         "fix": false
       }
     }

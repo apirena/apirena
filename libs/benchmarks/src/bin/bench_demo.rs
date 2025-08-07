@@ -1,12 +1,12 @@
 use std::path::PathBuf;
 use std::fs;
 use std::time::Instant;
-use hallwatch_parser::{LanguageParser, languages::javascript::JavaScriptParser, detect_language};
-use hallwatch_benchmarks::measure_memory_usage;
+use reqsmith_parser::{LanguageParser, languages::javascript::JavaScriptParser, detect_language};
+use reqsmith_benchmarks::measure_memory_usage;
 use walkdir::WalkDir;
 
 fn main() {
-    println!("🚀 Hallwatch Performance Benchmark Suite");
+    println!("🚀 Reqsmith Performance Benchmark Suite");
     println!("==========================================");
     println!("Testing real-world endpoint discovery performance\n");
     

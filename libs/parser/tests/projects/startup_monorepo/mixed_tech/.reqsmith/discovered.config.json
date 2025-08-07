@@ -14,7 +14,7 @@
   },
   "frameworks": [
     {
-      "path": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/auth",
+      "path": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/auth",
       "framework": "flask",
       "confidence": 1.0,
       "signals": [
@@ -22,13 +22,13 @@
           "signal_type": "requirements.txt",
           "value": "flask dependency found",
           "confidence_boost": 0.8,
-          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/auth/requirements.txt"
+          "source": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/auth/requirements.txt"
         },
         {
           "signal_type": "code_pattern",
           "value": "Flask(__name__) or @app.route found",
           "confidence_boost": 0.9,
-          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/auth/app.py"
+          "source": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/auth/app.py"
         }
       ],
       "patterns": [
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "path": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/ml",
+      "path": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/ml",
       "framework": "fastapi",
       "confidence": 1.0,
       "signals": [
@@ -52,13 +52,13 @@
           "signal_type": "requirements.txt",
           "value": "fastapi dependency found",
           "confidence_boost": 0.8,
-          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/ml/requirements.txt"
+          "source": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/ml/requirements.txt"
         },
         {
           "signal_type": "code_pattern",
           "value": "FastAPI() or @app.method decorator found",
           "confidence_boost": 0.9,
-          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/ml/main.py"
+          "source": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/mixed_tech/services/ml/main.py"
         }
       ],
       "patterns": [
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "path": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/backend",
+      "path": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/mixed_tech/backend",
       "framework": "express",
       "confidence": 1.0,
       "signals": [
@@ -83,13 +83,13 @@
           "signal_type": "package.json",
           "value": "express dependency found",
           "confidence_boost": 0.8,
-          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/backend/package.json"
+          "source": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/mixed_tech/backend/package.json"
         },
         {
           "signal_type": "code_pattern",
           "value": "express() or app.method() found",
           "confidence_boost": 0.9,
-          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/backend/src/app.js"
+          "source": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/mixed_tech/backend/src/app.js"
         }
       ],
       "patterns": [
@@ -115,7 +115,7 @@
       ]
     },
     {
-      "path": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/frontend",
+      "path": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/mixed_tech/frontend",
       "framework": "nextjs",
       "confidence": 1.0,
       "signals": [
@@ -123,19 +123,19 @@
           "signal_type": "package.json",
           "value": "next dependency found",
           "confidence_boost": 0.9,
-          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/frontend/package.json"
+          "source": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/mixed_tech/frontend/package.json"
         },
         {
           "signal_type": "config_file",
           "value": "next.config.js found",
           "confidence_boost": 0.8,
-          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/frontend/next.config.js"
+          "source": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/mixed_tech/frontend/next.config.js"
         },
         {
           "signal_type": "directory",
           "value": "pages/api directory found",
           "confidence_boost": 0.85,
-          "source": "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/mixed_tech/frontend/pages/api"
+          "source": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/mixed_tech/frontend/pages/api"
         }
       ],
       "patterns": [

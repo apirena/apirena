@@ -1,4 +1,4 @@
-// Hallwatch Parser Integration Tests
+// Reqsmith Parser Integration Tests
 // This file loads the new modular test architecture
 mod unit;
 mod projects;

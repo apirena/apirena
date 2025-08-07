@@ -1,4 +1,4 @@
-// Auto-generated Hallwatch configuration
+// Auto-generated Reqsmith configuration
 // Generated: 2025-08-06T02:53:18.167949+00:00
 // Version: 1.0.0
 // Debug Mode: true
@@ -26,14 +26,14 @@ export default {
   // Detected frameworks
   frameworks: [
     {
-      path: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin",
+      path: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin",
       framework: "express",
       confidence: 1,
 
       // Detection signals (debug mode)
       _signals: [
-        { type: "package.json", value: "express dependency found", confidence: 0.8, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin/package.json" },
-        { type: "code_pattern", value: "express() or app.method() found", confidence: 0.9, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin/app.js" },
+        { type: "package.json", value: "express dependency found", confidence: 0.8, source: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin/package.json" },
+        { type: "code_pattern", value: "express() or app.method() found", confidence: 0.9, source: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin/app.js" },
       ],
 
       // Patterns for route detection
@@ -53,15 +53,15 @@ export default {
       ],
     },
     {
-      path: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api",
+      path: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api",
       framework: "express",
       confidence: 1,
 
       // Detection signals (debug mode)
       _signals: [
-        { type: "package.json", value: "express dependency found", confidence: 0.8, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/package.json" },
-        { type: "code_pattern", value: "express() or app.method() found", confidence: 0.9, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/server.js" },
-        { type: "route_file", value: "express routes found in src", confidence: 0.7, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/routes/users.js" },
+        { type: "package.json", value: "express dependency found", confidence: 0.8, source: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/package.json" },
+        { type: "code_pattern", value: "express() or app.method() found", confidence: 0.9, source: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/server.js" },
+        { type: "route_file", value: "express routes found in src", confidence: 0.7, source: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/routes/users.js" },
       ],
 
       // Patterns for route detection

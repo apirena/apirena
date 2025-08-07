@@ -1,6 +1,6 @@
-# Hallwatch Project Overview
+# Reqsmith Project Overview
 
-## What is Hallwatch?
+## What is Reqsmith?
 
 A **code-first API playground** that eliminates the gap between writing APIs and testing them. No configuration, no annotations, no spec drift - just save your code and test immediately.
 
@@ -11,7 +11,7 @@ Traditional API tools require manual work:
 - Swagger: Write OpenAPI specs that drift from implementation  
 - Insomnia: Import/export, maintain separate configurations
 
-**Hallwatch**: Your code IS the specification.
+**Reqsmith**: Your code IS the specification.
 
 ## How It Works
 
@@ -47,7 +47,7 @@ State management that preserves your work:
 
 ## Differentiation
 
-| Feature | Postman | Insomnia | Swagger | Hallwatch |
+| Feature | Postman | Insomnia | Swagger | Reqsmith |
 |---------|---------|----------|---------|-----------|
 | Configuration | Manual | Import/Export | Annotations | None |
 | Time to Test | 5+ min | 3+ min | 2+ min | <10 sec |
@@ -79,7 +79,7 @@ State management that preserves your work:
 ## Repository Structure
 
 ```
-hallwatch/
+reqsmith/
 ├── apps/
 │   ├── cli/           # Command-line interface (Rust)
 │   └── desktop/       # Tauri playground app (future)
@@ -95,10 +95,10 @@ hallwatch/
 
 ```bash
 # Discover endpoints in a project
-hallwatch discover ./my-api-project
+reqsmith discover ./my-api-project
 
 # Watch for changes in real-time
-hallwatch watch ./my-api-project
+reqsmith watch ./my-api-project
 
 # Output
 📋 Found 12 endpoint(s):

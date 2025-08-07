@@ -1,4 +1,4 @@
-# Hallwatch: The Code-First API Playground
+# Reqsmith: The Code-First API Playground
 
 **Your code is the spec.** Test APIs instantly as you write them—no manual documentation, no spec drift, just real-time API discovery that understands your actual implementation.
 
@@ -8,13 +8,13 @@ Prototype: https://theme-yoga-27205403.figma.site/
 
 ## 🎯 Core Value: Code-First API Testing
 
-Hallwatch watches your source files, automatically discovers endpoints through AST parsing, and creates an intelligent playground for testing—all without requiring special comments, annotations, or separate spec files.
+Reqsmith watches your source files, automatically discovers endpoints through AST parsing, and creates an intelligent playground for testing—all without requiring special comments, annotations, or separate spec files.
 
 ```javascript
 // You write this:
 app.post('/users/:id/profile', updateProfile);
 
-// Hallwatch instantly provides:
+// Reqsmith instantly provides:
 // ✅ Endpoint detected
 // ✅ Parameters extracted (id: string)
 // ✅ Method identified (POST)
@@ -22,7 +22,7 @@ app.post('/users/:id/profile', updateProfile);
 // → Test it now!
 ```
 
-## 🏆 Why Hallwatch?
+## 🏆 Why Reqsmith?
 
 ### The Problem with Current Tools
 
@@ -33,7 +33,7 @@ app.post('/users/:id/profile', updateProfile);
 | Import from frameworks | Requires specific annotations |
 | Copy-paste URLs | Error-prone and tedious |
 
-### The Hallwatch Difference
+### The Reqsmith Difference
 
 We use **AST parsing + AI** to understand your code as you write it:
 - **Zero Configuration**: Works with your existing code
@@ -47,7 +47,7 @@ We use **AST parsing + AI** to understand your code as you write it:
 ```
 Manual Everything ←—————————————————————————————————————————————————→ Zero Config
                   ●—————————————————————————————————————————————————○
-Hallwatch         ●                                                 
+Reqsmith         ●                                                 
 Postman                                                            ●
 Insomnia                                                       ●    
 Swagger                                                    ●         
@@ -57,7 +57,7 @@ Swagger                                                    ●
 ```
 5+ Minutes ←——————————————————————————————————————————————————————————→ <10 Seconds
            ●—————————————————————————————————————————————————————————○
-Hallwatch  ●                                                        
+Reqsmith  ●                                                        
 Postman                                                            ●
 Insomnia                                                       ●    
 Swagger                                                    ●         
@@ -67,7 +67,7 @@ Swagger                                                    ●
 ```
 Drifts Immediately ←—————————————————————————————————————————————————→ Always Current
                    ●————————————————————————————————————————————————○
-Hallwatch          ●                                                
+Reqsmith          ●                                                
 Manual Tools                                                      ●
 Generated                                                     ●    
 Imported                                                  ●         
@@ -77,7 +77,7 @@ Imported                                                  ●
 ```
 Basic Templates ←————————————————————————————————————————————————————→ Context Aware
                 ●———————————————————————————————————————————————————○
-Hallwatch       ●                                                   
+Reqsmith       ●                                                   
 Postman                                                            ●
 Insomnia                                                           ●
 Swagger                                                        ●    
@@ -87,7 +87,7 @@ Swagger                                                        ●
 ```
 Manual Setup ←——————————————————————————————————————————————————————→ Auto-Detects
              ●—————————————————————————————————————————————————————○
-Hallwatch    ●                                                     
+Reqsmith    ●                                                     
 Postman                                                           ●
 Insomnia                                                          ●
 Swagger                                                       ●    
@@ -97,7 +97,7 @@ Swagger                                                       ●
 ```
 Complex Interface ←———————————————————————————————————————————————————→ Point & Click
                   ●——————————————————————————————————————————————————○
-Hallwatch         ●                                                  
+Reqsmith         ●                                                  
 Postman                                                             ●
 Insomnia                                                        ●    
 Swagger                                                     ●         
@@ -107,7 +107,7 @@ Swagger                                                     ●
 ```
 Complex Setup ←———————————————————————————————————————————————————————→ Share Codebase
               ●——————————————————————————————————————————————————————○
-Hallwatch     ●                                                      
+Reqsmith     ●                                                      
 Postman                                                             ●
 Insomnia                                                        ●    
 Swagger                                                     ●         
@@ -117,7 +117,7 @@ Swagger                                                     ●
 ```
 Separate Tracking ←———————————————————————————————————————————————————→ In Your Repo
                   ●——————————————————————————————————————————————————○
-Hallwatch         ●                                                  
+Reqsmith         ●                                                  
 Postman                                                             ●
 Insomnia                                                        ●    
 Swagger                                                     ●         
@@ -127,7 +127,7 @@ Swagger                                                     ●
 ```
 Switch Apps ←—————————————————————————————————————————————————————————→ Stay in Editor
             ●—————————————————————————————————————————————————————————○
-Hallwatch   ●                                                        
+Reqsmith   ●                                                        
 Postman                                                             ●
 Insomnia                                                        ●    
 Swagger                                                     ●         
@@ -137,7 +137,7 @@ Swagger                                                     ●
 ```
 Manual Updates ←——————————————————————————————————————————————————————→ Auto-Current
                ●——————————————————————————————————————————————————————○
-Hallwatch      ●                                                     
+Reqsmith      ●                                                     
 Postman                                                             ●
 Insomnia                                                            ●
 Swagger                                                         ●    
@@ -147,7 +147,7 @@ Swagger                                                         ●
 ```
 500MB+ ←——————————————————————————————————————————————————————————————→ <100MB
        ●——————————————————————————————————————————————————————————————○
-Hallwatch ●                                                          
+Reqsmith ●                                                          
 Postman                                                             ●
 Insomnia                                                        ●    
 Swagger                                                     ●         
@@ -157,7 +157,7 @@ Swagger                                                     ●
 ```
 Cloud Dependent ←—————————————————————————————————————————————————————→ Fully Local
                 ●—————————————————————————————————————————————————————○
-Hallwatch       ●                                                    
+Reqsmith       ●                                                    
 Swagger                                                             ●
 Postman                                                         ●    
 Insomnia                                                    ●         
@@ -167,7 +167,7 @@ Insomnia                                                    ●
 ```
 Cloud Sync ←——————————————————————————————————————————————————————————→ 100% Local
            ●——————————————————————————————————————————————————————————○
-Hallwatch  ●                                                         
+Reqsmith  ●                                                         
 Postman                                                             ●
 Swagger                                                         ●    
 Insomnia                                                    ●         
@@ -177,7 +177,7 @@ Insomnia                                                    ●
 ```
 Complex Workspaces ←——————————————————————————————————————————————————→ Share Code
                    ●——————————————————————————————————————————————————○
-Hallwatch          ●                                                 
+Reqsmith          ●                                                 
 Postman                                                             ●
 Insomnia                                                        ●    
 Swagger                                                     ●         
@@ -199,11 +199,11 @@ This is an NX monorepo containing:
 ## 🚀 Getting Started
 
 ```bash
-# Install Hallwatch
-npm install -g hallwatch
+# Install Reqsmith
+npm install -g reqsmith
 
 # Point it at your project
-hallwatch watch ./my-api
+reqsmith watch ./my-api
 
 # That's it! Open the playground at http://localhost:3000
 ```
@@ -279,10 +279,10 @@ File Watch   <10ms parse   Smart caching    Context analysis   Test & iterate
 
 ## 🔧 Advanced Configuration (Optional)
 
-While Hallwatch works with zero config, you can customize behavior:
+While Reqsmith works with zero config, you can customize behavior:
 
 ```javascript
-// .hallwatch/config.js
+// .reqsmith/config.js
 export default {
   // Custom ignore patterns
   ignore: ['tests/**', 'migrations/**'],
@@ -313,8 +313,8 @@ export default {
 
 ```bash
 # Clone the repository
-git clone https://github.com/hallwatch/hallwatch.git
-cd hallwatch
+git clone https://github.com/reqsmith/reqsmith.git
+cd reqsmith
 
 # Install dependencies
 pnpm install
@@ -343,7 +343,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📄 License
 
-Hallwatch is licensed under the Functional Source License 1.1 (FSL).
+Reqsmith is licensed under the Functional Source License 1.1 (FSL).
 - ✅ **Free for**: Personal use, open source, companies <$100k revenue
 - 💰 **Paid for**: Commercial use by larger companies
 - 🔄 **Converts to**: Apache 2.0 after 4 years
@@ -352,4 +352,4 @@ Hallwatch is licensed under the Functional Source License 1.1 (FSL).
 
 **Stop maintaining API specs. Start shipping features.**
 
-[Website](https://hallwatch.dev) | [Discord](https://discord.gg/hallwatch) | [Documentation](https://docs.hallwatch.dev)
+[Website](https://reqsmith.dev) | [Discord](https://discord.gg/reqsmith) | [Documentation](https://docs.reqsmith.dev)

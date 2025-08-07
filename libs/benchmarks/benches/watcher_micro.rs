@@ -1,5 +1,5 @@
 use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion};
-use hallwatch_core::watcher::Watcher;
+use reqsmith_core::watcher::Watcher;
 use std::fs;
 use std::path::PathBuf;
 use std::time::Duration;

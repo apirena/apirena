@@ -1,6 +1,6 @@
 // Flask unit tests - patterns module
 use super::fixtures;
-use hallwatch_parser::config::ConfigDiscovery;
+use reqsmith_parser::config::ConfigDiscovery;
 
 #[tokio::test]
 async fn detects_flask_route_patterns() {

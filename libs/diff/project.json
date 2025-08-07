@@ -1,5 +1,5 @@
 {
-  "name": "hallwatch-diff",
+  "name": "reqsmith-diff",
   "type": "library",
   "sourceRoot": "libs/diff/src",
   "projectType": "library",
@@ -13,5 +13,5 @@
       "options": {}
     }
   },
-  "tags": ["type:library", "scope:hallwatch"]
+  "tags": ["type:library", "scope:reqsmith"]
 }

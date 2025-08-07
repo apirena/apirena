@@ -1,5 +1,5 @@
 [package]
-name = "hallwatch-diff"
+name = "reqsmith-diff"
 version = "0.1.0"
 edition = "2021"
 

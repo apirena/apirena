@@ -1,8 +1,8 @@
-# Hallwatch Architecture
+# Reqsmith Architecture
 
 ## Overview
 
-Hallwatch is built as a modular, high-performance system for code-first API testing. The architecture follows these principles:
+Reqsmith is built as a modular, high-performance system for code-first API testing. The architecture follows these principles:
 
 1. **Code-First Design** - Implementation is the source of truth
 2. **Performance First** - Sub-10ms parsing, minimal memory usage
@@ -22,20 +22,20 @@ Hallwatch is built as a modular, high-performance system for code-first API test
 │             Core Libraries                  │
 │  ┌─────────────────────────────────────┐   │
 │  │      File System Watcher             │   │
-│  │        (hallwatch-core)               │   │
+│  │        (reqsmith-core)               │   │
 │  ├─────────────────────────────────────┤   │
 │  │    AST Parser + Smart Caching       │   │
-│  │       (hallwatch-parser)              │   │
+│  │       (reqsmith-parser)              │   │
 │  ├─────────────────────────────────────┤   │
 │  │  AI Enhancement Layer + Cache       │   │
-│  │        (hallwatch-ai)                 │   │
+│  │        (reqsmith-ai)                 │   │
 │  └─────────────────────────────────────┘   │
 └─────────────────────────────────────────────┘
 ```
 
 ## Core Libraries
 
-### hallwatch-core
+### reqsmith-core
 
 **Responsibility**: File system monitoring and event handling
 
@@ -49,7 +49,7 @@ Hallwatch is built as a modular, high-performance system for code-first API test
 - < 50MB memory usage
 - Support for 10,000+ files
 
-### hallwatch-parser
+### reqsmith-parser
 
 **Responsibility**: AST-based endpoint discovery without annotations
 
@@ -65,7 +65,7 @@ Hallwatch is built as a modular, high-performance system for code-first API test
 - 95%+ accuracy on real-world code
 - Zero configuration required
 
-### hallwatch-ai
+### reqsmith-ai
 
 **Responsibility**: Intelligent parameter analysis with smart caching
 

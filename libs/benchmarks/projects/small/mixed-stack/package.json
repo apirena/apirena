@@ -1,7 +1,7 @@
 {
   "name": "mixed-stack-benchmark",
   "version": "1.0.0", 
-  "description": "Mixed technology stack for Hallwatch benchmarks",
+  "description": "Mixed technology stack for Reqsmith benchmarks",
   "scripts": {
     "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
     "start:frontend": "cd frontend && npm start",

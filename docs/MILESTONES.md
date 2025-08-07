@@ -2,7 +2,7 @@
 
 ## Overview
 
-Hallwatch development is divided into 6 phases, each building on the previous. All development should be AI-agent friendly with clear boundaries and testable outcomes.
+Reqsmith development is divided into 6 phases, each building on the previous. All development should be AI-agent friendly with clear boundaries and testable outcomes.
 
 ## Phase 1: Foundation (Sprint 1-2) ✅ COMPLETE
 
@@ -13,7 +13,7 @@ Hallwatch development is divided into 6 phases, each building on the previous. A
 
 ### Libraries to Create
 
-#### `@hallwatch/core` ✅ Created & Implemented
+#### `@reqsmith/core` ✅ Created & Implemented
 ```bash
 nx build core  # ✅ Working
 ```
@@ -29,7 +29,7 @@ nx build core  # ✅ Working
 - [ ] Respect .gitignore patterns (TODO: Phase 2)
 - [x] Core functionality tested ✅
 
-#### `@hallwatch/parser` ✅ Created & Implemented
+#### `@reqsmith/parser` ✅ Created & Implemented
 ```bash
 nx build parser  # ✅ Working
 ```
@@ -49,8 +49,8 @@ nx build parser  # ✅ Working
 
 ### Deliverables
 - Working CLI that prints discovered endpoints ✅ COMPLETE
-  - `hallwatch discover` command working ✅
-  - `hallwatch watch` command working ✅
+  - `reqsmith discover` command working ✅
+  - `reqsmith watch` command working ✅
   - Real-time endpoint detection ✅
   - Table and JSON output formats ✅
 - Benchmark suite showing performance metrics ⏳ TODO: Phase 2
@@ -65,7 +65,7 @@ nx build parser  # ✅ Working
 
 ### Features Completed ✅
 
-#### Language Support in `@hallwatch/parser`
+#### Language Support in `@reqsmith/parser`
 - JavaScript/TypeScript (Express, Next.js) ✅ COMPLETE
 - Python (FastAPI, Flask) ✅ COMPLETE  
 - PHP (Laravel) ✅ COMPLETE
@@ -84,7 +84,7 @@ pub struct ConfigDiscovery {
 **Implemented Features:**
 - Automatic framework detection with confidence scoring (0.0-1.0) ✅
 - Multi-framework monorepo support ✅
-- Smart config file generation (`.hallwatch/discovered.config.js`) ✅
+- Smart config file generation (`.reqsmith/discovered.config.js`) ✅
 - Performance optimization hints ✅
 - Debug mode with detailed detection signals ✅
 - Pattern-based route extraction ✅
@@ -105,7 +105,7 @@ pub struct ConfigDiscovery {
 
 ### Apps to Create
 
-#### `@hallwatch/desktop`
+#### `@reqsmith/desktop`
 ```bash
 nx g @nx/react:app desktop --directory=apps --bundler=vite
 # Then add Tauri
@@ -137,7 +137,7 @@ pnpm tauri init
 
 ### Libraries to Create
 
-#### `@hallwatch/ai`
+#### `@reqsmith/ai`
 ```bash
 nx g @monodon/rust:library ai --directory=libs
 ```
@@ -163,7 +163,7 @@ nx g @monodon/rust:library ai --directory=libs
 - Custom parameter hints
 
 ### Features to Add
-- Optional `.hallwatch/config.js` file
+- Optional `.reqsmith/config.js` file
 - Environment switching (local/staging/prod)
 - Custom parameter generators
 - Advanced ignore patterns
@@ -258,7 +258,7 @@ nx run desktop:package
   - Laravel ✅ (basic detection implemented)
 - **Advanced Configuration System** ✅
   - Framework auto-detection with confidence scoring ✅
-  - Smart config generation (`.hallwatch/discovered.config.js`) ✅
+  - Smart config generation (`.reqsmith/discovered.config.js`) ✅
   - Monorepo structure detection ✅
   - Performance optimization hints ✅
   - Pattern-based route detection ✅
@@ -266,17 +266,17 @@ nx run desktop:package
 **Verified Working Examples:**
 ```bash
 # Endpoint discovery across multiple frameworks
-./target/release/hallwatch discover test-app.js
+./target/release/reqsmith discover test-app.js
 📋 Found 6 endpoint(s):
 METHOD   PATH           HANDLER    LINE
 Get      /users         5:5        5
 Post     /users         9:5        9
 
 # Real-time watching with config generation
-./target/release/hallwatch watch test-watch
+./target/release/reqsmith watch test-watch
 📄 Created: test.js
 📍 Found 1 endpoint(s): Get /test (line 1)
-✅ Generated .hallwatch/discovered.config.js with Express patterns
+✅ Generated .reqsmith/discovered.config.js with Express patterns
 ```
 
 🎯 **Phase 2 REMAINING**: Additional Language Support

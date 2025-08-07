@@ -10,8 +10,8 @@
 
 2. **Installation**
    ```bash
-   git clone https://github.com/hallwatch/hallwatch.git
-   cd hallwatch
+   git clone https://github.com/reqsmith/reqsmith.git
+   cd reqsmith
    pnpm install
    ```
 
@@ -24,13 +24,13 @@
    pnpm nx build parser
    
    # Build CLI
-   cargo build -p hallwatch-cli
+   cargo build -p reqsmith-cli
    ```
 
 4. **Running**
    ```bash
    # Run CLI
-   ./target/debug/hallwatch --help
+   ./target/debug/reqsmith --help
    
    # Via NX (when configured)
    pnpm nx run cli:serve -- --help
@@ -46,10 +46,10 @@ pnpm nx run-many --target=test --all
 pnpm nx affected:test
 
 # Run specific Rust tests
-cargo test -p hallwatch-parser
+cargo test -p reqsmith-parser
 
 # Run with output
-cargo test -p hallwatch-core -- --nocapture
+cargo test -p reqsmith-core -- --nocapture
 ```
 
 ## Development Workflow

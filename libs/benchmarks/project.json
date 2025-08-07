@@ -21,7 +21,7 @@
       ],
       "options": {
         "target-dir": "dist/target/benchmarks",
-        "package": "hallwatch-benchmarks"
+        "package": "reqsmith-benchmarks"
       },
       "configurations": {
         "production": {
@@ -42,42 +42,42 @@
     "bench-demo": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo run --package hallwatch-benchmarks --bin bench_demo",
+        "command": "cargo run --package reqsmith-benchmarks --bin bench_demo",
         "cwd": "{workspaceRoot}"
       }
     },
     "bench-parser": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo bench --package hallwatch-benchmarks --bench parser_micro",
+        "command": "cargo bench --package reqsmith-benchmarks --bench parser_micro",
         "cwd": "{workspaceRoot}"
       }
     },
     "bench-watcher": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo bench --package hallwatch-benchmarks --bench watcher_micro",
+        "command": "cargo bench --package reqsmith-benchmarks --bench watcher_micro",
         "cwd": "{workspaceRoot}"
       }
     },
     "bench-e2e": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo bench --package hallwatch-benchmarks --bench end_to_end",
+        "command": "cargo bench --package reqsmith-benchmarks --bench end_to_end",
         "cwd": "{workspaceRoot}"
       }
     },
     "bench-scalability": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo bench --package hallwatch-benchmarks --bench scalability",
+        "command": "cargo bench --package reqsmith-benchmarks --bench scalability",
         "cwd": "{workspaceRoot}"
       }
     },
     "bench-demo": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo run --package hallwatch-benchmarks --bin bench_demo",
+        "command": "cargo run --package reqsmith-benchmarks --bin bench_demo",
         "cwd": "{workspaceRoot}"
       }
     },

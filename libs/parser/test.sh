@@ -1,10 +1,10 @@
 #!/bin/bash
-# Hallwatch Parser Test Runner
+# Reqsmith Parser Test Runner
 # Demonstrates granular test execution using Nx
 
 set -e
 
-echo "🧪 Hallwatch Parser Test Suite"
+echo "🧪 Reqsmith Parser Test Suite"
 echo "=============================="
 
 # Color codes for output

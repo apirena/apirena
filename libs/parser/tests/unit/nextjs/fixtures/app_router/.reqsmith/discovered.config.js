@@ -1,4 +1,4 @@
-// Auto-generated Hallwatch configuration
+// Auto-generated Reqsmith configuration
 // Generated: 2025-08-06T02:53:18.196441+00:00
 // Version: 1.0.0
 // Debug Mode: true
@@ -26,15 +26,15 @@ export default {
   // Detected frameworks
   frameworks: [
     {
-      path: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router",
+      path: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/unit/nextjs/fixtures/app_router",
       framework: "nextjs",
       confidence: 1,
 
       // Detection signals (debug mode)
       _signals: [
-        { type: "package.json", value: "next dependency found", confidence: 0.9, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router/package.json" },
-        { type: "config_file", value: "next.config.js found", confidence: 0.8, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router/next.config.js" },
-        { type: "directory", value: "app/api directory found (App Router)", confidence: 0.85, source: "/Users/isaiahdahl/deployment/hallwatch/libs/parser/tests/unit/nextjs/fixtures/app_router/app/api" },
+        { type: "package.json", value: "next dependency found", confidence: 0.9, source: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/unit/nextjs/fixtures/app_router/package.json" },
+        { type: "config_file", value: "next.config.js found", confidence: 0.8, source: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/unit/nextjs/fixtures/app_router/next.config.js" },
+        { type: "directory", value: "app/api directory found (App Router)", confidence: 0.85, source: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/unit/nextjs/fixtures/app_router/app/api" },
       ],
 
       // Patterns for route detection

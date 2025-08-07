@@ -1,5 +1,5 @@
 use crate::projects::fixtures;
-use hallwatch_parser::config::ConfigDiscovery;
+use reqsmith_parser::config::ConfigDiscovery;
 use std::fs;
 
 #[tokio::test]
@@ -38,7 +38,7 @@ async fn generates_clean_production_config() {
     let _config = discovery.discover(&project_path).await.unwrap();
     
     // In non-debug mode, signals should not be included in JS output
-    let config_path = project_path.join(".hallwatch/discovered.config.js");
+    let config_path = project_path.join(".reqsmith/discovered.config.js");
     let config_content = fs::read_to_string(&config_path).unwrap();
     assert!(!config_content.contains("_signals:"));
     assert!(config_content.contains("debugMode: false"));

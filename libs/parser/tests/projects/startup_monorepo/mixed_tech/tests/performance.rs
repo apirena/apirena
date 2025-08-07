@@ -1,5 +1,5 @@
 use crate::projects::fixtures;
-use hallwatch_parser::config::ConfigDiscovery;
+use reqsmith_parser::config::ConfigDiscovery;
 use std::time::Instant;
 
 #[tokio::test]

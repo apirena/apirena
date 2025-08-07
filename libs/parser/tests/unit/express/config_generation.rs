@@ -1,5 +1,5 @@
 use super::fixtures;
-use hallwatch_parser::config::ConfigDiscovery;
+use reqsmith_parser::config::ConfigDiscovery;
 use std::fs;
 use tempfile::TempDir;
 
@@ -18,7 +18,7 @@ async fn generates_valid_config() {
     let _config = discovery.discover(temp_dir.path()).await.unwrap();
     
     // Check that config file was created
-    let config_path = temp_dir.path().join(".hallwatch/discovered.config.js");
+    let config_path = temp_dir.path().join(".reqsmith/discovered.config.js");
     assert!(config_path.exists());
     
     let config_content = fs::read_to_string(&config_path).unwrap();
@@ -39,7 +39,7 @@ async fn includes_correct_patterns() {
     let discovery = ConfigDiscovery::new(true);
     let _config = discovery.discover(temp_dir.path()).await.unwrap();
     
-    let config_path = temp_dir.path().join(".hallwatch/discovered.config.js");
+    let config_path = temp_dir.path().join(".reqsmith/discovered.config.js");
     let config_content = fs::read_to_string(&config_path).unwrap();
     
     // Should include Express-specific patterns
@@ -61,7 +61,7 @@ async fn preserves_debug_info() {
     let discovery = ConfigDiscovery::new(true);
     let _config = discovery.discover(temp_dir.path()).await.unwrap();
     
-    let config_path = temp_dir.path().join(".hallwatch/discovered.config.js");
+    let config_path = temp_dir.path().join(".reqsmith/discovered.config.js");
     let config_content = fs::read_to_string(&config_path).unwrap();
     
     // Debug mode should include signal information
@@ -83,7 +83,7 @@ async fn generates_clean_production_config() {
     let discovery = ConfigDiscovery::new(false);
     let _config = discovery.discover(temp_dir.path()).await.unwrap();
     
-    let config_path = temp_dir.path().join(".hallwatch/discovered.config.js");
+    let config_path = temp_dir.path().join(".reqsmith/discovered.config.js");
     let config_content = fs::read_to_string(&config_path).unwrap();
     
     // Production mode should not include debug info

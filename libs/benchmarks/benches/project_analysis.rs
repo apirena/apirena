@@ -1,7 +1,7 @@
 use criterion::{black_box, criterion_group, criterion_main, Criterion, BenchmarkId};
 use std::path::PathBuf;
 use std::fs;
-use hallwatch_parser::{LanguageParser, languages::javascript::JavaScriptParser, languages::python::PythonParser, languages::php::PhpParser, detect_language};
+use reqsmith_parser::{LanguageParser, languages::javascript::JavaScriptParser, languages::python::PythonParser, languages::php::PhpParser, detect_language};
 use walkdir::WalkDir;
 
 fn get_test_projects() -> Vec<(String, PathBuf)> {

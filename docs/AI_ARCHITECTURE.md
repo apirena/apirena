@@ -1,4 +1,4 @@
-# AI Architecture for Hallwatch
+# AI Architecture for Reqsmith
 
 ## Overview
 

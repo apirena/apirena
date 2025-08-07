@@ -1,39 +1,39 @@
 # Auto-Generated Configuration System ✅ IMPLEMENTED
 
-The Hallwatch config generation system automatically detects project frameworks and creates intelligent configuration files for optimal endpoint discovery.
+The Reqsmith config generation system automatically detects project frameworks and creates intelligent configuration files for optimal endpoint discovery.
 
 ## Current Implementation Status ✅
 
 **✅ WORKING**: Full configuration generation system implemented and tested
 - **Framework Detection**: 5 frameworks supported (Express, Flask, FastAPI, Next.js, Laravel)
-- **Config File Generation**: `.hallwatch/discovered.config.js` created automatically
+- **Config File Generation**: `.reqsmith/discovered.config.js` created automatically
 - **Confidence Scoring**: Intelligent framework detection with 0.0-1.0 confidence
 - **Monorepo Support**: Multi-framework project detection
 - **Performance Optimization**: Auto-tuned settings based on project size
 - **Debug Mode**: Detailed detection signals for troubleshooting
 
 **⏳ CLI COMMAND PLANNED**: Direct config generation commands (currently integrated into discovery)
-- The system works automatically during `hallwatch discover` and `hallwatch watch`
-- Standalone `hallwatch config` command planned for Phase 3
+- The system works automatically during `reqsmith discover` and `reqsmith watch`
+- Standalone `reqsmith config` command planned for Phase 3
 
 ## Quick Start
 
 ```bash
 # Current working method - config generated automatically
-hallwatch discover /path/to/your/project
-# ✅ Automatically generates .hallwatch/discovered.config.js
+reqsmith discover /path/to/your/project
+# ✅ Automatically generates .reqsmith/discovered.config.js
 
-hallwatch watch /path/to/your/project  
+reqsmith watch /path/to/your/project  
 # ✅ Generates config + monitors for changes
 
 # Planned for Phase 3
-hallwatch config /path/to/your/project --debug
-hallwatch config /path/to/your/project --format json
+reqsmith config /path/to/your/project --debug
+reqsmith config /path/to/your/project --format json
 ```
 
 ## What Gets Generated
 
-### `.hallwatch/discovered.config.js`
+### `.reqsmith/discovered.config.js`
 A human-readable JavaScript configuration file that includes:
 
 - **Project Structure Analysis**: Type (monorepo/single/multi-app), file count, size
@@ -42,7 +42,7 @@ A human-readable JavaScript configuration file that includes:
 - **Performance Settings**: Auto-tuned based on project size
 - **Override Section**: Where you can add custom patterns
 
-### `.hallwatch/discovered.config.json` (Debug Mode)
+### `.reqsmith/discovered.config.json` (Debug Mode)
 A JSON version of the configuration for easy parsing and analysis.
 
 ## Framework Detection ✅ IMPLEMENTED
@@ -156,7 +156,7 @@ The system automatically optimizes based on project size:
 ### Adding Custom Patterns
 
 ```javascript
-// In .hallwatch/discovered.config.js
+// In .reqsmith/discovered.config.js
 overrides: {
   customPatterns: [
     {
@@ -205,7 +205,7 @@ Start with auto-detection, then add custom patterns only for missed endpoints.
 Regenerate config when adding new frameworks or significantly changing project structure.
 
 ### 5. Version Control ✅ RECOMMENDED
-**✅ DO COMMIT** `.hallwatch/discovered.config.js` to version control so your team shares the same patterns.
+**✅ DO COMMIT** `.reqsmith/discovered.config.js` to version control so your team shares the same patterns.
 
 **Why commit the generated config:**
 - **Team Consistency**: Everyone gets identical endpoint detection patterns
@@ -217,17 +217,17 @@ Regenerate config when adding new frameworks or significantly changing project s
 **Recommended .gitignore:**
 ```gitignore
 # Keep generated configs (like package.json)
-# .hallwatch/discovered.config.js   # ✅ COMMIT THIS
-# .hallwatch/discovered.config.json # ✅ COMMIT THIS  
+# .reqsmith/discovered.config.js   # ✅ COMMIT THIS
+# .reqsmith/discovered.config.json # ✅ COMMIT THIS  
 
 # Ignore user-specific files (future)
-.hallwatch/cache/
-.hallwatch/logs/
-.hallwatch/user-settings.json
+.reqsmith/cache/
+.reqsmith/logs/
+.reqsmith/user-settings.json
 ```
 
 **Auto-Regeneration Triggers:**
-- `hallwatch discover` or `hallwatch watch` commands
+- `reqsmith discover` or `reqsmith watch` commands
 - Framework dependency changes (new package.json entries)
 - Major project structure changes
 - Manual config regeneration
@@ -249,7 +249,7 @@ Regenerate config when adding new frameworks or significantly changing project s
 1. Verify patterns match your code style
 2. Add custom patterns for non-standard implementations
 3. Check file exclusion patterns
-4. Use `hallwatch discover` to test pattern matching
+4. Use `reqsmith discover` to test pattern matching
 
 ## Examples
 
@@ -264,14 +264,14 @@ Regenerate config when adding new frameworks or significantly changing project s
 #   auth/       (FastAPI)
 #   ml/         (FastAPI)
 
-hallwatch config . --debug
+reqsmith config . --debug
 # Detects: Express, Next.js, FastAPI (3 instances)
 ```
 
 ### Single App Project
 ```bash
 # Simple Flask project
-hallwatch config . 
+reqsmith config . 
 # Detects: Flask with appropriate patterns
 ```
 
@@ -287,4 +287,4 @@ customPatterns: [
 ]
 ```
 
-The auto-generated configuration system makes Hallwatch work out of the box for most projects while providing the flexibility to handle any custom patterns you might have.
+The auto-generated configuration system makes Reqsmith work out of the box for most projects while providing the flexibility to handle any custom patterns you might have.

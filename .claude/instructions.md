@@ -1,8 +1,8 @@
-# Claude Development Instructions for Hallwatch
+# Claude Development Instructions for Reqsmith
 
 ## Project Overview
 
-Hallwatch is a **code-first API playground** that eliminates spec drift by discovering endpoints directly from source code using AST parsing, enhanced with AI for intelligent parameter suggestions.
+Reqsmith is a **code-first API playground** that eliminates spec drift by discovering endpoints directly from source code using AST parsing, enhanced with AI for intelligent parameter suggestions.
 
 **Core Value**: Your code IS the spec - no annotations, no manual configuration, just real-time API discovery and testing.
 

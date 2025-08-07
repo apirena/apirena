@@ -1,8 +1,8 @@
-# Hallwatch Product Specification
+# Reqsmith Product Specification
 
 ## Core Concept
 
-Hallwatch is a **code-first API playground** that eliminates the gap between implementation and testing. By combining AST parsing with intelligent caching and AI assistance, we provide instant API testing without manual configuration.
+Reqsmith is a **code-first API playground** that eliminates the gap between implementation and testing. By combining AST parsing with intelligent caching and AI assistance, we provide instant API testing without manual configuration.
 
 ## Key Principles
 
@@ -24,14 +24,14 @@ Hallwatch is a **code-first API playground** that eliminates the gap between imp
 ## Core User Journey
 
 ```
-Developer writes endpoint → Hallwatch detects it → AI analyzes context → 
+Developer writes endpoint → Reqsmith detects it → AI analyzes context → 
 Playground ready → Developer tests → State preserved → Iterate quickly
 ```
 
 ## Technical Architecture
 
-### Parser Library (`@hallwatch/parser`) ✅ IMPLEMENTED
-The heart of Hallwatch - a high-performance, multi-language endpoint detector.
+### Parser Library (`@reqsmith/parser`) ✅ IMPLEMENTED
+The heart of Reqsmith - a high-performance, multi-language endpoint detector.
 
 **Capabilities:**
 - AST-based endpoint discovery ✅ (tree-sitter integration)
@@ -39,7 +39,7 @@ The heart of Hallwatch - a high-performance, multi-language endpoint detector.
 - <10ms parsing performance ✅ (verified in tests)
 - Incremental parsing on changes ✅ (real-time file watching)
 - Intelligent framework detection ✅ (confidence scoring)
-- Smart configuration generation ✅ (`.hallwatch/discovered.config.js`)
+- Smart configuration generation ✅ (`.reqsmith/discovered.config.js`)
 
 **Supported Patterns:** ✅ ALL WORKING
 ```javascript
@@ -65,7 +65,7 @@ Route::get('/users/{id}', 'UserController@show');
 
 **Framework Detection System:** ✅ PRODUCTION READY
 ```javascript
-// Generated .hallwatch/discovered.config.js
+// Generated .reqsmith/discovered.config.js
 {
   frameworks: [
     {
@@ -88,7 +88,7 @@ Route::get('/users/{id}', 'UserController@show');
 }
 ```
 
-### AI Enhancement Layer (`@hallwatch/ai`) ⏳ PLANNED
+### AI Enhancement Layer (`@reqsmith/ai`) ⏳ PLANNED
 Intelligent parameter and context analysis, with smart caching.
 
 **Planned Features:**
@@ -103,13 +103,13 @@ Intelligent parameter and context analysis, with smart caching.
   - Invalidate on signature changes
   - Preserve user overrides
 
-### Desktop Playground UI (`@hallwatch/desktop`) ⏳ PLANNED
+### Desktop Playground UI (`@reqsmith/desktop`) ⏳ PLANNED
 A persistent, intelligent testing environment.
 
 ## Configuration Philosophy
 
 ### Zero Config by Default
-Hallwatch works immediately with standard patterns:
+Reqsmith works immediately with standard patterns:
 - No annotations required
 - No special comments needed
 - No configuration files necessary
@@ -118,7 +118,7 @@ Hallwatch works immediately with standard patterns:
 Optional configuration for advanced needs:
 
 ```javascript
-// .hallwatch/config.js - OPTIONAL
+// .reqsmith/config.js - OPTIONAL
 export default {
   // Custom file watching
   watch: {
@@ -161,8 +161,8 @@ export default {
 ## Success Metrics - Current Status ✅
 
 1. **Time to First Test**: ✅ <10 seconds with CLI (Target: <30 seconds from install)
-   - `hallwatch discover .` immediately finds endpoints
-   - Real-time discovery with `hallwatch watch .`
+   - `reqsmith discover .` immediately finds endpoints
+   - Real-time discovery with `reqsmith watch .`
    
 2. **Endpoint Detection Rate**: ✅ 100% on implemented patterns
    - Express.js: Complete coverage ✅

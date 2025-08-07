@@ -1,4 +1,4 @@
-use hallwatch_parser::config::ConfigDiscovery;
+use reqsmith_parser::config::ConfigDiscovery;
 use tempfile::TempDir;
 use std::fs;
 

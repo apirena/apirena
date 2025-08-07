@@ -1,11 +1,11 @@
 use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion};
-use hallwatch_benchmarks::{
+use reqsmith_benchmarks::{
     scenarios::{BenchmarkScenario, ProjectSize, ScenarioFactory},
     metrics::{DetailedMetrics, TimingMetrics, MemoryMetrics, ThroughputMetrics, QualityMetrics},
     BenchmarkTimer, measure_memory_usage,
 };
-use hallwatch_core::watcher::Watcher;
-use hallwatch_parser::parse_file;
+use reqsmith_core::watcher::Watcher;
+use reqsmith_parser::parse_file;
 use std::fs;
 use std::path::PathBuf;
 use std::time::Duration;
@@ -470,7 +470,7 @@ async fn measure_config_generation_performance(project_path: &std::path::Path) -
         chrono::Utc::now().to_rfc3339()
     );
     
-    let config_path = project_path.join(".hallwatch").join("discovered.config.js");
+    let config_path = project_path.join(".reqsmith").join("discovered.config.js");
     if let Some(parent) = config_path.parent() {
         fs::create_dir_all(parent).unwrap();
     }
