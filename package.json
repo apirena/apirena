@@ -22,5 +22,10 @@
   "workspaces": [
     "apps/*",
     "libs/*"
-  ]
+  ],
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
 }

@@ -1,0 +1,41 @@
+{
+  "name": "desktop",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/desktop/src",
+  "projectType": "application",
+  "tags": ["type:app", "platform:desktop"],
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd apps/desktop && pnpm tauri dev"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd apps/desktop && pnpm tauri build"
+      },
+      "dependsOn": ["build-rust"]
+    },
+    "build-rust": {
+      "executor": "@monodon/rust:build",
+      "options": {
+        "release": true,
+        "manifestPath": "apps/desktop/src-tauri/Cargo.toml"
+      }
+    },
+    "check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd apps/desktop && pnpm check"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd apps/desktop && pnpm test"
+      }
+    }
+  }
+}
