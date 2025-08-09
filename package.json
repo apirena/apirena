@@ -8,7 +8,9 @@
     "test": "nx run-many --target=test --all",
     "lint": "nx run-many --target=lint --all",
     "dev": "nx serve desktop",
-    "format": "nx format:write"
+    "format": "nx format:write",
+    "serve:desktop": "nx serve desktop",
+    "build:desktop": "nx build desktop"
   },
   "devDependencies": {
     "@nx/workspace": "^21.3.0",

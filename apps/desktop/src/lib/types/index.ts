@@ -40,3 +40,28 @@ export interface ProjectState {
   isWatching: boolean;
   watchId?: string;
 }
+
+export interface EndpointEntry {
+  id: string;
+  method: string;
+  path: string;
+  file: string;
+  line: number;
+  framework: string;
+  last_seen: string;
+}
+
+export interface EndpointManifest {
+  version: string;
+  last_updated: string;
+  endpoints: EndpointEntry[];
+  statistics: { total: number; by_method: Record<string, number> };
+}
+
+export interface ProjectConfig {
+  version: string;
+  baseUrl: string;
+  environments?: Record<string, { baseUrl: string }>;
+  watch: { include: string[]; exclude: string[] };
+  parser?: { incrementalEnabled: boolean; parallelism: number };
+}

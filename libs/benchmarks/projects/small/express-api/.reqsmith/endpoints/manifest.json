@@ -1,0 +1,268 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-09T04:53:58.990664Z",
+  "endpoints": [
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "src/routes/orders.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "POST:/",
+      "method": "Post",
+      "path": "/",
+      "file": "src/routes/orders.js",
+      "line": 33,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "GET:/:id",
+      "method": "Get",
+      "path": "/:id",
+      "file": "src/routes/orders.js",
+      "line": 80,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "PATCH:/:id/status",
+      "method": "Patch",
+      "path": "/:id/status",
+      "file": "src/routes/orders.js",
+      "line": 96,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "DELETE:/:id",
+      "method": "Delete",
+      "path": "/:id",
+      "file": "src/routes/orders.js",
+      "line": 121,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "GET:/user/:userId",
+      "method": "Get",
+      "path": "/user/:userId",
+      "file": "src/routes/orders.js",
+      "line": 153,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "GET:/stats/summary",
+      "method": "Get",
+      "path": "/stats/summary",
+      "file": "src/routes/orders.js",
+      "line": 178,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "GET:/:id/tracking",
+      "method": "Get",
+      "path": "/:id/tracking",
+      "file": "src/routes/orders.js",
+      "line": 216,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "src/routes/products.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "POST:/",
+      "method": "Post",
+      "path": "/",
+      "file": "src/routes/products.js",
+      "line": 42,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "GET:/:id",
+      "method": "Get",
+      "path": "/:id",
+      "file": "src/routes/products.js",
+      "line": 62,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "PUT:/:id",
+      "method": "Put",
+      "path": "/:id",
+      "file": "src/routes/products.js",
+      "line": 78,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "DELETE:/:id",
+      "method": "Delete",
+      "path": "/:id",
+      "file": "src/routes/products.js",
+      "line": 97,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "GET:/categories/list",
+      "method": "Get",
+      "path": "/categories/list",
+      "file": "src/routes/products.js",
+      "line": 112,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "GET:/search/query",
+      "method": "Get",
+      "path": "/search/query",
+      "file": "src/routes/products.js",
+      "line": 122,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "PUT:/:id/stock",
+      "method": "Put",
+      "path": "/:id/stock",
+      "file": "src/routes/products.js",
+      "line": 144,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "POST:/bulk/create",
+      "method": "Post",
+      "path": "/bulk/create",
+      "file": "src/routes/products.js",
+      "line": 165,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "PATCH:/bulk/update",
+      "method": "Patch",
+      "path": "/bulk/update",
+      "file": "src/routes/products.js",
+      "line": 175,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "POST:/auth/login",
+      "method": "Post",
+      "path": "/auth/login",
+      "file": "src/routes/auth.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "POST:/v1/auth/login",
+      "method": "Post",
+      "path": "/v1/auth/login",
+      "file": "src/routes/auth.js",
+      "line": 21,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "POST:/auth/register",
+      "method": "Post",
+      "path": "/auth/register",
+      "file": "src/routes/auth.js",
+      "line": 37,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "POST:/auth/logout",
+      "method": "Post",
+      "path": "/auth/logout",
+      "file": "src/routes/auth.js",
+      "line": 55,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "GET:/auth/me",
+      "method": "Get",
+      "path": "/auth/me",
+      "file": "src/routes/auth.js",
+      "line": 60,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "GET:/users",
+      "method": "Get",
+      "path": "/users",
+      "file": "src/routes/users.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "POST:/users",
+      "method": "Post",
+      "path": "/users",
+      "file": "src/routes/users.js",
+      "line": 14,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "GET:/users/:id",
+      "method": "Get",
+      "path": "/users/:id",
+      "file": "src/routes/users.js",
+      "line": 23,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "PUT:/users/:id",
+      "method": "Put",
+      "path": "/users/:id",
+      "file": "src/routes/users.js",
+      "line": 35,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    },
+    {
+      "id": "DELETE:/users/:id",
+      "method": "Delete",
+      "path": "/users/:id",
+      "file": "src/routes/users.js",
+      "line": 48,
+      "framework": "auto",
+      "last_seen": "2025-08-09T04:53:58.990664Z"
+    }
+  ],
+  "statistics": {
+    "total": 28,
+    "by_method": {
+      "Delete": 3,
+      "Get": 12,
+      "Patch": 2,
+      "Post": 8,
+      "Put": 3
+    }
+  }
+}

@@ -1,0 +1,130 @@
+use anyhow::{anyhow, Result};
+use chrono::{DateTime, Utc};
+use serde::{Deserialize, Serialize};
+use std::collections::BTreeMap;
+use std::fs;
+use std::path::{Path, PathBuf};
+
+use reqsmith_parser::Endpoint;
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct EndpointManifest {
+    pub version: String,
+    pub last_updated: DateTime<Utc>,
+    pub endpoints: Vec<EndpointEntry>,
+    pub statistics: ManifestStats,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct EndpointEntry {
+    pub id: String,
+    pub method: String,
+    pub path: String,
+    pub file: String,
+    pub line: usize,
+    pub framework: String,
+    pub last_seen: DateTime<Utc>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct ManifestStats {
+    pub total: usize,
+    pub by_method: BTreeMap<String, usize>,
+}
+
+#[derive(Debug, Clone)]
+pub struct ReqSmithStorage {
+    project_root: PathBuf,
+    reqsmith_dir: PathBuf,
+}
+
+#[derive(Debug, Clone)]
+pub struct EndpointRecord {
+    pub endpoint: Endpoint,
+    pub file: PathBuf,
+}
+
+impl EndpointRecord {
+    pub fn from_endpoint(endpoint: Endpoint, file: &Path) -> Self {
+        Self { endpoint, file: file.to_path_buf() }
+    }
+}
+
+impl ReqSmithStorage {
+    pub fn new(project_root: PathBuf) -> Result<Self> {
+        let reqsmith_dir = project_root.join(".reqsmith");
+        // Create directory structure
+        fs::create_dir_all(reqsmith_dir.join("endpoints/by-file"))?;
+        fs::create_dir_all(reqsmith_dir.join("cache/ast"))?;
+
+        // Ensure .gitignore exists and ignores cache/
+        let gitignore_path = reqsmith_dir.join(".gitignore");
+        if !gitignore_path.exists() {
+            fs::write(&gitignore_path, "cache/\n*.log\nwatch-state.json\n")?;
+        }
+
+        Ok(Self { project_root, reqsmith_dir })
+    }
+
+    pub fn save_endpoints(&self, endpoints: &[EndpointRecord]) -> Result<()> {
+        // Build manifest entries
+        let now = Utc::now();
+        let mut by_file: BTreeMap<String, Vec<EndpointEntry>> = BTreeMap::new();
+        let mut by_method: BTreeMap<String, usize> = BTreeMap::new();
+        let mut manifest_entries: Vec<EndpointEntry> = Vec::new();
+
+        for rec in endpoints {
+            let method = format!("{:?}", rec.endpoint.method);
+            *by_method.entry(method.clone()).or_default() += 1;
+
+            let rel_file = pathdiff::diff_paths(&rec.file, &self.project_root)
+                .unwrap_or(rec.file.clone())
+                .to_string_lossy()
+                .to_string();
+
+            let entry = EndpointEntry {
+                id: format!("{}:{}", method.to_uppercase(), rec.endpoint.path),
+                method,
+                path: rec.endpoint.path.clone(),
+                file: rel_file.clone(),
+                line: rec.endpoint.line,
+                framework: "auto".to_string(),
+                last_seen: now,
+            };
+
+            by_file.entry(rel_file).or_default().push(entry.clone());
+            manifest_entries.push(entry);
+        }
+
+        let manifest = EndpointManifest {
+            version: "1.0.0".into(),
+            last_updated: now,
+            statistics: ManifestStats { total: manifest_entries.len(), by_method },
+            endpoints: manifest_entries,
+        };
+
+        // Write manifest.json
+        let manifest_path = self.reqsmith_dir.join("endpoints/manifest.json");
+        write_json_atomic(&manifest_path, &manifest)?;
+
+        // Write by-file jsons
+        for (file, entries) in by_file {
+            let safe = file.replace('/', "-");
+            let p = self.reqsmith_dir.join(format!("endpoints/by-file/{}.json", safe));
+            write_json_atomic(&p, &entries)?;
+        }
+
+        Ok(())
+    }
+}
+
+fn write_json_atomic<T: Serialize>(path: &Path, value: &T) -> Result<()> {
+    let dir = path.parent().ok_or_else(|| anyhow!("Invalid path"))?;
+    fs::create_dir_all(dir)?;
+    let tmp = dir.join(format!(".tmp-{}.json", uuid::Uuid::new_v4()));
+    let data = serde_json::to_string_pretty(value)?;
+    fs::write(&tmp, data)?;
+    // Atomic rename where supported
+    std::fs::rename(&tmp, path)?;
+    Ok(())
+}

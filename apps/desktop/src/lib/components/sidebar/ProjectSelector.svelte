@@ -2,15 +2,27 @@
   import { invoke } from '@tauri-apps/api/core';
   import { endpointStore } from '../../stores/endpoints.svelte.js';
 
+  function isTauri() {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return typeof window !== 'undefined' && (window as any).__TAURI_INTERNALS__ !== undefined;
+  }
+
   // Access store properties directly
   let projectState = $derived(endpointStore.projectState);
   let isLoading = $derived(endpointStore.isLoading);
 
   async function selectProject() {
+    if (!isTauri()) {
+      console.warn('Tauri environment required. Run the desktop app (pnpm tauri dev).');
+      return;
+    }
     try {
       // Use Tauri command to select project folder
       const selectedPath = await invoke('select_project_folder');
       if (selectedPath) {
+        // Load from filesystem manifest first for instant UI
+        await endpointStore.loadFromFilesystem(selectedPath as string);
+        // Then run discovery to refresh and persist
         await endpointStore.discoverEndpoints(selectedPath as string);
       }
     } catch (error) {
@@ -19,6 +31,7 @@
   }
 
   async function toggleWatching() {
+    if (!isTauri()) return;
     if (projectState.isWatching) {
       await endpointStore.stopWatching();
     } else {
@@ -35,12 +48,19 @@
         class="watch-toggle" 
         class:watching={projectState.isWatching}
         onclick={toggleWatching}
-        disabled={isLoading}
+        disabled={isLoading || !isTauri()}
+        title={!isTauri() ? 'Run the desktop app with Tauri to enable watching' : ''}
       >
         {projectState.isWatching ? '⏹️ Stop Watching' : '▶️ Start Watching'}
       </button>
     {/if}
   </div>
+
+  {#if !isTauri()}
+    <div class="tauri-hint">
+      ⚠️ Project selection requires Tauri. Run the desktop app (pnpm tauri dev) instead of Vite-only.
+    </div>
+  {/if}
 
   {#if projectState.path}
     <div class="project-info">
@@ -52,7 +72,7 @@
       </div>
     </div>
   {:else}
-    <button class="select-project-btn" onclick={selectProject} disabled={isLoading}>
+    <button class="select-project-btn" onclick={selectProject} disabled={isLoading || !isTauri()} title={!isTauri() ? 'Run the desktop app with Tauri to select a project' : ''}>
       {isLoading ? 'Loading...' : '📁 Select Project'}
     </button>
   {/if}
@@ -77,6 +97,16 @@
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--color-text-primary);
+  }
+
+  .tauri-hint {
+    margin: 0.5rem 0 0.75rem 0;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    background: var(--color-warning-surface);
+    color: var(--color-warning);
+    border: 1px dashed var(--color-warning);
+    border-radius: 6px;
   }
 
   .watch-toggle {

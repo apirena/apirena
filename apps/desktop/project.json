@@ -5,10 +5,22 @@
   "projectType": "application",
   "tags": ["type:app", "platform:desktop"],
   "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd apps/desktop && pnpm tauri dev --no-watch"
+      }
+    },
     "dev": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cd apps/desktop && pnpm tauri dev"
+        "command": "cd apps/desktop && pnpm tauri dev --no-watch"
+      }
+    },
+    "serve-static": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd apps/desktop && pnpm build && pnpm tauri dev --no-watch -c src-tauri/tauri.static.conf.json"
       }
     },
     "build": {

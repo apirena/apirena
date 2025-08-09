@@ -1,0 +1,47 @@
+[
+  {
+    "id": "POST:/auth/login",
+    "method": "Post",
+    "path": "/auth/login",
+    "file": "src/routes/auth.js",
+    "line": 5,
+    "framework": "auto",
+    "last_seen": "2025-08-09T04:53:58.990664Z"
+  },
+  {
+    "id": "POST:/v1/auth/login",
+    "method": "Post",
+    "path": "/v1/auth/login",
+    "file": "src/routes/auth.js",
+    "line": 21,
+    "framework": "auto",
+    "last_seen": "2025-08-09T04:53:58.990664Z"
+  },
+  {
+    "id": "POST:/auth/register",
+    "method": "Post",
+    "path": "/auth/register",
+    "file": "src/routes/auth.js",
+    "line": 37,
+    "framework": "auto",
+    "last_seen": "2025-08-09T04:53:58.990664Z"
+  },
+  {
+    "id": "POST:/auth/logout",
+    "method": "Post",
+    "path": "/auth/logout",
+    "file": "src/routes/auth.js",
+    "line": 55,
+    "framework": "auto",
+    "last_seen": "2025-08-09T04:53:58.990664Z"
+  },
+  {
+    "id": "GET:/auth/me",
+    "method": "Get",
+    "path": "/auth/me",
+    "file": "src/routes/auth.js",
+    "line": 60,
+    "framework": "auto",
+    "last_seen": "2025-08-09T04:53:58.990664Z"
+  }
+]
