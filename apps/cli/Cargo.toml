@@ -1,11 +1,11 @@
 [package]
-name = "reqsmith-cli"
+name = "pinpath-cli"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
 
 [[bin]]
-name = "reqsmith"
+name = "pinpath"
 path = "src/main.rs"
 
 [dependencies]
@@ -16,6 +16,6 @@ tracing.workspace = true
 tracing-subscriber = "0.3"
 walkdir = "2.4"
 serde_json = "1.0"
-reqsmith-core = { path = "../../libs/core" }
-reqsmith-parser = { path = "../../libs/parser" }
-reqsmith-diff = { path = "../../libs/diff" }
+pinpath-core = { path = "../../libs/core" }
+pinpath-parser = { path = "../../libs/parser" }
+pinpath-diff = { path = "../../libs/diff" }

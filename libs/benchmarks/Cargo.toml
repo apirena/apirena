@@ -1,5 +1,5 @@
 [package]
-name = "reqsmith-benchmarks"
+name = "pinpath-benchmarks"
 version = "0.1.0"
 edition = "2021"
 
@@ -19,9 +19,9 @@ name = "stress_test"
 path = "src/bin/stress_test.rs"
 
 [dependencies]
-# Core reqsmith libraries
-reqsmith-core = { path = "../core" }
-reqsmith-parser = { path = "../parser" }
+# Core pinpath libraries
+pinpath-core = { path = "../core" }
+pinpath-parser = { path = "../parser" }
 
 # Benchmarking
 criterion = { version = "0.5", features = ["html_reports"] }

@@ -1,5 +1,5 @@
 [package]
-name = "reqsmith-core"
+name = "pinpath-core"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
@@ -10,7 +10,7 @@ tokio.workspace = true
 notify.workspace = true
 tracing.workspace = true
 serde.workspace = true
-reqsmith-diff = { path = "../diff" }
+pinpath-diff = { path = "../diff" }
 
 [dev-dependencies]
 tempfile = "3.8"

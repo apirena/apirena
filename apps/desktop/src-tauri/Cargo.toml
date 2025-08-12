@@ -30,10 +30,10 @@ chrono = { version = "0.4", features = ["serde"] }
 uuid = { version = "1", features = ["v4"] }
 pathdiff = "0.2"
 
-# Reqsmith libraries
-reqsmith-core = { path = "../../../libs/core" }
-reqsmith-parser = { path = "../../../libs/parser" }
-reqsmith-diff = { path = "../../../libs/diff" }
+# Pinpath libraries
+pinpath-core = { path = "../../../libs/core" }
+pinpath-parser = { path = "../../../libs/parser" }
+pinpath-diff = { path = "../../../libs/diff" }
 tauri-plugin-dialog = "2.3.2"
 notify.workspace = true
 tauri-plugin-os = "2.3.0"
