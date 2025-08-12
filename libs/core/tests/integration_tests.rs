@@ -1,4 +1,4 @@
-use reqsmith_core::{FileWatcher, FileEventType};
+use pinpath_core::{FileWatcher, FileEventType};
 use tempfile::TempDir;
 use tokio::fs;
 use tokio::time::{timeout, Duration};

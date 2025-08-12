@@ -2,8 +2,8 @@ use std::path::PathBuf;
 use std::fs;
 use std::time::Instant;
 use std::collections::HashMap;
-use reqsmith_parser::{LanguageParser, languages::javascript::JavaScriptParser, detect_language};
-use reqsmith_benchmarks::measure_memory_usage;
+use pinpath_parser::{LanguageParser, languages::javascript::JavaScriptParser, detect_language};
+use pinpath_benchmarks::measure_memory_usage;
 use walkdir::WalkDir;
 
 #[derive(Debug)]
@@ -17,7 +17,7 @@ struct BenchmarkResult {
 }
 
 fn main() {
-    println!("🚀 Reqsmith Performance Analysis: Cold Start vs Hot Reload");
+    println!("🚀 Pinpath Performance Analysis: Cold Start vs Hot Reload");
     println!("===========================================================");
     println!("Testing real-world development workflow performance\n");
     
@@ -57,7 +57,7 @@ fn main() {
 fn benchmark_development_workflow(project_path: &PathBuf) -> Result<BenchmarkResult, Box<dyn std::error::Error>> {
     let js_parser = JavaScriptParser;
     
-    // 1. Cold start: Full project analysis (like opening Reqsmith first time)
+    // 1. Cold start: Full project analysis (like opening Pinpath first time)
     let cold_start_time = Instant::now();
     let (file_cache, endpoints_found) = parse_all_files(project_path, &js_parser)?;
     let cold_start_ms = cold_start_time.elapsed().as_millis() as f64;

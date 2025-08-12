@@ -2,7 +2,7 @@
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "desktop",
   "version": "0.1.0",
-  "identifier": "com.reqsmith.app",
+  "identifier": "com.pinpath.app",
   "build": {
     "beforeDevCommand": "pnpm build",
     "frontendDist": "../build"

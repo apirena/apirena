@@ -2,8 +2,8 @@ use std::collections::HashMap;
 use std::path::{Path, PathBuf};
 use std::sync::OnceLock;
 use tauri::{AppHandle, Emitter, TitleBarStyle, WebviewUrl, WebviewWindowBuilder, Manager};
-use reqsmith_parser::{Endpoint, LanguageParser, detect_language};
-use reqsmith_parser::languages::{javascript::JavaScriptParser, python::PythonParser, php::PhpParser};
+use pinpath_parser::{Endpoint, LanguageParser, detect_language};
+use pinpath_parser::languages::{javascript::JavaScriptParser, python::PythonParser, php::PhpParser};
 
 mod storage;
 mod watcher;
@@ -141,7 +141,7 @@ async fn select_project_folder_from(app_handle: AppHandle, start_path: String) -
 
 
 fn find_workspace_root() -> Option<std::path::PathBuf> {
-    // Try to locate the reqsmith workspace root
+    // Try to locate the workspace root
     if let Ok(mut dir) = std::env::current_dir() {
         for _ in 0..8 {  // Increased search depth
             if dir.join("nx.json").exists() && dir.join("pnpm-workspace.yaml").exists() {
@@ -319,13 +319,13 @@ async fn send_request(
     
     // Build request based on method
     let mut request_builder = match endpoint.method {
-        reqsmith_parser::HttpMethod::Get => client.get(&url),
-        reqsmith_parser::HttpMethod::Post => client.post(&url),
-        reqsmith_parser::HttpMethod::Put => client.put(&url),
-        reqsmith_parser::HttpMethod::Delete => client.delete(&url),
-        reqsmith_parser::HttpMethod::Patch => client.patch(&url),
-        reqsmith_parser::HttpMethod::Options => client.request(reqwest::Method::OPTIONS, &url),
-        reqsmith_parser::HttpMethod::Head => client.head(&url),
+        pinpath_parser::HttpMethod::Get => client.get(&url),
+        pinpath_parser::HttpMethod::Post => client.post(&url),
+        pinpath_parser::HttpMethod::Put => client.put(&url),
+        pinpath_parser::HttpMethod::Delete => client.delete(&url),
+        pinpath_parser::HttpMethod::Patch => client.patch(&url),
+        pinpath_parser::HttpMethod::Options => client.request(reqwest::Method::OPTIONS, &url),
+        pinpath_parser::HttpMethod::Head => client.head(&url),
     };
 
     // Add query parameters for GET requests

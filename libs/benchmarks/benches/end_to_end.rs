@@ -1,11 +1,11 @@
 use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion};
-use reqsmith_benchmarks::{
+use pinpath_benchmarks::{
     scenarios::{BenchmarkScenario, ProjectSize, ScenarioFactory},
     metrics::{DetailedMetrics, TimingMetrics, MemoryMetrics, ThroughputMetrics, QualityMetrics},
     BenchmarkTimer, measure_memory_usage,
 };
-use reqsmith_core::watcher::Watcher;
-use reqsmith_parser::parse_file;
+use pinpath_core::watcher::Watcher;
+use pinpath_parser::parse_file;
 use std::fs;
 use std::path::PathBuf;
 use std::time::Duration;

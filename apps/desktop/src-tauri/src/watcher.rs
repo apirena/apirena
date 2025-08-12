@@ -6,8 +6,8 @@ use std::sync::mpsc;
 use tauri::{AppHandle, Emitter};
 use tokio::task;
 
-use reqsmith_parser::{IncrementalParser, incremental::EndpointState, Endpoint, detect_language, LanguageParser};
-use reqsmith_parser::languages::{javascript::JavaScriptParser, python::PythonParser, php::PhpParser};
+use pinpath_parser::{IncrementalParser, incremental::EndpointState, Endpoint, detect_language, LanguageParser};
+use pinpath_parser::languages::{javascript::JavaScriptParser, python::PythonParser, php::PhpParser};
 
 use crate::storage::{ReqSmithStorage, EndpointRecord};
 

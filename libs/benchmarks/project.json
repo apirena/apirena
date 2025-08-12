@@ -1,97 +1,53 @@
 {
   "name": "benchmarks",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "library",
   "sourceRoot": "libs/benchmarks/src",
+  "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@monodon/rust:check",
-      "outputs": [
-        "{options.target-dir}"
-      ],
-      "options": {
-        "target-dir": "dist/target/benchmarks"
-      }
+      "executor": "@monodon/rust:build",
+      "options": {}
     },
     "test": {
-      "cache": true,
       "executor": "@monodon/rust:test",
-      "outputs": [
-        "{options.target-dir}"
-      ],
-      "options": {
-        "target-dir": "dist/target/benchmarks",
-        "package": "reqsmith-benchmarks"
-      },
-      "configurations": {
-        "production": {
-          "release": true
-        }
-      }
+      "options": {}
     },
-    "lint": {
-      "cache": true,
-      "executor": "@monodon/rust:lint",
-      "outputs": [
-        "{options.target-dir}"
-      ],
-      "options": {
-        "target-dir": "dist/target/benchmarks"
-      }
-    },
-    "bench-demo": {
+    "run:bench_demo": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo run --package reqsmith-benchmarks --bin bench_demo",
-        "cwd": "{workspaceRoot}"
+        "command": "cargo run --package pinpath-benchmarks --bin bench_demo"
       }
     },
-    "bench-parser": {
+    "bench:parser_micro": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo bench --package reqsmith-benchmarks --bench parser_micro",
-        "cwd": "{workspaceRoot}"
+        "command": "cargo bench --package pinpath-benchmarks --bench parser_micro"
       }
     },
-    "bench-watcher": {
+    "bench:watcher_micro": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo bench --package reqsmith-benchmarks --bench watcher_micro",
-        "cwd": "{workspaceRoot}"
+        "command": "cargo bench --package pinpath-benchmarks --bench watcher_micro"
       }
     },
-    "bench-e2e": {
+    "bench:end_to_end": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo bench --package reqsmith-benchmarks --bench end_to_end",
-        "cwd": "{workspaceRoot}"
+        "command": "cargo bench --package pinpath-benchmarks --bench end_to_end"
       }
     },
-    "bench-scalability": {
+    "bench:scalability": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo bench --package reqsmith-benchmarks --bench scalability",
-        "cwd": "{workspaceRoot}"
+        "command": "cargo bench --package pinpath-benchmarks --bench scalability"
       }
     },
-    "bench-demo": {
+    "run:bench_demo:dev": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo run --package reqsmith-benchmarks --bin bench_demo",
-        "cwd": "{workspaceRoot}"
-      }
-    },
-    "bench-all": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          "nx run benchmarks:bench-parser",
-          "nx run benchmarks:bench-watcher", 
-          "nx run benchmarks:bench-e2e",
-          "nx run benchmarks:bench-scalability"
-        ],
-        "parallel": false
+        "command": "cargo run --package pinpath-benchmarks --bin bench_demo"
       }
     }
-  }
+  },
+  "tags": ["type:library", "scope:pinpath"]
 }

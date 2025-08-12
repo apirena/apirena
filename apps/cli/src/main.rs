@@ -3,10 +3,10 @@ use clap::{Parser, Subcommand};
 use std::path::PathBuf;
 use tracing::info;
 use std::fs;
-use reqsmith_core::{FileWatcher, FileEvent, FileEventType, EnhancedWatcher};
-use reqsmith_parser::{detect_language, languages::{javascript::JavaScriptParser, python::PythonParser, php::PhpParser}, LanguageParser, IncrementalParser, EndpointChanges};
-use reqsmith_parser::config::ConfigDiscovery;
-use reqsmith_diff::{ChangeSource, DiffProcessor};
+use pinpath_core::{FileWatcher, FileEvent, FileEventType, EnhancedWatcher};
+use pinpath_parser::{detect_language, languages::{javascript::JavaScriptParser, python::PythonParser, php::PhpParser}, LanguageParser, IncrementalParser, EndpointChanges};
+use pinpath_parser::config::ConfigDiscovery;
+use pinpath_diff::{ChangeSource, DiffProcessor};
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
@@ -89,7 +89,7 @@ async fn main() -> Result<()> {
     
     match cli.command {
         Commands::Watch { path, port } => {
-            info!("Starting Reqsmith watcher on {} (port {})", path.display(), port);
+            info!("Starting Pinpath watcher on {} (port {})", path.display(), port);
             println!("🔍 Watching {} for API changes...", path.display());
             println!("🌐 Web interface available at http://localhost:{}", port);
             
@@ -177,7 +177,7 @@ async fn main() -> Result<()> {
                         println!("\n💡 You can now:");
                         println!("   1. Review the generated configuration");
                         println!("   2. Add custom patterns in the 'overrides' section");
-                        println!("   3. Run 'reqsmith discover {}' to test endpoint detection", path.display());
+                        println!("   3. Run 'pinpath discover {}' to test endpoint detection", path.display());
                     } else {
                         println!("❌ Failed to create configuration file");
                     }
@@ -319,7 +319,7 @@ async fn analyze_file(path: &PathBuf) -> Result<()> {
     Ok(())
 }
 
-fn discover_endpoints(path: &PathBuf) -> Result<Vec<reqsmith_parser::Endpoint>> {
+fn discover_endpoints(path: &PathBuf) -> Result<Vec<pinpath_parser::Endpoint>> {
     let mut all_endpoints = Vec::new();
     
     if path.is_file() {
@@ -342,7 +342,7 @@ fn discover_endpoints(path: &PathBuf) -> Result<Vec<reqsmith_parser::Endpoint>> 
     Ok(all_endpoints)
 }
 
-fn parse_file_content(content: &str, path: &PathBuf) -> Result<Vec<reqsmith_parser::Endpoint>> {
+fn parse_file_content(content: &str, path: &PathBuf) -> Result<Vec<pinpath_parser::Endpoint>> {
     let extension = path.extension()
         .and_then(|ext| ext.to_str())
         .unwrap_or("");
@@ -419,7 +419,7 @@ fn detect_breaking_changes(changes: &EndpointChanges) -> Vec<String> {
     // Modified endpoints might be breaking
     for change in &changes.modified {
         match change.change_type {
-            reqsmith_parser::ChangeType::PathChanged => {
+            pinpath_parser::ChangeType::PathChanged => {
                 breaking_changes.push(format!(
                     "Changed path: {} {} -> {}",
                     format!("{:?}", change.old.method),
@@ -427,7 +427,7 @@ fn detect_breaking_changes(changes: &EndpointChanges) -> Vec<String> {
                     change.new.path
                 ));
             }
-            reqsmith_parser::ChangeType::MethodChanged => {
+            pinpath_parser::ChangeType::MethodChanged => {
                 breaking_changes.push(format!(
                     "Changed method: {} {} -> {} {}",
                     format!("{:?}", change.old.method),
@@ -436,9 +436,7 @@ fn detect_breaking_changes(changes: &EndpointChanges) -> Vec<String> {
                     change.new.path
                 ));
             }
-            _ => {
-                // Other changes are potentially breaking but less critical
-            }
+            _ => {}
         }
     }
 
@@ -449,7 +447,7 @@ fn detect_breaking_changes(changes: &EndpointChanges) -> Vec<String> {
 fn load_parser_state(state_path: &std::path::Path) -> Result<IncrementalParser> {
     if state_path.exists() {
         let content = fs::read_to_string(state_path)?;
-        let state: reqsmith_parser::incremental::EndpointState = serde_json::from_str(&content)?;
+        let state: pinpath_parser::incremental::EndpointState = serde_json::from_str(&content)?;
         Ok(IncrementalParser::with_state(state))
     } else {
         Ok(IncrementalParser::new())

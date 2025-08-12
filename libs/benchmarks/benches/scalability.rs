@@ -1,11 +1,11 @@
 use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion, Throughput};
-use reqsmith_benchmarks::{
+use pinpath_benchmarks::{
     scenarios::{BenchmarkScenario, ProjectSize},
     metrics::DetailedMetrics,
     BenchmarkTimer, measure_memory_usage,
 };
-use reqsmith_core::watcher::Watcher;
-use reqsmith_parser::parse_file;
+use pinpath_core::watcher::Watcher;
+use pinpath_parser::parse_file;
 use std::fs;
 use std::path::PathBuf;
 use std::time::Duration;
@@ -14,7 +14,7 @@ use tokio::runtime::Runtime;
 
 /// Scalability benchmarks that test performance under stress:
 /// Large projects, many files, rapid changes, memory pressure
-/// These validate that Reqsmith can handle enterprise-scale projects
+/// These validate that Pinpath can handle enterprise-scale projects
 
 fn benchmark_large_project_discovery(c: &mut Criterion) {
     let mut group = c.benchmark_group("large_project_discovery");
@@ -247,7 +247,7 @@ async fn measure_large_project_performance(project_path: &std::path::Path) -> De
     let total_time = timer.elapsed();
     
     DetailedMetrics {
-        timing: reqsmith_benchmarks::metrics::TimingMetrics {
+        timing: pinpath_benchmarks::metrics::TimingMetrics {
             total_duration: total_time,
             discovery_time: total_time / 4,
             parse_time: total_time / 2,
@@ -255,19 +255,19 @@ async fn measure_large_project_performance(project_path: &std::path::Path) -> De
             config_generation_time: total_time / 8,
             file_watching_setup_time: total_time / 8,
         },
-        memory: reqsmith_benchmarks::metrics::MemoryMetrics {
+        memory: pinpath_benchmarks::metrics::MemoryMetrics {
             peak_memory_mb: (files.len() as f64 * 0.1).max(10.0),
             memory_per_file_kb: 100.0,
             memory_per_endpoint_bytes: if total_endpoints > 0 { 2048.0 } else { 0.0 },
             memory_growth_rate: 0.5,
         },
-        throughput: reqsmith_benchmarks::metrics::ThroughputMetrics {
+        throughput: pinpath_benchmarks::metrics::ThroughputMetrics {
             files_per_second: files.len() as f64 / total_time.as_secs_f64(),
             endpoints_per_second: total_endpoints as f64 / total_time.as_secs_f64(),
             lines_per_second: total_lines as f64 / total_time.as_secs_f64(),
             bytes_per_second: (total_lines * 50) as f64 / total_time.as_secs_f64(),
         },
-        quality: reqsmith_benchmarks::metrics::QualityMetrics {
+        quality: pinpath_benchmarks::metrics::QualityMetrics {
             endpoints_found: total_endpoints,
             frameworks_detected: frameworks_detected.into_iter().collect(),
             accuracy: 0.92, // Lower for large projects due to complexity

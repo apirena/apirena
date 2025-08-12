@@ -1,6 +1,6 @@
 use crate::{Endpoint, LanguageParser};
 use anyhow::Result;
-use reqsmith_diff::{ChangeEvent, CodeRegion, FileDiff};
+use pinpath_diff::{ChangeEvent, CodeRegion, FileDiff};
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 use std::collections::HashMap;

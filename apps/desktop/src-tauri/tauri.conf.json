@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Reqsmith",
+  "productName": "Pinpath",
   "version": "0.1.0",
-  "identifier": "com.reqsmith.app",
+  "identifier": "com.pinpath.app",
   "build": {
     "beforeDevCommand": "pnpm dev",
     "devUrl": "http://localhost:1420",

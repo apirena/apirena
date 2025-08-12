@@ -2,8 +2,8 @@ use std::path::PathBuf;
 use std::fs;
 use std::time::Instant;
 use std::collections::HashMap;
-use reqsmith_parser::{LanguageParser, languages::javascript::JavaScriptParser, detect_language};
-use reqsmith_benchmarks::measure_memory_usage;
+use pinpath_parser::{LanguageParser, languages::javascript::JavaScriptParser, detect_language};
+use pinpath_benchmarks::measure_memory_usage;
 use walkdir::WalkDir;
 
 #[derive(Debug)]
@@ -21,7 +21,7 @@ struct StressTestResult {
 }
 
 fn main() {
-    println!("🚀 Reqsmith Stress Test & Scalability Analysis");
+    println!("🚀 Pinpath Stress Test & Scalability Analysis");
     println!("================================================");
     println!("Testing limits and edge cases for development workflows\n");
     

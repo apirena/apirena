@@ -5,7 +5,7 @@ use std::collections::BTreeMap;
 use std::fs;
 use std::path::{Path, PathBuf};
 
-use reqsmith_parser::{Endpoint, incremental::EndpointState};
+use pinpath_parser::{Endpoint, incremental::EndpointState};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct EndpointManifest {

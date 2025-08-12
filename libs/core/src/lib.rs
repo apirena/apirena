@@ -3,7 +3,7 @@ use notify::{Event, RecommendedWatcher, RecursiveMode, Watcher};
 use tokio::sync::mpsc;
 use anyhow::Result;
 use std::time::SystemTime;
-use reqsmith_diff::{ChangeEvent, ChangeSource, DiffProcessor};
+use pinpath_diff::{ChangeEvent, ChangeSource, DiffProcessor};
 
 pub struct FileWatcher {
     watcher: Option<RecommendedWatcher>,

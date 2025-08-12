@@ -1,5 +1,5 @@
 {
-  "name": "reqsmith-diff",
+  "name": "pinpath-diff",
   "type": "library",
   "sourceRoot": "libs/diff/src",
   "projectType": "library",
@@ -13,5 +13,5 @@
       "options": {}
     }
   },
-  "tags": ["type:library", "scope:reqsmith"]
+  "tags": ["type:library", "scope:pinpath"]
 }

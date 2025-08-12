@@ -1,12 +1,12 @@
 use std::path::PathBuf;
 use std::fs;
 use std::time::Instant;
-use reqsmith_parser::{LanguageParser, languages::javascript::JavaScriptParser, detect_language};
-use reqsmith_benchmarks::measure_memory_usage;
+use pinpath_parser::{LanguageParser, languages::javascript::JavaScriptParser, detect_language};
+use pinpath_benchmarks::measure_memory_usage;
 use walkdir::WalkDir;
 
 fn main() {
-    println!("🚀 Reqsmith Performance Benchmark Suite");
+    println!("🚀 Pinpath Performance Benchmark Suite");
     println!("==========================================");
     println!("Testing real-world endpoint discovery performance\n");
     
