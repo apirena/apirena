@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ProjectSelector from '$lib/components/sidebar/ProjectSelector.svelte';
+  import TopNavbar from '$lib/components/navbar/TopNavbar.svelte';
   import EndpointList from '$lib/components/sidebar/EndpointList.svelte';
   import RequestBuilder from '$lib/components/request/RequestBuilder.svelte';
   import ResponseViewer from '$lib/components/response/ResponseViewer.svelte';
@@ -13,39 +13,38 @@
   <title>Reqsmith Desktop</title>
 </svelte:head>
 
-<div class="h-screen bg-background text-foreground">
-  <Splitpanes class="default-theme splitpanes-shadcn" horizontal={false}>
-    <!-- Sidebar -->
-    <Pane size={22} minSize={16} maxSize={40} class="bg-background">
-      <div class="p-3 h-full flex flex-col">
-        <!-- Removed App Logo / Header Card -->
-
-        <div class="space-y-3">
-          <ProjectSelector />
+<div class="h-screen bg-background text-foreground flex flex-col">
+  <!-- Top Navbar -->
+  <TopNavbar />
+  
+  <!-- Main Content -->
+  <div class="flex-1 overflow-hidden">
+    <Splitpanes class="default-theme splitpanes-shadcn" horizontal={false}>
+      <!-- Sidebar -->
+      <Pane size={22} minSize={16} maxSize={40} class="bg-background">
+        <div class="p-3 h-full flex flex-col">
+          <ScrollArea class="flex-1 bg-background">
+            <EndpointList />
+          </ScrollArea>
         </div>
+      </Pane>
 
-        <Separator class="my-3" />
+      <!-- Builder -->
+      <Pane size={46} minSize={30}>
+        <div class="h-full overflow-hidden p-4 bg-background">
+          <RequestBuilder />
+        </div>
+      </Pane>
 
-        <ScrollArea class="flex-1 bg-background">
-          <EndpointList />
-        </ScrollArea>
-      </div>
-    </Pane>
-
-    <!-- Builder -->
-    <Pane size={46} minSize={30}>
-      <div class="h-full overflow-hidden p-4 bg-background">
-        <RequestBuilder />
-      </div>
-    </Pane>
-
-    <!-- Response -->
-    <Pane size={32} minSize={24}>
-      <div class="h-full overflow-hidden p-4 bg-background">
-        <ResponseViewer />
-      </div>
-    </Pane>
-  </Splitpanes>
+      <!-- Response -->
+      <Pane size={32} minSize={24}>
+        <div class="h-full overflow-hidden p-4 bg-background">
+          <ResponseViewer />
+        </div>
+      </Pane>
+    </Splitpanes>
+  </div>
+  
   <!-- Keep the app alive and show any runtime error -->
   <GlobalErrorOverlay />
 </div>

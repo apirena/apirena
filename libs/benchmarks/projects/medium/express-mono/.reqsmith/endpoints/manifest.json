@@ -1,0 +1,439 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-12T05:15:53.510254Z",
+  "endpoints": [
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "routes/orders.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/",
+      "method": "Post",
+      "path": "/",
+      "file": "routes/orders.js",
+      "line": 33,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/:id",
+      "method": "Get",
+      "path": "/:id",
+      "file": "routes/orders.js",
+      "line": 80,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "PATCH:/:id/status",
+      "method": "Patch",
+      "path": "/:id/status",
+      "file": "routes/orders.js",
+      "line": 96,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "DELETE:/:id",
+      "method": "Delete",
+      "path": "/:id",
+      "file": "routes/orders.js",
+      "line": 121,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/user/:userId",
+      "method": "Get",
+      "path": "/user/:userId",
+      "file": "routes/orders.js",
+      "line": 153,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/stats/summary",
+      "method": "Get",
+      "path": "/stats/summary",
+      "file": "routes/orders.js",
+      "line": 178,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/:id/tracking",
+      "method": "Get",
+      "path": "/:id/tracking",
+      "file": "routes/orders.js",
+      "line": 216,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "routes/products.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/",
+      "method": "Post",
+      "path": "/",
+      "file": "routes/products.js",
+      "line": 42,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/:id",
+      "method": "Get",
+      "path": "/:id",
+      "file": "routes/products.js",
+      "line": 62,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "PUT:/:id",
+      "method": "Put",
+      "path": "/:id",
+      "file": "routes/products.js",
+      "line": 78,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "DELETE:/:id",
+      "method": "Delete",
+      "path": "/:id",
+      "file": "routes/products.js",
+      "line": 97,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/categories/list",
+      "method": "Get",
+      "path": "/categories/list",
+      "file": "routes/products.js",
+      "line": 112,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/search/query",
+      "method": "Get",
+      "path": "/search/query",
+      "file": "routes/products.js",
+      "line": 122,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "PUT:/:id/stock",
+      "method": "Put",
+      "path": "/:id/stock",
+      "file": "routes/products.js",
+      "line": 144,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/bulk/create",
+      "method": "Post",
+      "path": "/bulk/create",
+      "file": "routes/products.js",
+      "line": 165,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "PATCH:/bulk/update",
+      "method": "Patch",
+      "path": "/bulk/update",
+      "file": "routes/products.js",
+      "line": 175,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/login",
+      "method": "Post",
+      "path": "/login",
+      "file": "routes/auth.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/register",
+      "method": "Post",
+      "path": "/register",
+      "file": "routes/auth.js",
+      "line": 10,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/logout",
+      "method": "Post",
+      "path": "/logout",
+      "file": "routes/auth.js",
+      "line": 15,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/forgot-password",
+      "method": "Post",
+      "path": "/forgot-password",
+      "file": "routes/auth.js",
+      "line": 20,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/reset-password",
+      "method": "Post",
+      "path": "/reset-password",
+      "file": "routes/auth.js",
+      "line": 25,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/verify-email/:token",
+      "method": "Get",
+      "path": "/verify-email/:token",
+      "file": "routes/auth.js",
+      "line": 30,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/refresh-token",
+      "method": "Post",
+      "path": "/refresh-token",
+      "file": "routes/auth.js",
+      "line": 35,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/users",
+      "method": "Get",
+      "path": "/users",
+      "file": "routes/users.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/users",
+      "method": "Post",
+      "path": "/users",
+      "file": "routes/users.js",
+      "line": 14,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/users/:id",
+      "method": "Get",
+      "path": "/users/:id",
+      "file": "routes/users.js",
+      "line": 23,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "PUT:/users/:id",
+      "method": "Put",
+      "path": "/users/:id",
+      "file": "routes/users.js",
+      "line": 35,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "DELETE:/users/:id",
+      "method": "Delete",
+      "path": "/users/:id",
+      "file": "routes/users.js",
+      "line": 48,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/stripe/payment",
+      "method": "Post",
+      "path": "/stripe/payment",
+      "file": "routes/webhooks.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/github/deployment",
+      "method": "Post",
+      "path": "/github/deployment",
+      "file": "routes/webhooks.js",
+      "line": 9,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/slack/notifications",
+      "method": "Post",
+      "path": "/slack/notifications",
+      "file": "routes/webhooks.js",
+      "line": 13,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/sendgrid/email-events",
+      "method": "Post",
+      "path": "/sendgrid/email-events",
+      "file": "routes/webhooks.js",
+      "line": 17,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/auth0/user-events",
+      "method": "Post",
+      "path": "/auth0/user-events",
+      "file": "routes/webhooks.js",
+      "line": 21,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/monitoring/alerts",
+      "method": "Post",
+      "path": "/monitoring/alerts",
+      "file": "routes/webhooks.js",
+      "line": 25,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/webhook-logs",
+      "method": "Get",
+      "path": "/webhook-logs",
+      "file": "routes/webhooks.js",
+      "line": 29,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/dashboard",
+      "method": "Get",
+      "path": "/dashboard",
+      "file": "routes/analytics.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/sales-metrics",
+      "method": "Get",
+      "path": "/sales-metrics",
+      "file": "routes/analytics.js",
+      "line": 9,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/user-metrics",
+      "method": "Get",
+      "path": "/user-metrics",
+      "file": "routes/analytics.js",
+      "line": 13,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/performance-metrics",
+      "method": "Get",
+      "path": "/performance-metrics",
+      "file": "routes/analytics.js",
+      "line": 17,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/custom-report",
+      "method": "Post",
+      "path": "/custom-report",
+      "file": "routes/analytics.js",
+      "line": 21,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/export/:format",
+      "method": "Get",
+      "path": "/export/:format",
+      "file": "routes/analytics.js",
+      "line": 25,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/real-time-stats",
+      "method": "Get",
+      "path": "/real-time-stats",
+      "file": "routes/analytics.js",
+      "line": 29,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "POST:/event-tracking",
+      "method": "Post",
+      "path": "/event-tracking",
+      "file": "routes/analytics.js",
+      "line": 33,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/health",
+      "method": "Get",
+      "path": "/health",
+      "file": "app.js",
+      "line": 30,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    },
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "app.js",
+      "line": 35,
+      "framework": "auto",
+      "last_seen": "2025-08-12T05:15:53.510254Z"
+    }
+  ],
+  "statistics": {
+    "total": 47,
+    "by_method": {
+      "Delete": 3,
+      "Get": 21,
+      "Patch": 2,
+      "Post": 18,
+      "Put": 3
+    }
+  }
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "POST:/auth/login",
+    "method": "Post",
+    "path": "/auth/login",
+    "file": "express-api/src/routes/auth.js",
+    "line": 5,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "POST:/v1/auth/login",
+    "method": "Post",
+    "path": "/v1/auth/login",
+    "file": "express-api/src/routes/auth.js",
+    "line": 21,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "POST:/auth/register",
+    "method": "Post",
+    "path": "/auth/register",
+    "file": "express-api/src/routes/auth.js",
+    "line": 37,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "POST:/auth/logout",
+    "method": "Post",
+    "path": "/auth/logout",
+    "file": "express-api/src/routes/auth.js",
+    "line": 55,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/auth/me",
+    "method": "Get",
+    "path": "/auth/me",
+    "file": "express-api/src/routes/auth.js",
+    "line": 60,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  }
+]

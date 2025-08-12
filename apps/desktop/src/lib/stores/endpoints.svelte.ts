@@ -1,6 +1,6 @@
 import { invoke } from '@tauri-apps/api/core';
 import { listen } from '@tauri-apps/api/event';
-import type { Endpoint, HttpResponse, RequestConfig, ProjectState, FileChangeEvent, EndpointManifest } from '../types';
+import type { Endpoint, HttpResponse, RequestConfig, ProjectState, FileChangeEvent, EndpointManifest, Environment } from '../types';
 
 function isTauri() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -47,6 +47,13 @@ class EndpointStore {
     params: {},
     headers: { 'Content-Type': 'application/json' },
     body: ''
+  });
+
+  // Environment management
+  currentEnvironment = $state<Environment>({
+    id: 'dev',
+    name: 'Development',
+    baseUrl: 'http://localhost:3000'
   });
 
   lastResponse = $state<HttpResponse | null>(null);
@@ -151,6 +158,22 @@ class EndpointStore {
     }
   }
 
+  clearProject() {
+    this.projectState.path = '';
+    this.projectState.endpoints = [];
+    this.projectState.isWatching = false;
+    this.projectState.watchId = undefined;
+    this.selectedEndpoint = null;
+    this.requestConfig = {
+      endpoint: {} as Endpoint,
+      params: {},
+      headers: { 'Content-Type': 'application/json' },
+      body: ''
+    };
+    this.lastResponse = null;
+    this.error = null;
+  }
+
   selectEndpoint(endpoint: Endpoint) {
     this.selectedEndpoint = endpoint;
     this.requestConfig.endpoint = endpoint;
@@ -172,6 +195,10 @@ class EndpointStore {
     this.requestConfig.body = body;
   }
 
+  setEnvironment(environment: Environment) {
+    this.currentEnvironment = environment;
+  }
+
   async sendRequest() {
     if (!this.selectedEndpoint) {
       this.error = 'No endpoint selected';
@@ -190,7 +217,8 @@ class EndpointStore {
         endpoint: this.selectedEndpoint,
         params: this.requestConfig.params,
         headers: this.requestConfig.headers,
-        body: this.requestConfig.body || null
+        body: this.requestConfig.body || null,
+        baseUrl: this.currentEnvironment.baseUrl
       });
 
       this.lastResponse = response;

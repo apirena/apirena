@@ -1,0 +1,110 @@
+[
+  {
+    "id": "POST:/register",
+    "method": "Post",
+    "path": "/register",
+    "file": "flask-app/routes/auth.py",
+    "line": 9,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "POST:/login",
+    "method": "Post",
+    "path": "/login",
+    "file": "flask-app/routes/auth.py",
+    "line": 40,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/me",
+    "method": "Get",
+    "path": "/me",
+    "file": "flask-app/routes/auth.py",
+    "line": 60,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "POST:/change-password",
+    "method": "Post",
+    "path": "/change-password",
+    "file": "flask-app/routes/auth.py",
+    "line": 72,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "POST:/logout",
+    "method": "Post",
+    "path": "/logout",
+    "file": "flask-app/routes/auth.py",
+    "line": 91,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "POST:/refresh",
+    "method": "Post",
+    "path": "/refresh",
+    "file": "flask-app/routes/auth.py",
+    "line": 97,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/register",
+    "method": "Get",
+    "path": "/register",
+    "file": "flask-app/routes/auth.py",
+    "line": 9,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/login",
+    "method": "Get",
+    "path": "/login",
+    "file": "flask-app/routes/auth.py",
+    "line": 40,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/me",
+    "method": "Get",
+    "path": "/me",
+    "file": "flask-app/routes/auth.py",
+    "line": 60,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/change-password",
+    "method": "Get",
+    "path": "/change-password",
+    "file": "flask-app/routes/auth.py",
+    "line": 72,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/logout",
+    "method": "Get",
+    "path": "/logout",
+    "file": "flask-app/routes/auth.py",
+    "line": 91,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/refresh",
+    "method": "Get",
+    "path": "/refresh",
+    "file": "flask-app/routes/auth.py",
+    "line": 97,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  }
+]

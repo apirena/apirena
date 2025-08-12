@@ -1,0 +1,862 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-12T04:17:33.381028Z",
+  "endpoints": [
+    {
+      "id": "GET:/dashboard",
+      "method": "Get",
+      "path": "/dashboard",
+      "file": "mixed-stack/backend/routes/analytics.py",
+      "line": 12,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/users",
+      "method": "Get",
+      "path": "/users",
+      "file": "mixed-stack/backend/routes/analytics.py",
+      "line": 67,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/products",
+      "method": "Get",
+      "path": "/products",
+      "file": "mixed-stack/backend/routes/analytics.py",
+      "line": 130,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/orders",
+      "method": "Get",
+      "path": "/orders",
+      "file": "mixed-stack/backend/routes/analytics.py",
+      "line": 223,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/dashboard",
+      "method": "Get",
+      "path": "/dashboard",
+      "file": "mixed-stack/backend/routes/analytics.py",
+      "line": 12,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/users",
+      "method": "Get",
+      "path": "/users",
+      "file": "mixed-stack/backend/routes/analytics.py",
+      "line": 67,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/products",
+      "method": "Get",
+      "path": "/products",
+      "file": "mixed-stack/backend/routes/analytics.py",
+      "line": 130,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/orders",
+      "method": "Get",
+      "path": "/orders",
+      "file": "mixed-stack/backend/routes/analytics.py",
+      "line": 223,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "express-api/src/routes/orders.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/",
+      "method": "Post",
+      "path": "/",
+      "file": "express-api/src/routes/orders.js",
+      "line": 33,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/:id",
+      "method": "Get",
+      "path": "/:id",
+      "file": "express-api/src/routes/orders.js",
+      "line": 80,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "PATCH:/:id/status",
+      "method": "Patch",
+      "path": "/:id/status",
+      "file": "express-api/src/routes/orders.js",
+      "line": 96,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "DELETE:/:id",
+      "method": "Delete",
+      "path": "/:id",
+      "file": "express-api/src/routes/orders.js",
+      "line": 121,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/user/:userId",
+      "method": "Get",
+      "path": "/user/:userId",
+      "file": "express-api/src/routes/orders.js",
+      "line": 153,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/stats/summary",
+      "method": "Get",
+      "path": "/stats/summary",
+      "file": "express-api/src/routes/orders.js",
+      "line": 178,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/:id/tracking",
+      "method": "Get",
+      "path": "/:id/tracking",
+      "file": "express-api/src/routes/orders.js",
+      "line": 216,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "express-api/src/routes/products.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/",
+      "method": "Post",
+      "path": "/",
+      "file": "express-api/src/routes/products.js",
+      "line": 42,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/:id",
+      "method": "Get",
+      "path": "/:id",
+      "file": "express-api/src/routes/products.js",
+      "line": 62,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "PUT:/:id",
+      "method": "Put",
+      "path": "/:id",
+      "file": "express-api/src/routes/products.js",
+      "line": 78,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "DELETE:/:id",
+      "method": "Delete",
+      "path": "/:id",
+      "file": "express-api/src/routes/products.js",
+      "line": 97,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/categories/list",
+      "method": "Get",
+      "path": "/categories/list",
+      "file": "express-api/src/routes/products.js",
+      "line": 112,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/search/query",
+      "method": "Get",
+      "path": "/search/query",
+      "file": "express-api/src/routes/products.js",
+      "line": 122,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "PUT:/:id/stock",
+      "method": "Put",
+      "path": "/:id/stock",
+      "file": "express-api/src/routes/products.js",
+      "line": 144,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/bulk/create",
+      "method": "Post",
+      "path": "/bulk/create",
+      "file": "express-api/src/routes/products.js",
+      "line": 165,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "PATCH:/bulk/update",
+      "method": "Patch",
+      "path": "/bulk/update",
+      "file": "express-api/src/routes/products.js",
+      "line": 175,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/auth/login",
+      "method": "Post",
+      "path": "/auth/login",
+      "file": "express-api/src/routes/auth.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/v1/auth/login",
+      "method": "Post",
+      "path": "/v1/auth/login",
+      "file": "express-api/src/routes/auth.js",
+      "line": 21,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/auth/register",
+      "method": "Post",
+      "path": "/auth/register",
+      "file": "express-api/src/routes/auth.js",
+      "line": 37,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/auth/logout",
+      "method": "Post",
+      "path": "/auth/logout",
+      "file": "express-api/src/routes/auth.js",
+      "line": 55,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/auth/me",
+      "method": "Get",
+      "path": "/auth/me",
+      "file": "express-api/src/routes/auth.js",
+      "line": 60,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/users",
+      "method": "Get",
+      "path": "/users",
+      "file": "express-api/src/routes/users.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/users",
+      "method": "Post",
+      "path": "/users",
+      "file": "express-api/src/routes/users.js",
+      "line": 14,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/users/:id",
+      "method": "Get",
+      "path": "/users/:id",
+      "file": "express-api/src/routes/users.js",
+      "line": 23,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "PUT:/users/:id",
+      "method": "Put",
+      "path": "/users/:id",
+      "file": "express-api/src/routes/users.js",
+      "line": 35,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "DELETE:/users/:id",
+      "method": "Delete",
+      "path": "/users/:id",
+      "file": "express-api/src/routes/users.js",
+      "line": 48,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/api/health",
+      "method": "Get",
+      "path": "/api/health",
+      "file": "flask-app/app.py",
+      "line": 27,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/api/status",
+      "method": "Get",
+      "path": "/api/status",
+      "file": "flask-app/app.py",
+      "line": 31,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/api/health",
+      "method": "Get",
+      "path": "/api/health",
+      "file": "flask-app/app.py",
+      "line": 27,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/api/status",
+      "method": "Get",
+      "path": "/api/status",
+      "file": "flask-app/app.py",
+      "line": 31,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/register",
+      "method": "Post",
+      "path": "/register",
+      "file": "flask-app/routes/auth.py",
+      "line": 9,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/login",
+      "method": "Post",
+      "path": "/login",
+      "file": "flask-app/routes/auth.py",
+      "line": 40,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/me",
+      "method": "Get",
+      "path": "/me",
+      "file": "flask-app/routes/auth.py",
+      "line": 60,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/change-password",
+      "method": "Post",
+      "path": "/change-password",
+      "file": "flask-app/routes/auth.py",
+      "line": 72,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/logout",
+      "method": "Post",
+      "path": "/logout",
+      "file": "flask-app/routes/auth.py",
+      "line": 91,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/refresh",
+      "method": "Post",
+      "path": "/refresh",
+      "file": "flask-app/routes/auth.py",
+      "line": 97,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/register",
+      "method": "Get",
+      "path": "/register",
+      "file": "flask-app/routes/auth.py",
+      "line": 9,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/login",
+      "method": "Get",
+      "path": "/login",
+      "file": "flask-app/routes/auth.py",
+      "line": 40,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/me",
+      "method": "Get",
+      "path": "/me",
+      "file": "flask-app/routes/auth.py",
+      "line": 60,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/change-password",
+      "method": "Get",
+      "path": "/change-password",
+      "file": "flask-app/routes/auth.py",
+      "line": 72,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/logout",
+      "method": "Get",
+      "path": "/logout",
+      "file": "flask-app/routes/auth.py",
+      "line": 91,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/refresh",
+      "method": "Get",
+      "path": "/refresh",
+      "file": "flask-app/routes/auth.py",
+      "line": 97,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "flask-app/routes/users.py",
+      "line": 8,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/",
+      "method": "Post",
+      "path": "/",
+      "file": "flask-app/routes/users.py",
+      "line": 26,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:user_id>",
+      "method": "Get",
+      "path": "/<int:user_id>",
+      "file": "flask-app/routes/users.py",
+      "line": 47,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "PUT:/<int:user_id>",
+      "method": "Put",
+      "path": "/<int:user_id>",
+      "file": "flask-app/routes/users.py",
+      "line": 54,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "DELETE:/<int:user_id>",
+      "method": "Delete",
+      "path": "/<int:user_id>",
+      "file": "flask-app/routes/users.py",
+      "line": 78,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:user_id>/profile",
+      "method": "Get",
+      "path": "/<int:user_id>/profile",
+      "file": "flask-app/routes/users.py",
+      "line": 93,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:user_id>/orders",
+      "method": "Get",
+      "path": "/<int:user_id>/orders",
+      "file": "flask-app/routes/users.py",
+      "line": 105,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "flask-app/routes/users.py",
+      "line": 8,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "flask-app/routes/users.py",
+      "line": 26,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:user_id>",
+      "method": "Get",
+      "path": "/<int:user_id>",
+      "file": "flask-app/routes/users.py",
+      "line": 47,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:user_id>",
+      "method": "Get",
+      "path": "/<int:user_id>",
+      "file": "flask-app/routes/users.py",
+      "line": 54,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:user_id>",
+      "method": "Get",
+      "path": "/<int:user_id>",
+      "file": "flask-app/routes/users.py",
+      "line": 78,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:user_id>/profile",
+      "method": "Get",
+      "path": "/<int:user_id>/profile",
+      "file": "flask-app/routes/users.py",
+      "line": 93,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:user_id>/orders",
+      "method": "Get",
+      "path": "/<int:user_id>/orders",
+      "file": "flask-app/routes/users.py",
+      "line": 105,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "flask-app/routes/products.py",
+      "line": 8,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/",
+      "method": "Post",
+      "path": "/",
+      "file": "flask-app/routes/products.py",
+      "line": 37,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:product_id>",
+      "method": "Get",
+      "path": "/<int:product_id>",
+      "file": "flask-app/routes/products.py",
+      "line": 62,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "PUT:/<int:product_id>",
+      "method": "Put",
+      "path": "/<int:product_id>",
+      "file": "flask-app/routes/products.py",
+      "line": 68,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "DELETE:/<int:product_id>",
+      "method": "Delete",
+      "path": "/<int:product_id>",
+      "file": "flask-app/routes/products.py",
+      "line": 83,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/categories",
+      "method": "Get",
+      "path": "/categories",
+      "file": "flask-app/routes/products.py",
+      "line": 92,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/search",
+      "method": "Get",
+      "path": "/search",
+      "file": "flask-app/routes/products.py",
+      "line": 98,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "PUT:/<int:product_id>/stock",
+      "method": "Put",
+      "path": "/<int:product_id>/stock",
+      "file": "flask-app/routes/products.py",
+      "line": 114,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "flask-app/routes/products.py",
+      "line": 8,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "flask-app/routes/products.py",
+      "line": 37,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:product_id>",
+      "method": "Get",
+      "path": "/<int:product_id>",
+      "file": "flask-app/routes/products.py",
+      "line": 62,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:product_id>",
+      "method": "Get",
+      "path": "/<int:product_id>",
+      "file": "flask-app/routes/products.py",
+      "line": 68,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:product_id>",
+      "method": "Get",
+      "path": "/<int:product_id>",
+      "file": "flask-app/routes/products.py",
+      "line": 83,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/categories",
+      "method": "Get",
+      "path": "/categories",
+      "file": "flask-app/routes/products.py",
+      "line": 92,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/search",
+      "method": "Get",
+      "path": "/search",
+      "file": "flask-app/routes/products.py",
+      "line": 98,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:product_id>/stock",
+      "method": "Get",
+      "path": "/<int:product_id>/stock",
+      "file": "flask-app/routes/products.py",
+      "line": 114,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "flask-app/routes/orders.py",
+      "line": 10,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "POST:/",
+      "method": "Post",
+      "path": "/",
+      "file": "flask-app/routes/orders.py",
+      "line": 26,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:order_id>",
+      "method": "Get",
+      "path": "/<int:order_id>",
+      "file": "flask-app/routes/orders.py",
+      "line": 78,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "PUT:/<int:order_id>/status",
+      "method": "Put",
+      "path": "/<int:order_id>/status",
+      "file": "flask-app/routes/orders.py",
+      "line": 93,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "DELETE:/<int:order_id>",
+      "method": "Delete",
+      "path": "/<int:order_id>",
+      "file": "flask-app/routes/orders.py",
+      "line": 118,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/stats",
+      "method": "Get",
+      "path": "/stats",
+      "file": "flask-app/routes/orders.py",
+      "line": 145,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "flask-app/routes/orders.py",
+      "line": 10,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/",
+      "method": "Get",
+      "path": "/",
+      "file": "flask-app/routes/orders.py",
+      "line": 26,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:order_id>",
+      "method": "Get",
+      "path": "/<int:order_id>",
+      "file": "flask-app/routes/orders.py",
+      "line": 78,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:order_id>/status",
+      "method": "Get",
+      "path": "/<int:order_id>/status",
+      "file": "flask-app/routes/orders.py",
+      "line": 93,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/<int:order_id>",
+      "method": "Get",
+      "path": "/<int:order_id>",
+      "file": "flask-app/routes/orders.py",
+      "line": 118,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    },
+    {
+      "id": "GET:/stats",
+      "method": "Get",
+      "path": "/stats",
+      "file": "flask-app/routes/orders.py",
+      "line": 145,
+      "framework": "auto",
+      "last_seen": "2025-08-12T04:17:33.381028Z"
+    }
+  ],
+  "statistics": {
+    "total": 94,
+    "by_method": {
+      "Delete": 6,
+      "Get": 63,
+      "Patch": 2,
+      "Post": 16,
+      "Put": 7
+    }
+  }
+}

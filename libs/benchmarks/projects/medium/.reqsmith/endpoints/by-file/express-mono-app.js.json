@@ -1,0 +1,20 @@
+[
+  {
+    "id": "GET:/health",
+    "method": "Get",
+    "path": "/health",
+    "file": "express-mono/app.js",
+    "line": 30,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "express-mono/app.js",
+    "line": 35,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  }
+]

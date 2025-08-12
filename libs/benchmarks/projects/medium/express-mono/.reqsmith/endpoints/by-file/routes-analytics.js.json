@@ -1,0 +1,74 @@
+[
+  {
+    "id": "GET:/dashboard",
+    "method": "Get",
+    "path": "/dashboard",
+    "file": "routes/analytics.js",
+    "line": 5,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "GET:/sales-metrics",
+    "method": "Get",
+    "path": "/sales-metrics",
+    "file": "routes/analytics.js",
+    "line": 9,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "GET:/user-metrics",
+    "method": "Get",
+    "path": "/user-metrics",
+    "file": "routes/analytics.js",
+    "line": 13,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "GET:/performance-metrics",
+    "method": "Get",
+    "path": "/performance-metrics",
+    "file": "routes/analytics.js",
+    "line": 17,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "POST:/custom-report",
+    "method": "Post",
+    "path": "/custom-report",
+    "file": "routes/analytics.js",
+    "line": 21,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "GET:/export/:format",
+    "method": "Get",
+    "path": "/export/:format",
+    "file": "routes/analytics.js",
+    "line": 25,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "GET:/real-time-stats",
+    "method": "Get",
+    "path": "/real-time-stats",
+    "file": "routes/analytics.js",
+    "line": 29,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "POST:/event-tracking",
+    "method": "Post",
+    "path": "/event-tracking",
+    "file": "routes/analytics.js",
+    "line": 33,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  }
+]

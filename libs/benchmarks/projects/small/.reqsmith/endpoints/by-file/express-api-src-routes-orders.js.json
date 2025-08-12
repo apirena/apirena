@@ -1,0 +1,74 @@
+[
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "express-api/src/routes/orders.js",
+    "line": 5,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "POST:/",
+    "method": "Post",
+    "path": "/",
+    "file": "express-api/src/routes/orders.js",
+    "line": 33,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/:id",
+    "method": "Get",
+    "path": "/:id",
+    "file": "express-api/src/routes/orders.js",
+    "line": 80,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "PATCH:/:id/status",
+    "method": "Patch",
+    "path": "/:id/status",
+    "file": "express-api/src/routes/orders.js",
+    "line": 96,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "DELETE:/:id",
+    "method": "Delete",
+    "path": "/:id",
+    "file": "express-api/src/routes/orders.js",
+    "line": 121,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/user/:userId",
+    "method": "Get",
+    "path": "/user/:userId",
+    "file": "express-api/src/routes/orders.js",
+    "line": 153,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/stats/summary",
+    "method": "Get",
+    "path": "/stats/summary",
+    "file": "express-api/src/routes/orders.js",
+    "line": 178,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/:id/tracking",
+    "method": "Get",
+    "path": "/:id/tracking",
+    "file": "express-api/src/routes/orders.js",
+    "line": 216,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  }
+]

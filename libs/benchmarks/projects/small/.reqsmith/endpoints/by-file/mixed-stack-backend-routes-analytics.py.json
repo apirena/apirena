@@ -1,0 +1,74 @@
+[
+  {
+    "id": "GET:/dashboard",
+    "method": "Get",
+    "path": "/dashboard",
+    "file": "mixed-stack/backend/routes/analytics.py",
+    "line": 12,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/users",
+    "method": "Get",
+    "path": "/users",
+    "file": "mixed-stack/backend/routes/analytics.py",
+    "line": 67,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/products",
+    "method": "Get",
+    "path": "/products",
+    "file": "mixed-stack/backend/routes/analytics.py",
+    "line": 130,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/orders",
+    "method": "Get",
+    "path": "/orders",
+    "file": "mixed-stack/backend/routes/analytics.py",
+    "line": 223,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/dashboard",
+    "method": "Get",
+    "path": "/dashboard",
+    "file": "mixed-stack/backend/routes/analytics.py",
+    "line": 12,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/users",
+    "method": "Get",
+    "path": "/users",
+    "file": "mixed-stack/backend/routes/analytics.py",
+    "line": 67,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/products",
+    "method": "Get",
+    "path": "/products",
+    "file": "mixed-stack/backend/routes/analytics.py",
+    "line": 130,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/orders",
+    "method": "Get",
+    "path": "/orders",
+    "file": "mixed-stack/backend/routes/analytics.py",
+    "line": 223,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  }
+]

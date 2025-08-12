@@ -6,7 +6,7 @@
     "file": "src/routes/products.js",
     "line": 5,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   },
   {
     "id": "POST:/",
@@ -15,7 +15,7 @@
     "file": "src/routes/products.js",
     "line": 42,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   },
   {
     "id": "GET:/:id",
@@ -24,7 +24,7 @@
     "file": "src/routes/products.js",
     "line": 62,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   },
   {
     "id": "PUT:/:id",
@@ -33,7 +33,7 @@
     "file": "src/routes/products.js",
     "line": 78,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   },
   {
     "id": "DELETE:/:id",
@@ -42,7 +42,7 @@
     "file": "src/routes/products.js",
     "line": 97,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   },
   {
     "id": "GET:/categories/list",
@@ -51,7 +51,7 @@
     "file": "src/routes/products.js",
     "line": 112,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   },
   {
     "id": "GET:/search/query",
@@ -60,7 +60,7 @@
     "file": "src/routes/products.js",
     "line": 122,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   },
   {
     "id": "PUT:/:id/stock",
@@ -69,7 +69,7 @@
     "file": "src/routes/products.js",
     "line": 144,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   },
   {
     "id": "POST:/bulk/create",
@@ -78,7 +78,7 @@
     "file": "src/routes/products.js",
     "line": 165,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   },
   {
     "id": "PATCH:/bulk/update",
@@ -87,6 +87,6 @@
     "file": "src/routes/products.js",
     "line": 175,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   }
 ]

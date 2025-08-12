@@ -1,0 +1,92 @@
+[
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "express-mono/routes/products.js",
+    "line": 5,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "POST:/",
+    "method": "Post",
+    "path": "/",
+    "file": "express-mono/routes/products.js",
+    "line": 42,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "GET:/:id",
+    "method": "Get",
+    "path": "/:id",
+    "file": "express-mono/routes/products.js",
+    "line": 62,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "PUT:/:id",
+    "method": "Put",
+    "path": "/:id",
+    "file": "express-mono/routes/products.js",
+    "line": 78,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "DELETE:/:id",
+    "method": "Delete",
+    "path": "/:id",
+    "file": "express-mono/routes/products.js",
+    "line": 97,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "GET:/categories/list",
+    "method": "Get",
+    "path": "/categories/list",
+    "file": "express-mono/routes/products.js",
+    "line": 112,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "GET:/search/query",
+    "method": "Get",
+    "path": "/search/query",
+    "file": "express-mono/routes/products.js",
+    "line": 122,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "PUT:/:id/stock",
+    "method": "Put",
+    "path": "/:id/stock",
+    "file": "express-mono/routes/products.js",
+    "line": 144,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "POST:/bulk/create",
+    "method": "Post",
+    "path": "/bulk/create",
+    "file": "express-mono/routes/products.js",
+    "line": 165,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "PATCH:/bulk/update",
+    "method": "Patch",
+    "path": "/bulk/update",
+    "file": "express-mono/routes/products.js",
+    "line": 175,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  }
+]

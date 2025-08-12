@@ -1,0 +1,65 @@
+[
+  {
+    "id": "POST:/login",
+    "method": "Post",
+    "path": "/login",
+    "file": "routes/auth.js",
+    "line": 5,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "POST:/register",
+    "method": "Post",
+    "path": "/register",
+    "file": "routes/auth.js",
+    "line": 10,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "POST:/logout",
+    "method": "Post",
+    "path": "/logout",
+    "file": "routes/auth.js",
+    "line": 15,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "POST:/forgot-password",
+    "method": "Post",
+    "path": "/forgot-password",
+    "file": "routes/auth.js",
+    "line": 20,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "POST:/reset-password",
+    "method": "Post",
+    "path": "/reset-password",
+    "file": "routes/auth.js",
+    "line": 25,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "GET:/verify-email/:token",
+    "method": "Get",
+    "path": "/verify-email/:token",
+    "file": "routes/auth.js",
+    "line": 30,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "POST:/refresh-token",
+    "method": "Post",
+    "path": "/refresh-token",
+    "file": "routes/auth.js",
+    "line": 35,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  }
+]

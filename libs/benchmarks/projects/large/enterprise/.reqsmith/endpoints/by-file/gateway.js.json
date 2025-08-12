@@ -1,0 +1,65 @@
+[
+  {
+    "id": "GET:/health",
+    "method": "Get",
+    "path": "/health",
+    "file": "gateway.js",
+    "line": 14,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "GET:/api/v1/status",
+    "method": "Get",
+    "path": "/api/v1/status",
+    "file": "gateway.js",
+    "line": 23,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "GET:/api/v1/services",
+    "method": "Get",
+    "path": "/api/v1/services",
+    "file": "gateway.js",
+    "line": 32,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "GET:/api/v1/rate-limits/:userId",
+    "method": "Get",
+    "path": "/api/v1/rate-limits/:userId",
+    "file": "gateway.js",
+    "line": 44,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "GET:/api/v1/load-balancer/health",
+    "method": "Get",
+    "path": "/api/v1/load-balancer/health",
+    "file": "gateway.js",
+    "line": 53,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "POST:/api/v1/analytics/events",
+    "method": "Post",
+    "path": "/api/v1/analytics/events",
+    "file": "gateway.js",
+    "line": 58,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "GET:/api/v1/circuit-breaker/status",
+    "method": "Get",
+    "path": "/api/v1/circuit-breaker/status",
+    "file": "gateway.js",
+    "line": 63,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "GET:/users",
+    "method": "Get",
+    "path": "/users",
+    "file": "routes/users.js",
+    "line": 5,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "POST:/users",
+    "method": "Post",
+    "path": "/users",
+    "file": "routes/users.js",
+    "line": 14,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "GET:/users/:id",
+    "method": "Get",
+    "path": "/users/:id",
+    "file": "routes/users.js",
+    "line": 23,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "PUT:/users/:id",
+    "method": "Put",
+    "path": "/users/:id",
+    "file": "routes/users.js",
+    "line": 35,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "DELETE:/users/:id",
+    "method": "Delete",
+    "path": "/users/:id",
+    "file": "routes/users.js",
+    "line": 48,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  }
+]

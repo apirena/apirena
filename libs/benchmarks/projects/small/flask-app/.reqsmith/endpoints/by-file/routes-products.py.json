@@ -1,0 +1,146 @@
+[
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "routes/products.py",
+    "line": 8,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "POST:/",
+    "method": "Post",
+    "path": "/",
+    "file": "routes/products.py",
+    "line": 37,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:product_id>",
+    "method": "Get",
+    "path": "/<int:product_id>",
+    "file": "routes/products.py",
+    "line": 62,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "PUT:/<int:product_id>",
+    "method": "Put",
+    "path": "/<int:product_id>",
+    "file": "routes/products.py",
+    "line": 68,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "DELETE:/<int:product_id>",
+    "method": "Delete",
+    "path": "/<int:product_id>",
+    "file": "routes/products.py",
+    "line": 83,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/categories",
+    "method": "Get",
+    "path": "/categories",
+    "file": "routes/products.py",
+    "line": 92,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/search",
+    "method": "Get",
+    "path": "/search",
+    "file": "routes/products.py",
+    "line": 98,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "PUT:/<int:product_id>/stock",
+    "method": "Put",
+    "path": "/<int:product_id>/stock",
+    "file": "routes/products.py",
+    "line": 114,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "routes/products.py",
+    "line": 8,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "routes/products.py",
+    "line": 37,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:product_id>",
+    "method": "Get",
+    "path": "/<int:product_id>",
+    "file": "routes/products.py",
+    "line": 62,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:product_id>",
+    "method": "Get",
+    "path": "/<int:product_id>",
+    "file": "routes/products.py",
+    "line": 68,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:product_id>",
+    "method": "Get",
+    "path": "/<int:product_id>",
+    "file": "routes/products.py",
+    "line": 83,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/categories",
+    "method": "Get",
+    "path": "/categories",
+    "file": "routes/products.py",
+    "line": 92,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/search",
+    "method": "Get",
+    "path": "/search",
+    "file": "routes/products.py",
+    "line": 98,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:product_id>/stock",
+    "method": "Get",
+    "path": "/<int:product_id>/stock",
+    "file": "routes/products.py",
+    "line": 114,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  }
+]

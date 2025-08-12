@@ -1,0 +1,137 @@
+[
+  {
+    "id": "POST:/api/v1/payments/charge",
+    "method": "Post",
+    "path": "/api/v1/payments/charge",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 13,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/payments/refund",
+    "method": "Post",
+    "path": "/api/v1/payments/refund",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 17,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/api/v1/payments/:id",
+    "method": "Get",
+    "path": "/api/v1/payments/:id",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 21,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/api/v1/payments",
+    "method": "Get",
+    "path": "/api/v1/payments",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 25,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/payments/subscription",
+    "method": "Post",
+    "path": "/api/v1/payments/subscription",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 29,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "PUT:/api/v1/payments/subscription/:id",
+    "method": "Put",
+    "path": "/api/v1/payments/subscription/:id",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 33,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "DELETE:/api/v1/payments/subscription/:id",
+    "method": "Delete",
+    "path": "/api/v1/payments/subscription/:id",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 37,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/api/v1/payments/subscription/:id",
+    "method": "Get",
+    "path": "/api/v1/payments/subscription/:id",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 41,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/payments/webhook/stripe",
+    "method": "Post",
+    "path": "/api/v1/payments/webhook/stripe",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 45,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/payments/webhook/paypal",
+    "method": "Post",
+    "path": "/api/v1/payments/webhook/paypal",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 49,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/api/v1/payments/methods/:userId",
+    "method": "Get",
+    "path": "/api/v1/payments/methods/:userId",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 53,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/payments/methods",
+    "method": "Post",
+    "path": "/api/v1/payments/methods",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 57,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "DELETE:/api/v1/payments/methods/:id",
+    "method": "Delete",
+    "path": "/api/v1/payments/methods/:id",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 61,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/api/v1/payments/disputes",
+    "method": "Get",
+    "path": "/api/v1/payments/disputes",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 65,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "PUT:/api/v1/payments/disputes/:id",
+    "method": "Put",
+    "path": "/api/v1/payments/disputes/:id",
+    "file": "enterprise/services/payment-service/server.js",
+    "line": 69,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  }
+]

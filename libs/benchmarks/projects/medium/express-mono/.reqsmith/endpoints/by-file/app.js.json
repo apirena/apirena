@@ -1,0 +1,20 @@
+[
+  {
+    "id": "GET:/health",
+    "method": "Get",
+    "path": "/health",
+    "file": "app.js",
+    "line": 30,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "app.js",
+    "line": 35,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  }
+]

@@ -6,7 +6,7 @@
     "file": "src/routes/users.js",
     "line": 5,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   },
   {
     "id": "POST:/users",
@@ -15,7 +15,7 @@
     "file": "src/routes/users.js",
     "line": 14,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   },
   {
     "id": "GET:/users/:id",
@@ -24,7 +24,7 @@
     "file": "src/routes/users.js",
     "line": 23,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   },
   {
     "id": "PUT:/users/:id",
@@ -33,7 +33,7 @@
     "file": "src/routes/users.js",
     "line": 35,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   },
   {
     "id": "DELETE:/users/:id",
@@ -42,6 +42,6 @@
     "file": "src/routes/users.js",
     "line": 48,
     "framework": "auto",
-    "last_seen": "2025-08-09T04:53:58.990664Z"
+    "last_seen": "2025-08-11T04:02:06.457368Z"
   }
 ]

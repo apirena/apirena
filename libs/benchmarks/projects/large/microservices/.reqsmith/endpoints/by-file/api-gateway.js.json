@@ -1,0 +1,128 @@
+[
+  {
+    "id": "GET:/api/users",
+    "method": "Get",
+    "path": "/api/users",
+    "file": "api-gateway.js",
+    "line": 7,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "POST:/api/users",
+    "method": "Post",
+    "path": "/api/users",
+    "file": "api-gateway.js",
+    "line": 12,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/api/users/:id",
+    "method": "Get",
+    "path": "/api/users/:id",
+    "file": "api-gateway.js",
+    "line": 17,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "PUT:/api/users/:id",
+    "method": "Put",
+    "path": "/api/users/:id",
+    "file": "api-gateway.js",
+    "line": 22,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "DELETE:/api/users/:id",
+    "method": "Delete",
+    "path": "/api/users/:id",
+    "file": "api-gateway.js",
+    "line": 27,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/api/posts",
+    "method": "Get",
+    "path": "/api/posts",
+    "file": "api-gateway.js",
+    "line": 33,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "POST:/api/posts",
+    "method": "Post",
+    "path": "/api/posts",
+    "file": "api-gateway.js",
+    "line": 38,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/api/posts/:id",
+    "method": "Get",
+    "path": "/api/posts/:id",
+    "file": "api-gateway.js",
+    "line": 43,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "PUT:/api/posts/:id",
+    "method": "Put",
+    "path": "/api/posts/:id",
+    "file": "api-gateway.js",
+    "line": 48,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "DELETE:/api/posts/:id",
+    "method": "Delete",
+    "path": "/api/posts/:id",
+    "file": "api-gateway.js",
+    "line": 53,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/api/posts/:postId/comments",
+    "method": "Get",
+    "path": "/api/posts/:postId/comments",
+    "file": "api-gateway.js",
+    "line": 59,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "POST:/api/posts/:postId/comments",
+    "method": "Post",
+    "path": "/api/posts/:postId/comments",
+    "file": "api-gateway.js",
+    "line": 64,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/api/search/users",
+    "method": "Get",
+    "path": "/api/search/users",
+    "file": "api-gateway.js",
+    "line": 70,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/api/search/posts",
+    "method": "Get",
+    "path": "/api/search/posts",
+    "file": "api-gateway.js",
+    "line": 76,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  }
+]

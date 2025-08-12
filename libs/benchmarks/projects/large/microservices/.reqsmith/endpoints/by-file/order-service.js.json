@@ -1,0 +1,101 @@
+[
+  {
+    "id": "GET:/orders",
+    "method": "Get",
+    "path": "/orders",
+    "file": "order-service.js",
+    "line": 5,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "POST:/orders",
+    "method": "Post",
+    "path": "/orders",
+    "file": "order-service.js",
+    "line": 10,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/orders/:id",
+    "method": "Get",
+    "path": "/orders/:id",
+    "file": "order-service.js",
+    "line": 15,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "PUT:/orders/:id",
+    "method": "Put",
+    "path": "/orders/:id",
+    "file": "order-service.js",
+    "line": 20,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "DELETE:/orders/:id",
+    "method": "Delete",
+    "path": "/orders/:id",
+    "file": "order-service.js",
+    "line": 25,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/orders/:id/status",
+    "method": "Get",
+    "path": "/orders/:id/status",
+    "file": "order-service.js",
+    "line": 31,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "PUT:/orders/:id/status",
+    "method": "Put",
+    "path": "/orders/:id/status",
+    "file": "order-service.js",
+    "line": 36,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "POST:/orders/:id/payment",
+    "method": "Post",
+    "path": "/orders/:id/payment",
+    "file": "order-service.js",
+    "line": 42,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/orders/:id/payment",
+    "method": "Get",
+    "path": "/orders/:id/payment",
+    "file": "order-service.js",
+    "line": 47,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "POST:/orders/:id/ship",
+    "method": "Post",
+    "path": "/orders/:id/ship",
+    "file": "order-service.js",
+    "line": 53,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/orders/:id/tracking",
+    "method": "Get",
+    "path": "/orders/:id/tracking",
+    "file": "order-service.js",
+    "line": 58,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "routes/orders.py",
+    "line": 10,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "POST:/",
+    "method": "Post",
+    "path": "/",
+    "file": "routes/orders.py",
+    "line": 26,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:order_id>",
+    "method": "Get",
+    "path": "/<int:order_id>",
+    "file": "routes/orders.py",
+    "line": 78,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "PUT:/<int:order_id>/status",
+    "method": "Put",
+    "path": "/<int:order_id>/status",
+    "file": "routes/orders.py",
+    "line": 93,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "DELETE:/<int:order_id>",
+    "method": "Delete",
+    "path": "/<int:order_id>",
+    "file": "routes/orders.py",
+    "line": 118,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/stats",
+    "method": "Get",
+    "path": "/stats",
+    "file": "routes/orders.py",
+    "line": 145,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "routes/orders.py",
+    "line": 10,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "routes/orders.py",
+    "line": 26,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:order_id>",
+    "method": "Get",
+    "path": "/<int:order_id>",
+    "file": "routes/orders.py",
+    "line": 78,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:order_id>/status",
+    "method": "Get",
+    "path": "/<int:order_id>/status",
+    "file": "routes/orders.py",
+    "line": 93,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:order_id>",
+    "method": "Get",
+    "path": "/<int:order_id>",
+    "file": "routes/orders.py",
+    "line": 118,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/stats",
+    "method": "Get",
+    "path": "/stats",
+    "file": "routes/orders.py",
+    "line": 145,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  }
+]

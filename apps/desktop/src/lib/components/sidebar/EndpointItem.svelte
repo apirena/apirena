@@ -18,17 +18,6 @@
     'Options': '#6B7280',  // Gray
     'Head': '#6B7280'      // Gray
   };
-
-  // Extract path segments for better readability
-  const pathSegments = $derived(() => {
-    const segments = endpoint.path.split('/').filter(Boolean);
-    return segments;
-  });
-
-  // Check if path has dynamic segments (contains : or {})
-  const hasDynamicSegments = $derived(() => {
-    return endpoint.path.includes(':') || endpoint.path.includes('{');
-  });
 </script>
 
 <div 
@@ -39,56 +28,27 @@
   tabindex="0"
   onkeydown={(e) => e.key === 'Enter' && onclick()}
 >
-  <div class="endpoint-header">
-    <span 
-      class="method-badge"
-      style="background-color: {methodColors[endpoint.method]};"
-    >
-      {endpoint.method}
-    </span>
-    <div class="endpoint-path">
-      {#if pathSegments.length === 0}
-        <span class="path-segment">/</span>
-      {:else}
-        {#each pathSegments() as segment, i}
-          <span class="path-separator">/</span>
-          <span 
-            class="path-segment"
-            class:dynamic={(segment as string).startsWith(':') || ((segment as string).startsWith('{') && (segment as string).endsWith('}'))}
-          >
-            {segment}
-          </span>
-        {/each}
-      {/if}
-    </div>
-  </div>
-
-  {#if endpoint.documentation}
-    <div class="endpoint-doc">
-      {endpoint.documentation}
-    </div>
-  {/if}
-
-  <div class="endpoint-meta">
-    <span class="file-location">
-      📍 Line {endpoint.line}:{endpoint.column}
-    </span>
-      {#if hasDynamicSegments()}
-      <span class="dynamic-indicator" title="Has dynamic path segments">
-        🔗 Dynamic
-      </span>
-    {/if}
-  </div>
+  <span 
+    class="method-badge"
+    style="background-color: {methodColors[endpoint.method]};"
+  >
+    {endpoint.method.toUpperCase()}
+  </span>
+  <span class="endpoint-path">{endpoint.path}</span>
 </div>
 
 <style>
   .endpoint-item {
-    padding: 0.75rem;
-    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.15s ease;
     border: 1px solid transparent;
     background: var(--color-surface);
+    min-height: auto;
   }
 
   .endpoint-item:hover {
@@ -107,80 +67,31 @@
     outline-offset: -2px;
   }
 
-  .endpoint-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
   .method-badge {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 0.125rem 0.375rem;
-    border-radius: 4px;
-    color: var(--color-primary-foreground);
-    font-size: 0.7rem;
+    border-radius: 3px;
+    color: white;
+    font-size: 0.65rem;
     font-weight: 600;
     letter-spacing: 0.025em;
-    min-width: 3rem;
+    min-width: 2.75rem;
     text-align: center;
+    flex-shrink: 0;
+    line-height: 1.2;
   }
 
   .endpoint-path {
-    flex: 1;
-    display: flex;
-    align-items: center;
     font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
-    font-size: 0.85rem;
-    line-height: 1.2;
-    overflow: hidden;
-  }
-
-  .path-separator {
-    color: var(--color-text-tertiary);
-    margin: 0 0.1rem;
-  }
-
-  .path-segment {
-    color: var(--color-text-primary);
-    white-space: nowrap;
-  }
-
-  .path-segment.dynamic {
-    background: var(--color-warning-surface);
-    color: var(--color-warning);
-    padding: 0.125rem 0.25rem;
-    border-radius: 3px;
-    font-weight: 500;
-  }
-
-  .endpoint-doc {
     font-size: 0.8rem;
-    color: var(--color-text-secondary);
-    margin-bottom: 0.5rem;
-    line-height: 1.3;
-    font-style: italic;
-  }
-
-  .endpoint-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.7rem;
-    color: var(--color-text-tertiary);
-  }
-
-  .file-location {
-    opacity: 0.8;
-  }
-
-  .dynamic-indicator {
-    background: var(--color-warning-surface);
-    color: var(--color-warning);
-    padding: 0.125rem 0.25rem;
-    border-radius: 3px;
-    font-weight: 500;
+    color: var(--color-text-primary);
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.2;
   }
 </style>

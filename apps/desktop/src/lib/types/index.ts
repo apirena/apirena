@@ -58,6 +58,12 @@ export interface EndpointManifest {
   statistics: { total: number; by_method: Record<string, number> };
 }
 
+export interface Environment {
+  id: string;
+  name: string;
+  baseUrl: string;
+}
+
 export interface ProjectConfig {
   version: string;
   baseUrl: string;

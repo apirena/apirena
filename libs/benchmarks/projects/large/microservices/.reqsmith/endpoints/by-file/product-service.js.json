@@ -1,0 +1,101 @@
+[
+  {
+    "id": "GET:/products",
+    "method": "Get",
+    "path": "/products",
+    "file": "product-service.js",
+    "line": 5,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "POST:/products",
+    "method": "Post",
+    "path": "/products",
+    "file": "product-service.js",
+    "line": 10,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/products/:id",
+    "method": "Get",
+    "path": "/products/:id",
+    "file": "product-service.js",
+    "line": 15,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "PUT:/products/:id",
+    "method": "Put",
+    "path": "/products/:id",
+    "file": "product-service.js",
+    "line": 20,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "DELETE:/products/:id",
+    "method": "Delete",
+    "path": "/products/:id",
+    "file": "product-service.js",
+    "line": 25,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/categories",
+    "method": "Get",
+    "path": "/categories",
+    "file": "product-service.js",
+    "line": 31,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/categories/:id/products",
+    "method": "Get",
+    "path": "/categories/:id/products",
+    "file": "product-service.js",
+    "line": 36,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/products/:id/reviews",
+    "method": "Get",
+    "path": "/products/:id/reviews",
+    "file": "product-service.js",
+    "line": 42,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "POST:/products/:id/reviews",
+    "method": "Post",
+    "path": "/products/:id/reviews",
+    "file": "product-service.js",
+    "line": 47,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "GET:/products/:id/inventory",
+    "method": "Get",
+    "path": "/products/:id/inventory",
+    "file": "product-service.js",
+    "line": 53,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  },
+  {
+    "id": "PUT:/products/:id/inventory",
+    "method": "Put",
+    "path": "/products/:id/inventory",
+    "file": "product-service.js",
+    "line": 58,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:53:49.901838Z"
+  }
+]

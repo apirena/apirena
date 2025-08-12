@@ -1,0 +1,110 @@
+[
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "flask-app/routes/orders.py",
+    "line": 10,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "POST:/",
+    "method": "Post",
+    "path": "/",
+    "file": "flask-app/routes/orders.py",
+    "line": 26,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/<int:order_id>",
+    "method": "Get",
+    "path": "/<int:order_id>",
+    "file": "flask-app/routes/orders.py",
+    "line": 78,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "PUT:/<int:order_id>/status",
+    "method": "Put",
+    "path": "/<int:order_id>/status",
+    "file": "flask-app/routes/orders.py",
+    "line": 93,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "DELETE:/<int:order_id>",
+    "method": "Delete",
+    "path": "/<int:order_id>",
+    "file": "flask-app/routes/orders.py",
+    "line": 118,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/stats",
+    "method": "Get",
+    "path": "/stats",
+    "file": "flask-app/routes/orders.py",
+    "line": 145,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "flask-app/routes/orders.py",
+    "line": 10,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "flask-app/routes/orders.py",
+    "line": 26,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/<int:order_id>",
+    "method": "Get",
+    "path": "/<int:order_id>",
+    "file": "flask-app/routes/orders.py",
+    "line": 78,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/<int:order_id>/status",
+    "method": "Get",
+    "path": "/<int:order_id>/status",
+    "file": "flask-app/routes/orders.py",
+    "line": 93,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/<int:order_id>",
+    "method": "Get",
+    "path": "/<int:order_id>",
+    "file": "flask-app/routes/orders.py",
+    "line": 118,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/stats",
+    "method": "Get",
+    "path": "/stats",
+    "file": "flask-app/routes/orders.py",
+    "line": 145,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  }
+]

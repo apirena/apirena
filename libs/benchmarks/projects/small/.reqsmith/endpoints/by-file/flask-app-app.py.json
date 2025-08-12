@@ -1,0 +1,38 @@
+[
+  {
+    "id": "GET:/api/health",
+    "method": "Get",
+    "path": "/api/health",
+    "file": "flask-app/app.py",
+    "line": 27,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/api/status",
+    "method": "Get",
+    "path": "/api/status",
+    "file": "flask-app/app.py",
+    "line": 31,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/api/health",
+    "method": "Get",
+    "path": "/api/health",
+    "file": "flask-app/app.py",
+    "line": 27,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  },
+  {
+    "id": "GET:/api/status",
+    "method": "Get",
+    "path": "/api/status",
+    "file": "flask-app/app.py",
+    "line": 31,
+    "framework": "auto",
+    "last_seen": "2025-08-12T04:17:33.381028Z"
+  }
+]

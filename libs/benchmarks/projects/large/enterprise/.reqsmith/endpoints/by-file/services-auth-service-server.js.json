@@ -1,0 +1,137 @@
+[
+  {
+    "id": "POST:/api/v1/auth/login",
+    "method": "Post",
+    "path": "/api/v1/auth/login",
+    "file": "services/auth-service/server.js",
+    "line": 13,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "POST:/api/v1/auth/register",
+    "method": "Post",
+    "path": "/api/v1/auth/register",
+    "file": "services/auth-service/server.js",
+    "line": 17,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "POST:/api/v1/auth/logout",
+    "method": "Post",
+    "path": "/api/v1/auth/logout",
+    "file": "services/auth-service/server.js",
+    "line": 21,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "POST:/api/v1/auth/refresh-token",
+    "method": "Post",
+    "path": "/api/v1/auth/refresh-token",
+    "file": "services/auth-service/server.js",
+    "line": 25,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "GET:/api/v1/auth/validate/:token",
+    "method": "Get",
+    "path": "/api/v1/auth/validate/:token",
+    "file": "services/auth-service/server.js",
+    "line": 29,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "POST:/api/v1/auth/forgot-password",
+    "method": "Post",
+    "path": "/api/v1/auth/forgot-password",
+    "file": "services/auth-service/server.js",
+    "line": 33,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "POST:/api/v1/auth/reset-password",
+    "method": "Post",
+    "path": "/api/v1/auth/reset-password",
+    "file": "services/auth-service/server.js",
+    "line": 37,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "GET:/api/v1/auth/profile",
+    "method": "Get",
+    "path": "/api/v1/auth/profile",
+    "file": "services/auth-service/server.js",
+    "line": 41,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "PUT:/api/v1/auth/profile",
+    "method": "Put",
+    "path": "/api/v1/auth/profile",
+    "file": "services/auth-service/server.js",
+    "line": 45,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "DELETE:/api/v1/auth/account",
+    "method": "Delete",
+    "path": "/api/v1/auth/account",
+    "file": "services/auth-service/server.js",
+    "line": 49,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "POST:/api/v1/auth/2fa/enable",
+    "method": "Post",
+    "path": "/api/v1/auth/2fa/enable",
+    "file": "services/auth-service/server.js",
+    "line": 54,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "POST:/api/v1/auth/2fa/verify",
+    "method": "Post",
+    "path": "/api/v1/auth/2fa/verify",
+    "file": "services/auth-service/server.js",
+    "line": 58,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "POST:/api/v1/auth/2fa/disable",
+    "method": "Post",
+    "path": "/api/v1/auth/2fa/disable",
+    "file": "services/auth-service/server.js",
+    "line": 62,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "GET:/api/v1/auth/sessions",
+    "method": "Get",
+    "path": "/api/v1/auth/sessions",
+    "file": "services/auth-service/server.js",
+    "line": 67,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  },
+  {
+    "id": "DELETE:/api/v1/auth/sessions/:id",
+    "method": "Delete",
+    "path": "/api/v1/auth/sessions/:id",
+    "file": "services/auth-service/server.js",
+    "line": 71,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:56:30.461225Z"
+  }
+]

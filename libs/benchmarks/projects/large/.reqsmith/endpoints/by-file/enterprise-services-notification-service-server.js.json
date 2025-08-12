@@ -1,0 +1,137 @@
+[
+  {
+    "id": "POST:/api/v1/notifications/email",
+    "method": "Post",
+    "path": "/api/v1/notifications/email",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 13,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/notifications/sms",
+    "method": "Post",
+    "path": "/api/v1/notifications/sms",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 17,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/notifications/push",
+    "method": "Post",
+    "path": "/api/v1/notifications/push",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 21,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/api/v1/notifications/:userId",
+    "method": "Get",
+    "path": "/api/v1/notifications/:userId",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 25,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "PUT:/api/v1/notifications/:id/read",
+    "method": "Put",
+    "path": "/api/v1/notifications/:id/read",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 29,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "DELETE:/api/v1/notifications/:id",
+    "method": "Delete",
+    "path": "/api/v1/notifications/:id",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 33,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/notifications/templates",
+    "method": "Post",
+    "path": "/api/v1/notifications/templates",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 37,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/api/v1/notifications/templates",
+    "method": "Get",
+    "path": "/api/v1/notifications/templates",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 41,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "PUT:/api/v1/notifications/templates/:id",
+    "method": "Put",
+    "path": "/api/v1/notifications/templates/:id",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 45,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "DELETE:/api/v1/notifications/templates/:id",
+    "method": "Delete",
+    "path": "/api/v1/notifications/templates/:id",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 49,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/notifications/bulk",
+    "method": "Post",
+    "path": "/api/v1/notifications/bulk",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 53,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/api/v1/notifications/delivery-status/:id",
+    "method": "Get",
+    "path": "/api/v1/notifications/delivery-status/:id",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 57,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/notifications/preferences/:userId",
+    "method": "Post",
+    "path": "/api/v1/notifications/preferences/:userId",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 61,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/api/v1/notifications/preferences/:userId",
+    "method": "Get",
+    "path": "/api/v1/notifications/preferences/:userId",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 65,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/notifications/schedule",
+    "method": "Post",
+    "path": "/api/v1/notifications/schedule",
+    "file": "enterprise/services/notification-service/server.js",
+    "line": 69,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  }
+]

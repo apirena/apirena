@@ -18,6 +18,10 @@
     "svelte-splitpanes": "^8.0.9"
   },
   "devDependencies": {
+    "@codemirror/commands": "^6.8.1",
+    "@codemirror/lang-json": "^6.0.2",
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/view": "^6.38.1",
     "@internationalized/date": "^3.8.1",
     "@lucide/svelte": "^0.515.0",
     "@sveltejs/adapter-static": "^3.0.6",

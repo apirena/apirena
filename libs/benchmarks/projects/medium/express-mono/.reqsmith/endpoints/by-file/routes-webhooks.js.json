@@ -1,0 +1,65 @@
+[
+  {
+    "id": "POST:/stripe/payment",
+    "method": "Post",
+    "path": "/stripe/payment",
+    "file": "routes/webhooks.js",
+    "line": 5,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "POST:/github/deployment",
+    "method": "Post",
+    "path": "/github/deployment",
+    "file": "routes/webhooks.js",
+    "line": 9,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "POST:/slack/notifications",
+    "method": "Post",
+    "path": "/slack/notifications",
+    "file": "routes/webhooks.js",
+    "line": 13,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "POST:/sendgrid/email-events",
+    "method": "Post",
+    "path": "/sendgrid/email-events",
+    "file": "routes/webhooks.js",
+    "line": 17,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "POST:/auth0/user-events",
+    "method": "Post",
+    "path": "/auth0/user-events",
+    "file": "routes/webhooks.js",
+    "line": 21,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "POST:/monitoring/alerts",
+    "method": "Post",
+    "path": "/monitoring/alerts",
+    "file": "routes/webhooks.js",
+    "line": 25,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  },
+  {
+    "id": "GET:/webhook-logs",
+    "method": "Get",
+    "path": "/webhook-logs",
+    "file": "routes/webhooks.js",
+    "line": 29,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:15:53.510254Z"
+  }
+]

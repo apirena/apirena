@@ -5,7 +5,7 @@ use std::collections::BTreeMap;
 use std::fs;
 use std::path::{Path, PathBuf};
 
-use reqsmith_parser::Endpoint;
+use reqsmith_parser::{Endpoint, incremental::EndpointState};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct EndpointManifest {
@@ -114,6 +114,29 @@ impl ReqSmithStorage {
             write_json_atomic(&p, &entries)?;
         }
 
+        Ok(())
+    }
+
+    /// Load parser state from cache
+    pub fn load_parser_state(&self) -> Result<EndpointState> {
+        let state_path = self.reqsmith_dir.join("cache/parser-state.json");
+        if !state_path.exists() {
+            return Ok(EndpointState {
+                endpoints: std::collections::HashMap::new(),
+                file_hashes: std::collections::HashMap::new(),
+                last_updated: std::time::SystemTime::now(),
+            });
+        }
+        
+        let content = std::fs::read_to_string(&state_path)?;
+        let state = serde_json::from_str(&content)?;
+        Ok(state)
+    }
+
+    /// Save parser state to cache
+    pub fn save_parser_state(&self, state: &EndpointState) -> Result<()> {
+        let state_path = self.reqsmith_dir.join("cache/parser-state.json");
+        write_json_atomic(&state_path, state)?;
         Ok(())
     }
 }

@@ -1,0 +1,619 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-11T04:56:30.461225Z",
+  "endpoints": [
+    {
+      "id": "GET:/health",
+      "method": "Get",
+      "path": "/health",
+      "file": "gateway.js",
+      "line": 14,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/status",
+      "method": "Get",
+      "path": "/api/v1/status",
+      "file": "gateway.js",
+      "line": 23,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/services",
+      "method": "Get",
+      "path": "/api/v1/services",
+      "file": "gateway.js",
+      "line": 32,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/rate-limits/:userId",
+      "method": "Get",
+      "path": "/api/v1/rate-limits/:userId",
+      "file": "gateway.js",
+      "line": 44,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/load-balancer/health",
+      "method": "Get",
+      "path": "/api/v1/load-balancer/health",
+      "file": "gateway.js",
+      "line": 53,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/analytics/events",
+      "method": "Post",
+      "path": "/api/v1/analytics/events",
+      "file": "gateway.js",
+      "line": 58,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/circuit-breaker/status",
+      "method": "Get",
+      "path": "/api/v1/circuit-breaker/status",
+      "file": "gateway.js",
+      "line": 63,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/notifications/email",
+      "method": "Post",
+      "path": "/api/v1/notifications/email",
+      "file": "services/notification-service/server.js",
+      "line": 13,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/notifications/sms",
+      "method": "Post",
+      "path": "/api/v1/notifications/sms",
+      "file": "services/notification-service/server.js",
+      "line": 17,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/notifications/push",
+      "method": "Post",
+      "path": "/api/v1/notifications/push",
+      "file": "services/notification-service/server.js",
+      "line": 21,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/notifications/:userId",
+      "method": "Get",
+      "path": "/api/v1/notifications/:userId",
+      "file": "services/notification-service/server.js",
+      "line": 25,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "PUT:/api/v1/notifications/:id/read",
+      "method": "Put",
+      "path": "/api/v1/notifications/:id/read",
+      "file": "services/notification-service/server.js",
+      "line": 29,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "DELETE:/api/v1/notifications/:id",
+      "method": "Delete",
+      "path": "/api/v1/notifications/:id",
+      "file": "services/notification-service/server.js",
+      "line": 33,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/notifications/templates",
+      "method": "Post",
+      "path": "/api/v1/notifications/templates",
+      "file": "services/notification-service/server.js",
+      "line": 37,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/notifications/templates",
+      "method": "Get",
+      "path": "/api/v1/notifications/templates",
+      "file": "services/notification-service/server.js",
+      "line": 41,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "PUT:/api/v1/notifications/templates/:id",
+      "method": "Put",
+      "path": "/api/v1/notifications/templates/:id",
+      "file": "services/notification-service/server.js",
+      "line": 45,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "DELETE:/api/v1/notifications/templates/:id",
+      "method": "Delete",
+      "path": "/api/v1/notifications/templates/:id",
+      "file": "services/notification-service/server.js",
+      "line": 49,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/notifications/bulk",
+      "method": "Post",
+      "path": "/api/v1/notifications/bulk",
+      "file": "services/notification-service/server.js",
+      "line": 53,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/notifications/delivery-status/:id",
+      "method": "Get",
+      "path": "/api/v1/notifications/delivery-status/:id",
+      "file": "services/notification-service/server.js",
+      "line": 57,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/notifications/preferences/:userId",
+      "method": "Post",
+      "path": "/api/v1/notifications/preferences/:userId",
+      "file": "services/notification-service/server.js",
+      "line": 61,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/notifications/preferences/:userId",
+      "method": "Get",
+      "path": "/api/v1/notifications/preferences/:userId",
+      "file": "services/notification-service/server.js",
+      "line": 65,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/notifications/schedule",
+      "method": "Post",
+      "path": "/api/v1/notifications/schedule",
+      "file": "services/notification-service/server.js",
+      "line": 69,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/payments/charge",
+      "method": "Post",
+      "path": "/api/v1/payments/charge",
+      "file": "services/payment-service/server.js",
+      "line": 13,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/payments/refund",
+      "method": "Post",
+      "path": "/api/v1/payments/refund",
+      "file": "services/payment-service/server.js",
+      "line": 17,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/payments/:id",
+      "method": "Get",
+      "path": "/api/v1/payments/:id",
+      "file": "services/payment-service/server.js",
+      "line": 21,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/payments",
+      "method": "Get",
+      "path": "/api/v1/payments",
+      "file": "services/payment-service/server.js",
+      "line": 25,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/payments/subscription",
+      "method": "Post",
+      "path": "/api/v1/payments/subscription",
+      "file": "services/payment-service/server.js",
+      "line": 29,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "PUT:/api/v1/payments/subscription/:id",
+      "method": "Put",
+      "path": "/api/v1/payments/subscription/:id",
+      "file": "services/payment-service/server.js",
+      "line": 33,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "DELETE:/api/v1/payments/subscription/:id",
+      "method": "Delete",
+      "path": "/api/v1/payments/subscription/:id",
+      "file": "services/payment-service/server.js",
+      "line": 37,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/payments/subscription/:id",
+      "method": "Get",
+      "path": "/api/v1/payments/subscription/:id",
+      "file": "services/payment-service/server.js",
+      "line": 41,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/payments/webhook/stripe",
+      "method": "Post",
+      "path": "/api/v1/payments/webhook/stripe",
+      "file": "services/payment-service/server.js",
+      "line": 45,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/payments/webhook/paypal",
+      "method": "Post",
+      "path": "/api/v1/payments/webhook/paypal",
+      "file": "services/payment-service/server.js",
+      "line": 49,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/payments/methods/:userId",
+      "method": "Get",
+      "path": "/api/v1/payments/methods/:userId",
+      "file": "services/payment-service/server.js",
+      "line": 53,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/payments/methods",
+      "method": "Post",
+      "path": "/api/v1/payments/methods",
+      "file": "services/payment-service/server.js",
+      "line": 57,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "DELETE:/api/v1/payments/methods/:id",
+      "method": "Delete",
+      "path": "/api/v1/payments/methods/:id",
+      "file": "services/payment-service/server.js",
+      "line": 61,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/payments/disputes",
+      "method": "Get",
+      "path": "/api/v1/payments/disputes",
+      "file": "services/payment-service/server.js",
+      "line": 65,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "PUT:/api/v1/payments/disputes/:id",
+      "method": "Put",
+      "path": "/api/v1/payments/disputes/:id",
+      "file": "services/payment-service/server.js",
+      "line": 69,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/users",
+      "method": "Get",
+      "path": "/api/v1/users",
+      "file": "services/user-service/server.js",
+      "line": 13,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/users",
+      "method": "Post",
+      "path": "/api/v1/users",
+      "file": "services/user-service/server.js",
+      "line": 17,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/users/:id",
+      "method": "Get",
+      "path": "/api/v1/users/:id",
+      "file": "services/user-service/server.js",
+      "line": 21,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "PUT:/api/v1/users/:id",
+      "method": "Put",
+      "path": "/api/v1/users/:id",
+      "file": "services/user-service/server.js",
+      "line": 25,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "DELETE:/api/v1/users/:id",
+      "method": "Delete",
+      "path": "/api/v1/users/:id",
+      "file": "services/user-service/server.js",
+      "line": 29,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "PATCH:/api/v1/users/:id/status",
+      "method": "Patch",
+      "path": "/api/v1/users/:id/status",
+      "file": "services/user-service/server.js",
+      "line": 33,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/users/:id/permissions",
+      "method": "Get",
+      "path": "/api/v1/users/:id/permissions",
+      "file": "services/user-service/server.js",
+      "line": 37,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "PUT:/api/v1/users/:id/permissions",
+      "method": "Put",
+      "path": "/api/v1/users/:id/permissions",
+      "file": "services/user-service/server.js",
+      "line": 41,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/users/:id/roles",
+      "method": "Get",
+      "path": "/api/v1/users/:id/roles",
+      "file": "services/user-service/server.js",
+      "line": 45,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "PUT:/api/v1/users/:id/roles",
+      "method": "Put",
+      "path": "/api/v1/users/:id/roles",
+      "file": "services/user-service/server.js",
+      "line": 49,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/users/:id/activity",
+      "method": "Get",
+      "path": "/api/v1/users/:id/activity",
+      "file": "services/user-service/server.js",
+      "line": 53,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/users/search",
+      "method": "Get",
+      "path": "/api/v1/users/search",
+      "file": "services/user-service/server.js",
+      "line": 57,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/users/bulk-import",
+      "method": "Post",
+      "path": "/api/v1/users/bulk-import",
+      "file": "services/user-service/server.js",
+      "line": 61,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/users/bulk-export",
+      "method": "Post",
+      "path": "/api/v1/users/bulk-export",
+      "file": "services/user-service/server.js",
+      "line": 65,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/users/:id/avatar",
+      "method": "Post",
+      "path": "/api/v1/users/:id/avatar",
+      "file": "services/user-service/server.js",
+      "line": 69,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/auth/login",
+      "method": "Post",
+      "path": "/api/v1/auth/login",
+      "file": "services/auth-service/server.js",
+      "line": 13,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/auth/register",
+      "method": "Post",
+      "path": "/api/v1/auth/register",
+      "file": "services/auth-service/server.js",
+      "line": 17,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/auth/logout",
+      "method": "Post",
+      "path": "/api/v1/auth/logout",
+      "file": "services/auth-service/server.js",
+      "line": 21,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/auth/refresh-token",
+      "method": "Post",
+      "path": "/api/v1/auth/refresh-token",
+      "file": "services/auth-service/server.js",
+      "line": 25,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/auth/validate/:token",
+      "method": "Get",
+      "path": "/api/v1/auth/validate/:token",
+      "file": "services/auth-service/server.js",
+      "line": 29,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/auth/forgot-password",
+      "method": "Post",
+      "path": "/api/v1/auth/forgot-password",
+      "file": "services/auth-service/server.js",
+      "line": 33,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/auth/reset-password",
+      "method": "Post",
+      "path": "/api/v1/auth/reset-password",
+      "file": "services/auth-service/server.js",
+      "line": 37,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/auth/profile",
+      "method": "Get",
+      "path": "/api/v1/auth/profile",
+      "file": "services/auth-service/server.js",
+      "line": 41,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "PUT:/api/v1/auth/profile",
+      "method": "Put",
+      "path": "/api/v1/auth/profile",
+      "file": "services/auth-service/server.js",
+      "line": 45,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "DELETE:/api/v1/auth/account",
+      "method": "Delete",
+      "path": "/api/v1/auth/account",
+      "file": "services/auth-service/server.js",
+      "line": 49,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/auth/2fa/enable",
+      "method": "Post",
+      "path": "/api/v1/auth/2fa/enable",
+      "file": "services/auth-service/server.js",
+      "line": 54,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/auth/2fa/verify",
+      "method": "Post",
+      "path": "/api/v1/auth/2fa/verify",
+      "file": "services/auth-service/server.js",
+      "line": 58,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "POST:/api/v1/auth/2fa/disable",
+      "method": "Post",
+      "path": "/api/v1/auth/2fa/disable",
+      "file": "services/auth-service/server.js",
+      "line": 62,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "GET:/api/v1/auth/sessions",
+      "method": "Get",
+      "path": "/api/v1/auth/sessions",
+      "file": "services/auth-service/server.js",
+      "line": 67,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    },
+    {
+      "id": "DELETE:/api/v1/auth/sessions/:id",
+      "method": "Delete",
+      "path": "/api/v1/auth/sessions/:id",
+      "file": "services/auth-service/server.js",
+      "line": 71,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:56:30.461225Z"
+    }
+  ],
+  "statistics": {
+    "total": 67,
+    "by_method": {
+      "Delete": 7,
+      "Get": 24,
+      "Patch": 1,
+      "Post": 27,
+      "Put": 8
+    }
+  }
+}

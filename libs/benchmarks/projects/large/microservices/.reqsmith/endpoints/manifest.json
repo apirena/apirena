@@ -1,0 +1,411 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-11T04:53:49.901838Z",
+  "endpoints": [
+    {
+      "id": "GET:/orders",
+      "method": "Get",
+      "path": "/orders",
+      "file": "order-service.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "POST:/orders",
+      "method": "Post",
+      "path": "/orders",
+      "file": "order-service.js",
+      "line": 10,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/orders/:id",
+      "method": "Get",
+      "path": "/orders/:id",
+      "file": "order-service.js",
+      "line": 15,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "PUT:/orders/:id",
+      "method": "Put",
+      "path": "/orders/:id",
+      "file": "order-service.js",
+      "line": 20,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "DELETE:/orders/:id",
+      "method": "Delete",
+      "path": "/orders/:id",
+      "file": "order-service.js",
+      "line": 25,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/orders/:id/status",
+      "method": "Get",
+      "path": "/orders/:id/status",
+      "file": "order-service.js",
+      "line": 31,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "PUT:/orders/:id/status",
+      "method": "Put",
+      "path": "/orders/:id/status",
+      "file": "order-service.js",
+      "line": 36,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "POST:/orders/:id/payment",
+      "method": "Post",
+      "path": "/orders/:id/payment",
+      "file": "order-service.js",
+      "line": 42,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/orders/:id/payment",
+      "method": "Get",
+      "path": "/orders/:id/payment",
+      "file": "order-service.js",
+      "line": 47,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "POST:/orders/:id/ship",
+      "method": "Post",
+      "path": "/orders/:id/ship",
+      "file": "order-service.js",
+      "line": 53,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/orders/:id/tracking",
+      "method": "Get",
+      "path": "/orders/:id/tracking",
+      "file": "order-service.js",
+      "line": 58,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/api/users",
+      "method": "Get",
+      "path": "/api/users",
+      "file": "api-gateway.js",
+      "line": 7,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "POST:/api/users",
+      "method": "Post",
+      "path": "/api/users",
+      "file": "api-gateway.js",
+      "line": 12,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/api/users/:id",
+      "method": "Get",
+      "path": "/api/users/:id",
+      "file": "api-gateway.js",
+      "line": 17,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "PUT:/api/users/:id",
+      "method": "Put",
+      "path": "/api/users/:id",
+      "file": "api-gateway.js",
+      "line": 22,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "DELETE:/api/users/:id",
+      "method": "Delete",
+      "path": "/api/users/:id",
+      "file": "api-gateway.js",
+      "line": 27,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/api/posts",
+      "method": "Get",
+      "path": "/api/posts",
+      "file": "api-gateway.js",
+      "line": 33,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "POST:/api/posts",
+      "method": "Post",
+      "path": "/api/posts",
+      "file": "api-gateway.js",
+      "line": 38,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/api/posts/:id",
+      "method": "Get",
+      "path": "/api/posts/:id",
+      "file": "api-gateway.js",
+      "line": 43,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "PUT:/api/posts/:id",
+      "method": "Put",
+      "path": "/api/posts/:id",
+      "file": "api-gateway.js",
+      "line": 48,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "DELETE:/api/posts/:id",
+      "method": "Delete",
+      "path": "/api/posts/:id",
+      "file": "api-gateway.js",
+      "line": 53,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/api/posts/:postId/comments",
+      "method": "Get",
+      "path": "/api/posts/:postId/comments",
+      "file": "api-gateway.js",
+      "line": 59,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "POST:/api/posts/:postId/comments",
+      "method": "Post",
+      "path": "/api/posts/:postId/comments",
+      "file": "api-gateway.js",
+      "line": 64,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/api/search/users",
+      "method": "Get",
+      "path": "/api/search/users",
+      "file": "api-gateway.js",
+      "line": 70,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/api/search/posts",
+      "method": "Get",
+      "path": "/api/search/posts",
+      "file": "api-gateway.js",
+      "line": 76,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/products",
+      "method": "Get",
+      "path": "/products",
+      "file": "product-service.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "POST:/products",
+      "method": "Post",
+      "path": "/products",
+      "file": "product-service.js",
+      "line": 10,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/products/:id",
+      "method": "Get",
+      "path": "/products/:id",
+      "file": "product-service.js",
+      "line": 15,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "PUT:/products/:id",
+      "method": "Put",
+      "path": "/products/:id",
+      "file": "product-service.js",
+      "line": 20,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "DELETE:/products/:id",
+      "method": "Delete",
+      "path": "/products/:id",
+      "file": "product-service.js",
+      "line": 25,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/categories",
+      "method": "Get",
+      "path": "/categories",
+      "file": "product-service.js",
+      "line": 31,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/categories/:id/products",
+      "method": "Get",
+      "path": "/categories/:id/products",
+      "file": "product-service.js",
+      "line": 36,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/products/:id/reviews",
+      "method": "Get",
+      "path": "/products/:id/reviews",
+      "file": "product-service.js",
+      "line": 42,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "POST:/products/:id/reviews",
+      "method": "Post",
+      "path": "/products/:id/reviews",
+      "file": "product-service.js",
+      "line": 47,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/products/:id/inventory",
+      "method": "Get",
+      "path": "/products/:id/inventory",
+      "file": "product-service.js",
+      "line": 53,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "PUT:/products/:id/inventory",
+      "method": "Put",
+      "path": "/products/:id/inventory",
+      "file": "product-service.js",
+      "line": 58,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/users",
+      "method": "Get",
+      "path": "/users",
+      "file": "user-service.js",
+      "line": 5,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "POST:/users",
+      "method": "Post",
+      "path": "/users",
+      "file": "user-service.js",
+      "line": 10,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/users/:id",
+      "method": "Get",
+      "path": "/users/:id",
+      "file": "user-service.js",
+      "line": 15,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "PUT:/users/:id",
+      "method": "Put",
+      "path": "/users/:id",
+      "file": "user-service.js",
+      "line": 20,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "DELETE:/users/:id",
+      "method": "Delete",
+      "path": "/users/:id",
+      "file": "user-service.js",
+      "line": 25,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "POST:/users/login",
+      "method": "Post",
+      "path": "/users/login",
+      "file": "user-service.js",
+      "line": 31,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "POST:/users/logout",
+      "method": "Post",
+      "path": "/users/logout",
+      "file": "user-service.js",
+      "line": 36,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    },
+    {
+      "id": "GET:/users/profile",
+      "method": "Get",
+      "path": "/users/profile",
+      "file": "user-service.js",
+      "line": 41,
+      "framework": "auto",
+      "last_seen": "2025-08-11T04:53:49.901838Z"
+    }
+  ],
+  "statistics": {
+    "total": 44,
+    "by_method": {
+      "Delete": 5,
+      "Get": 21,
+      "Post": 11,
+      "Put": 7
+    }
+  }
+}

@@ -1,20 +1,151 @@
 use std::collections::HashMap;
 use std::path::{Path, PathBuf};
-use tauri::{AppHandle, Emitter, TitleBarStyle, WebviewUrl, WebviewWindowBuilder};
+use std::sync::OnceLock;
+use tauri::{AppHandle, Emitter, TitleBarStyle, WebviewUrl, WebviewWindowBuilder, Manager};
 use reqsmith_parser::{Endpoint, LanguageParser, detect_language};
 use reqsmith_parser::languages::{javascript::JavaScriptParser, python::PythonParser, php::PhpParser};
 
 mod storage;
-use storage::{ReqSmithStorage, EndpointRecord};
+mod watcher;
 
-fn find_benchmark_project() -> Option<String> {
-    // Try to locate the repo root and pick a small express sample for demo
+use storage::{ReqSmithStorage, EndpointRecord};
+use watcher::WatcherRegistry;
+
+// Global watcher registry
+static WATCHER_REGISTRY: OnceLock<WatcherRegistry> = OnceLock::new();
+
+// Config management functions for persistent last directory
+fn get_app_config_dir(app_handle: &AppHandle) -> Result<PathBuf, String> {
+    app_handle
+        .path()
+        .app_config_dir()
+        .map_err(|e| format!("Failed to get app config directory: {}", e))
+}
+
+fn get_last_selected_directory(app_handle: &AppHandle) -> Option<PathBuf> {
+    let config_dir = get_app_config_dir(app_handle).ok()?;
+    let config_file = config_dir.join("last_directory.txt");
+    
+    if config_file.exists() {
+        if let Ok(path_str) = std::fs::read_to_string(&config_file) {
+            let path = PathBuf::from(path_str.trim());
+            if path.exists() && path.is_dir() {
+                return Some(path);
+            }
+        }
+    }
+    None
+}
+
+fn save_last_selected_directory(app_handle: &AppHandle, dir: &Path) -> Result<(), String> {
+    let config_dir = get_app_config_dir(app_handle)?;
+    
+    // Ensure config directory exists
+    if let Err(e) = std::fs::create_dir_all(&config_dir) {
+        return Err(format!("Failed to create config directory: {}", e));
+    }
+    
+    let config_file = config_dir.join("last_directory.txt");
+    std::fs::write(&config_file, dir.to_string_lossy().as_bytes())
+        .map_err(|e| format!("Failed to write last directory config: {}", e))
+}
+
+
+#[tauri::command]
+async fn select_project_folder(app_handle: AppHandle) -> Result<Option<String>, String> {
+    use tauri_plugin_dialog::DialogExt;
+    
+    // Get last selected directory from app config, or fall back to reasonable defaults
+    let start_dir = get_last_selected_directory(&app_handle)
+        .or_else(|| find_workspace_root())
+        .or_else(|| std::env::current_dir().ok())
+        .unwrap_or_else(|| std::env::var("HOME")
+            .or_else(|_| std::env::var("USERPROFILE"))
+            .map(std::path::PathBuf::from)
+            .unwrap_or_else(|_| std::path::PathBuf::from("/"))
+        );
+    
+    println!("Starting folder picker from: {}", start_dir.display());
+    
+    // Native folder picker dialog with starting directory
+    let folder = app_handle
+        .dialog()
+        .file()
+        .set_title("Select Project Folder to Watch")
+        .set_directory(&start_dir)
+        .blocking_pick_folder();
+    
+    match folder {
+        Some(path) => {
+            let path_str = path.to_string();
+            println!("Selected folder: {}", path_str);
+            
+            // Save the parent directory for next time
+            if let Some(parent) = PathBuf::from(&path_str).parent().map(|p| p.to_path_buf()) {
+                if let Err(e) = save_last_selected_directory(&app_handle, &parent) {
+                    eprintln!("Failed to save last selected directory: {}", e);
+                }
+            }
+            
+            Ok(Some(path_str))
+        },
+        None => {
+            println!("User cancelled folder selection");
+            // No fallback - user must select a project
+            Ok(None)
+        }
+    }
+}
+
+#[tauri::command]
+async fn select_project_folder_from(app_handle: AppHandle, start_path: String) -> Result<Option<String>, String> {
+    use tauri_plugin_dialog::DialogExt;
+    
+    let start_dir = std::path::PathBuf::from(&start_path);
+    
+    if !start_dir.exists() {
+        return Err(format!("Start path does not exist: {}", start_path));
+    }
+    
+    println!("Starting folder picker from custom path: {}", start_dir.display());
+    
+    // Native folder picker dialog with custom starting point
+    let folder = app_handle
+        .dialog()
+        .file()
+        .set_title("Select Project Folder to Watch")
+        .set_directory(&start_dir)
+        .blocking_pick_folder();
+    
+    match folder {
+        Some(path) => {
+            let path_str = path.to_string();
+            println!("Selected folder: {}", path_str);
+            
+            // Save the parent directory for next time
+            if let Some(parent) = PathBuf::from(&path_str).parent().map(|p| p.to_path_buf()) {
+                if let Err(e) = save_last_selected_directory(&app_handle, &parent) {
+                    eprintln!("Failed to save last selected directory: {}", e);
+                }
+            }
+            
+            Ok(Some(path_str))
+        },
+        None => {
+            println!("User cancelled folder selection");
+            Ok(None)
+        }
+    }
+}
+
+
+
+fn find_workspace_root() -> Option<std::path::PathBuf> {
+    // Try to locate the reqsmith workspace root
     if let Ok(mut dir) = std::env::current_dir() {
-        for _ in 0..6 {
-            let candidate = dir
-                .join("libs/benchmarks/projects/small/express-api");
-            if candidate.exists() {
-                return Some(candidate.to_string_lossy().to_string());
+        for _ in 0..8 {  // Increased search depth
+            if dir.join("nx.json").exists() && dir.join("pnpm-workspace.yaml").exists() {
+                return Some(dir);
             }
             if !dir.pop() {
                 break;
@@ -22,21 +153,6 @@ fn find_benchmark_project() -> Option<String> {
         }
     }
     None
-}
-
-#[tauri::command]
-async fn select_project_folder() -> Result<Option<String>, String> {
-    // Prefer a benchmark sample for reliable demo data
-    if let Some(sample) = find_benchmark_project() {
-        return Ok(Some(sample));
-    }
-
-    // Fallback: current working directory
-    let test_path = std::env::current_dir()
-        .map(|p| p.to_string_lossy().to_string())
-        .unwrap_or_else(|_| ".".to_string());
-        
-    Ok(Some(test_path))
 }
 
 fn should_visit(path: &Path) -> bool {
@@ -148,24 +264,44 @@ async fn start_watching(
         return Err("Project path does not exist".to_string());
     }
 
-    // Initial discovery and persist to disk, then emit results
+    // Get or create the global watcher registry
+    let registry = WATCHER_REGISTRY.get_or_init(|| WatcherRegistry::new());
+    
+    // Start watching the project directory
+    let watch_id = registry.start_watching(project_path.clone(), app_handle.clone()).await?;
+    
+    // Also do initial discovery and emit results
     match discover_endpoints(path.clone()).await {
         Ok(updated_endpoints) => {
             if let Err(e) = app_handle.emit("endpoints-updated", &updated_endpoints) {
-                eprintln!("Failed to emit endpoints update: {}", e);
+                eprintln!("Failed to emit initial endpoints: {}", e);
             }
         }
-        Err(err) => return Err(err),
+        Err(err) => {
+            // Stop watching if initial discovery fails
+            registry.stop_watching(&watch_id).await;
+            return Err(err);
+        }
     }
 
-    Ok(path)
+    Ok(watch_id)
 }
 
 #[tauri::command]
 async fn stop_watching(
-    _watch_id: String,
+    watch_id: String,
 ) -> Result<(), String> {
-    // No-op for now until a real watcher is wired up with cancellable tasks.
+    if let Some(registry) = WATCHER_REGISTRY.get() {
+        registry.stop_watching(&watch_id).await;
+    }
+    Ok(())
+}
+
+#[tauri::command]
+async fn copy_to_clipboard(text: String) -> Result<(), String> {
+    // Simple fallback - just print to console for now
+    // In a real implementation, you'd use the system clipboard API
+    println!("Copying to clipboard: {}", text);
     Ok(())
 }
 
@@ -174,10 +310,12 @@ async fn send_request(
     endpoint: Endpoint, 
     params: HashMap<String, String>,
     headers: HashMap<String, String>,
-    body: Option<String>
+    body: Option<String>,
+    base_url: Option<String>
 ) -> Result<HttpResponse, String> {
     let client = reqwest::Client::new();
-    let url = format!("http://localhost:3000{}", endpoint.path);
+    let base = base_url.unwrap_or_else(|| "http://localhost:3000".to_string());
+    let url = format!("{}{}", base, endpoint.path);
     
     // Build request based on method
     let mut request_builder = match endpoint.method {
@@ -239,10 +377,12 @@ struct HttpResponse {
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
+        .plugin(tauri_plugin_dialog::init())
+        .plugin(tauri_plugin_os::init())
         .setup(|app| {
             let win_builder = WebviewWindowBuilder::new(app, "main", WebviewUrl::default())
-                .title("Reqsmith")
-                .inner_size(1100.0, 720.0);
+                .title("")
+                .inner_size(1200.0, 800.0);
 
             #[cfg(target_os = "macos")]
             let win_builder = win_builder.title_bar_style(TitleBarStyle::Transparent);
@@ -271,11 +411,13 @@ pub fn run() {
         })
         .invoke_handler(tauri::generate_handler![
             select_project_folder,
+            select_project_folder_from,
             discover_endpoints,
             read_manifest,
             start_watching,
             stop_watching,
-            send_request
+            send_request,
+            copy_to_clipboard
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

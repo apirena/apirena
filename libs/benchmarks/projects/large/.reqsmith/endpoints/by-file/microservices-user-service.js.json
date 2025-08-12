@@ -1,0 +1,74 @@
+[
+  {
+    "id": "GET:/users",
+    "method": "Get",
+    "path": "/users",
+    "file": "microservices/user-service.js",
+    "line": 5,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/users",
+    "method": "Post",
+    "path": "/users",
+    "file": "microservices/user-service.js",
+    "line": 10,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/users/:id",
+    "method": "Get",
+    "path": "/users/:id",
+    "file": "microservices/user-service.js",
+    "line": 15,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "PUT:/users/:id",
+    "method": "Put",
+    "path": "/users/:id",
+    "file": "microservices/user-service.js",
+    "line": 20,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "DELETE:/users/:id",
+    "method": "Delete",
+    "path": "/users/:id",
+    "file": "microservices/user-service.js",
+    "line": 25,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/users/login",
+    "method": "Post",
+    "path": "/users/login",
+    "file": "microservices/user-service.js",
+    "line": 31,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/users/logout",
+    "method": "Post",
+    "path": "/users/logout",
+    "file": "microservices/user-service.js",
+    "line": 36,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/users/profile",
+    "method": "Get",
+    "path": "/users/profile",
+    "file": "microservices/user-service.js",
+    "line": 41,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  }
+]

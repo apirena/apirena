@@ -1,0 +1,128 @@
+[
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "routes/users.py",
+    "line": 8,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "POST:/",
+    "method": "Post",
+    "path": "/",
+    "file": "routes/users.py",
+    "line": 26,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:user_id>",
+    "method": "Get",
+    "path": "/<int:user_id>",
+    "file": "routes/users.py",
+    "line": 47,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "PUT:/<int:user_id>",
+    "method": "Put",
+    "path": "/<int:user_id>",
+    "file": "routes/users.py",
+    "line": 54,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "DELETE:/<int:user_id>",
+    "method": "Delete",
+    "path": "/<int:user_id>",
+    "file": "routes/users.py",
+    "line": 78,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:user_id>/profile",
+    "method": "Get",
+    "path": "/<int:user_id>/profile",
+    "file": "routes/users.py",
+    "line": 93,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:user_id>/orders",
+    "method": "Get",
+    "path": "/<int:user_id>/orders",
+    "file": "routes/users.py",
+    "line": 105,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "routes/users.py",
+    "line": 8,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/",
+    "method": "Get",
+    "path": "/",
+    "file": "routes/users.py",
+    "line": 26,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:user_id>",
+    "method": "Get",
+    "path": "/<int:user_id>",
+    "file": "routes/users.py",
+    "line": 47,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:user_id>",
+    "method": "Get",
+    "path": "/<int:user_id>",
+    "file": "routes/users.py",
+    "line": 54,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:user_id>",
+    "method": "Get",
+    "path": "/<int:user_id>",
+    "file": "routes/users.py",
+    "line": 78,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:user_id>/profile",
+    "method": "Get",
+    "path": "/<int:user_id>/profile",
+    "file": "routes/users.py",
+    "line": 93,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  },
+  {
+    "id": "GET:/<int:user_id>/orders",
+    "method": "Get",
+    "path": "/<int:user_id>/orders",
+    "file": "routes/users.py",
+    "line": 105,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:40:18.724514Z"
+  }
+]

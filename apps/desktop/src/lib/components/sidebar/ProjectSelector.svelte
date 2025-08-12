@@ -17,9 +17,17 @@
       return;
     }
     try {
+      // Stop watching current project if active
+      if (projectState.isWatching) {
+        await endpointStore.stopWatching();
+      }
+      
       // Use Tauri command to select project folder
       const selectedPath = await invoke('select_project_folder');
       if (selectedPath) {
+        // Clear previous project state
+        endpointStore.clearProject();
+        
         // Load from filesystem manifest first for instant UI
         await endpointStore.loadFromFilesystem(selectedPath as string);
         // Then run discovery to refresh and persist
@@ -64,16 +72,35 @@
 
   {#if projectState.path}
     <div class="project-info">
-      <div class="project-path" title={projectState.path}>
-        📁 {projectState.path.split('/').pop()}
+      <div class="project-header">
+        <div class="project-path" title={projectState.path}>
+          📁 {projectState.path.split('/').pop()}
+        </div>
+        <button 
+          class="reselect-btn" 
+          onclick={selectProject} 
+          disabled={isLoading || !isTauri()}
+          title="Select different project folder"
+        >
+          🔄
+        </button>
       </div>
       <div class="endpoint-count">
         {projectState.endpoints.length} endpoints found
       </div>
+      <div class="project-actions">
+        <button 
+          class="change-project-btn" 
+          onclick={selectProject} 
+          disabled={isLoading || !isTauri()}
+        >
+          📂 Change Project
+        </button>
+      </div>
     </div>
   {:else}
     <button class="select-project-btn" onclick={selectProject} disabled={isLoading || !isTauri()} title={!isTauri() ? 'Run the desktop app with Tauri to select a project' : ''}>
-      {isLoading ? 'Loading...' : '📁 Select Project'}
+      {isLoading ? 'Loading...' : '📁 Select Project Folder'}
     </button>
   {/if}
 </div>
@@ -133,7 +160,14 @@
   .project-info {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.5rem;
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .project-path {
@@ -143,11 +177,63 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    flex: 1;
+  }
+
+  .reselect-btn {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .reselect-btn:hover {
+    background: var(--color-surface-hover);
+    color: var(--color-primary);
+  }
+
+  .reselect-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 
   .endpoint-count {
     font-size: 0.8rem;
     color: var(--color-text-secondary);
+  }
+
+  .project-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .change-project-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    flex: 1;
+  }
+
+  .change-project-btn:hover {
+    background: var(--color-surface-hover);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .change-project-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 
   .select-project-btn {

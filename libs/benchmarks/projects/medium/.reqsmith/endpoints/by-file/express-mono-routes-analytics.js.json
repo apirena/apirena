@@ -1,0 +1,74 @@
+[
+  {
+    "id": "GET:/dashboard",
+    "method": "Get",
+    "path": "/dashboard",
+    "file": "express-mono/routes/analytics.js",
+    "line": 5,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "GET:/sales-metrics",
+    "method": "Get",
+    "path": "/sales-metrics",
+    "file": "express-mono/routes/analytics.js",
+    "line": 9,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "GET:/user-metrics",
+    "method": "Get",
+    "path": "/user-metrics",
+    "file": "express-mono/routes/analytics.js",
+    "line": 13,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "GET:/performance-metrics",
+    "method": "Get",
+    "path": "/performance-metrics",
+    "file": "express-mono/routes/analytics.js",
+    "line": 17,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "POST:/custom-report",
+    "method": "Post",
+    "path": "/custom-report",
+    "file": "express-mono/routes/analytics.js",
+    "line": 21,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "GET:/export/:format",
+    "method": "Get",
+    "path": "/export/:format",
+    "file": "express-mono/routes/analytics.js",
+    "line": 25,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "GET:/real-time-stats",
+    "method": "Get",
+    "path": "/real-time-stats",
+    "file": "express-mono/routes/analytics.js",
+    "line": 29,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "POST:/event-tracking",
+    "method": "Post",
+    "path": "/event-tracking",
+    "file": "express-mono/routes/analytics.js",
+    "line": 33,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  }
+]

@@ -1,0 +1,137 @@
+[
+  {
+    "id": "GET:/api/v1/users",
+    "method": "Get",
+    "path": "/api/v1/users",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 13,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/users",
+    "method": "Post",
+    "path": "/api/v1/users",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 17,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/api/v1/users/:id",
+    "method": "Get",
+    "path": "/api/v1/users/:id",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 21,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "PUT:/api/v1/users/:id",
+    "method": "Put",
+    "path": "/api/v1/users/:id",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 25,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "DELETE:/api/v1/users/:id",
+    "method": "Delete",
+    "path": "/api/v1/users/:id",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 29,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "PATCH:/api/v1/users/:id/status",
+    "method": "Patch",
+    "path": "/api/v1/users/:id/status",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 33,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/api/v1/users/:id/permissions",
+    "method": "Get",
+    "path": "/api/v1/users/:id/permissions",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 37,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "PUT:/api/v1/users/:id/permissions",
+    "method": "Put",
+    "path": "/api/v1/users/:id/permissions",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 41,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/api/v1/users/:id/roles",
+    "method": "Get",
+    "path": "/api/v1/users/:id/roles",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 45,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "PUT:/api/v1/users/:id/roles",
+    "method": "Put",
+    "path": "/api/v1/users/:id/roles",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 49,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/api/v1/users/:id/activity",
+    "method": "Get",
+    "path": "/api/v1/users/:id/activity",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 53,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "GET:/api/v1/users/search",
+    "method": "Get",
+    "path": "/api/v1/users/search",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 57,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/users/bulk-import",
+    "method": "Post",
+    "path": "/api/v1/users/bulk-import",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 61,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/users/bulk-export",
+    "method": "Post",
+    "path": "/api/v1/users/bulk-export",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 65,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  },
+  {
+    "id": "POST:/api/v1/users/:id/avatar",
+    "method": "Post",
+    "path": "/api/v1/users/:id/avatar",
+    "file": "enterprise/services/user-service/server.js",
+    "line": 69,
+    "framework": "auto",
+    "last_seen": "2025-08-11T04:57:26.918391Z"
+  }
+]

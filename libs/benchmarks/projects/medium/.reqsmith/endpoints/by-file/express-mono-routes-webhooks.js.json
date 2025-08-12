@@ -1,0 +1,65 @@
+[
+  {
+    "id": "POST:/stripe/payment",
+    "method": "Post",
+    "path": "/stripe/payment",
+    "file": "express-mono/routes/webhooks.js",
+    "line": 5,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "POST:/github/deployment",
+    "method": "Post",
+    "path": "/github/deployment",
+    "file": "express-mono/routes/webhooks.js",
+    "line": 9,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "POST:/slack/notifications",
+    "method": "Post",
+    "path": "/slack/notifications",
+    "file": "express-mono/routes/webhooks.js",
+    "line": 13,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "POST:/sendgrid/email-events",
+    "method": "Post",
+    "path": "/sendgrid/email-events",
+    "file": "express-mono/routes/webhooks.js",
+    "line": 17,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "POST:/auth0/user-events",
+    "method": "Post",
+    "path": "/auth0/user-events",
+    "file": "express-mono/routes/webhooks.js",
+    "line": 21,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "POST:/monitoring/alerts",
+    "method": "Post",
+    "path": "/monitoring/alerts",
+    "file": "express-mono/routes/webhooks.js",
+    "line": 25,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  },
+  {
+    "id": "GET:/webhook-logs",
+    "method": "Get",
+    "path": "/webhook-logs",
+    "file": "express-mono/routes/webhooks.js",
+    "line": 29,
+    "framework": "auto",
+    "last_seen": "2025-08-12T05:08:02.787188Z"
+  }
+]
