@@ -1,6 +1,6 @@
-# Reqsmith Project Overview
+# PinPath Project Overview
 
-## What is Reqsmith?
+## What is PinPath?
 
 A **code-first API playground** that eliminates the gap between writing APIs and testing them. No configuration, no annotations, no spec drift - just save your code and test immediately.
 
@@ -11,7 +11,7 @@ Traditional API tools require manual work:
 - Swagger: Write OpenAPI specs that drift from implementation  
 - Insomnia: Import/export, maintain separate configurations
 
-**Reqsmith**: Your code IS the specification.
+**PinPath**: Your code IS the specification.
 
 ## How It Works
 
@@ -47,7 +47,7 @@ State management that preserves your work:
 
 ## Differentiation
 
-| Feature | Postman | Insomnia | Swagger | Reqsmith |
+| Feature | Postman | Insomnia | Swagger | PinPath |
 |---------|---------|----------|---------|-----------|
 | Configuration | Manual | Import/Export | Annotations | None |
 | Time to Test | 5+ min | 3+ min | 2+ min | <10 sec |
@@ -79,7 +79,7 @@ State management that preserves your work:
 ## Repository Structure
 
 ```
-reqsmith/
+pinpath/
 ├── apps/
 │   ├── cli/           # Command-line interface (Rust)
 │   └── desktop/       # Tauri playground app (future)
@@ -95,10 +95,10 @@ reqsmith/
 
 ```bash
 # Discover endpoints in a project
-reqsmith discover ./my-api-project
+pinpath discover ./my-api-project
 
 # Watch for changes in real-time
-reqsmith watch ./my-api-project
+pinpath watch ./my-api-project
 
 # Output
 📋 Found 12 endpoint(s):

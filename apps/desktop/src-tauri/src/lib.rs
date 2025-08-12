@@ -8,7 +8,7 @@ use pinpath_parser::languages::{javascript::JavaScriptParser, python::PythonPars
 mod storage;
 mod watcher;
 
-use storage::{ReqSmithStorage, EndpointRecord};
+use storage::{PinPathStorage, EndpointRecord};
 use watcher::WatcherRegistry;
 
 // Global watcher registry
@@ -160,7 +160,7 @@ fn should_visit(path: &Path) -> bool {
         if let Some(name) = path.file_name().and_then(|s| s.to_str()) {
             return !matches!(
                 name,
-                "node_modules" | ".git" | ".reqsmith" | "target" | "dist" | "build"
+                "node_modules" | ".git" | ".pinpath" | "target" | "dist" | "build"
             );
         }
     }
@@ -195,8 +195,8 @@ async fn discover_endpoints(path: String) -> Result<Vec<Endpoint>, String> {
         return Err("Project path does not exist".to_string());
     }
 
-    // Ensure .reqsmith structure exists
-    let storage = ReqSmithStorage::new(project_path.clone())
+    // Ensure .pinpath structure exists
+    let storage = PinPathStorage::new(project_path.clone())
         .map_err(|e| format!("Storage init failed: {}", e))?;
 
     let mut endpoints = Vec::new();
@@ -244,7 +244,7 @@ async fn discover_endpoints(path: String) -> Result<Vec<Endpoint>, String> {
 #[tauri::command]
 async fn read_manifest(path: String) -> Result<Option<String>, String> {
     let project_path = PathBuf::from(&path);
-    let manifest_path = project_path.join(".reqsmith/endpoints/manifest.json");
+    let manifest_path = project_path.join(".pinpath/endpoints/manifest.json");
     if !manifest_path.exists() {
         return Ok(None);
     }

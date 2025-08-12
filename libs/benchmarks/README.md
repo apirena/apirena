@@ -1,10 +1,10 @@
-# Reqsmith Benchmarks
+# PinPath Benchmarks
 
-Performance testing suite for the Reqsmith endpoint discovery system.
+Performance testing suite for the PinPath endpoint discovery system.
 
 ## Overview
 
-This library provides comprehensive benchmarks that measure real-world performance across the entire Reqsmith pipeline - from file watching to endpoint extraction to configuration generation.
+This library provides comprehensive benchmarks that measure real-world performance across the entire PinPath pipeline - from file watching to endpoint extraction to configuration generation.
 
 ## Quick Start
 
@@ -76,7 +76,7 @@ Test individual component performance in isolation:
 Measure complete user workflows:
 - **Cold Start**: Time from opening project to full endpoint discovery
 - **Hot Reload**: File save to UI update latency
-- **Configuration Generation**: Speed of `.reqsmith/discovered.config.js` creation
+- **Configuration Generation**: Speed of `.pinpath/discovered.config.js` creation
 
 **Performance Targets**:
 - Small project cold start: < 50ms
@@ -148,7 +148,7 @@ Complete benchmark suite runs nightly:
 
 ### Current Working Output (via `nx run benchmarks:bench-demo`)
 ```
-🚀 Reqsmith Benchmark Suite - Parser Performance Test
+🚀 PinPath Benchmark Suite - Parser Performance Test
 =======================================================
 📊 Running Parser Performance Tests...
 
@@ -269,4 +269,4 @@ nx run benchmarks:bench -- --verbose
 - **Memory Profiling**: Detailed heap analysis for optimization
 - **UI Performance**: Desktop app responsiveness benchmarks (Phase 3)
 
-This benchmark suite ensures Reqsmith maintains its performance goals as new features are added, keeping the promise of < 10ms endpoint discovery for real-world projects.
+This benchmark suite ensures PinPath maintains its performance goals as new features are added, keeping the promise of < 10ms endpoint discovery for real-world projects.

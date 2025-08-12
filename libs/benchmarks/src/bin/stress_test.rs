@@ -21,7 +21,7 @@ struct StressTestResult {
 }
 
 fn main() {
-    println!("🚀 Pinpath Stress Test & Scalability Analysis");
+    println!("🚀 PinPath Stress Test & Scalability Analysis");
     println!("================================================");
     println!("Testing limits and edge cases for development workflows\n");
     

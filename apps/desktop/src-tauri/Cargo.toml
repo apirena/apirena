@@ -30,7 +30,7 @@ chrono = { version = "0.4", features = ["serde"] }
 uuid = { version = "1", features = ["v4"] }
 pathdiff = "0.2"
 
-# Pinpath libraries
+# PinPath libraries
 pinpath-core = { path = "../../../libs/core" }
 pinpath-parser = { path = "../../../libs/parser" }
 pinpath-diff = { path = "../../../libs/diff" }

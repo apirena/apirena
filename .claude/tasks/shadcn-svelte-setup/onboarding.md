@@ -1,4 +1,4 @@
-# Onboarding: shadcn-svelte Design System Setup for reqsmith Desktop
+# Onboarding: shadcn-svelte Design System Setup for pinpath Desktop
 
 Owner: GitHub Copilot
 Date: 2025-08-07

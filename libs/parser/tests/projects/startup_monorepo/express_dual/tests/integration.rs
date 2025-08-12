@@ -1,5 +1,5 @@
 use crate::projects::fixtures;
-use reqsmith_parser::config::ConfigDiscovery;
+use pinpath_parser::config::ConfigDiscovery;
 use std::fs;
 
 #[tokio::test]
@@ -7,7 +7,7 @@ async fn full_discovery_pipeline_works() {
     let project_path = fixtures::express_dual_monorepo();
     
     // Clean up any existing config files to ensure test isolation
-    let config_path = project_path.join(".reqsmith/discovered.config.js");
+    let config_path = project_path.join(".pinpath/discovered.config.js");
     if config_path.exists() {
         let _ = fs::remove_file(&config_path);
     }
@@ -32,7 +32,7 @@ async fn handles_monorepo_structure() {
     let project_path = fixtures::express_dual_monorepo();
     
     // Clean up any existing config files to ensure test isolation
-    let config_path = project_path.join(".reqsmith/discovered.config.js");
+    let config_path = project_path.join(".pinpath/discovered.config.js");
     if config_path.exists() {
         let _ = fs::remove_file(&config_path);
     }

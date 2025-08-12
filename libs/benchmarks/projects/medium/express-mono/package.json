@@ -1,7 +1,7 @@
 {
   "name": "express-monorepo-api",
   "version": "2.0.0",
-  "description": "Medium-sized Express monorepo for Reqsmith benchmarks",
+  "description": "Medium-sized Express monorepo for PinPath benchmarks",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",

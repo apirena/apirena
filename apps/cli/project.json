@@ -8,21 +8,21 @@
       "outputs": ["{projectRoot}/target"],
       "options": {
         "toolchain": "stable",
-        "package": "reqsmith-cli"
+        "package": "pinpath-cli"
       }
     },
     "serve": {
       "executor": "@monodon/rust:run",
       "options": {
         "toolchain": "stable",
-        "package": "reqsmith-cli"
+        "package": "pinpath-cli"
       }
     },
     "test": {
       "executor": "@monodon/rust:test",
       "options": {
         "toolchain": "stable",
-        "package": "reqsmith-cli"
+        "package": "pinpath-cli"
       }
     },
     "integration-test": {
@@ -181,7 +181,7 @@
       "executor": "@monodon/rust:clippy",
       "options": {
         "toolchain": "stable",
-        "package": "reqsmith-cli",
+        "package": "pinpath-cli",
         "fix": false
       }
     }

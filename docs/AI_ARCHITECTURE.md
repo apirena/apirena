@@ -1,4 +1,4 @@
-# AI Architecture for Reqsmith
+# AI Architecture for PinPath
 
 ## Overview
 

@@ -6,7 +6,7 @@ use pinpath_benchmarks::measure_memory_usage;
 use walkdir::WalkDir;
 
 fn main() {
-    println!("🚀 Pinpath Performance Benchmark Suite");
+    println!("🚀 PinPath Performance Benchmark Suite");
     println!("==========================================");
     println!("Testing real-world endpoint discovery performance\n");
     

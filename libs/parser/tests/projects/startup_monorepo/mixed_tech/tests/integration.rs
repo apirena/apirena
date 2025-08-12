@@ -1,5 +1,5 @@
 use crate::projects::fixtures;
-use reqsmith_parser::config::ConfigDiscovery;
+use pinpath_parser::config::ConfigDiscovery;
 use std::fs;
 
 #[tokio::test]
@@ -11,7 +11,7 @@ async fn complete_discovery_workflow() {
     // Complete workflow: detect all frameworks + generate config
     assert_eq!(config.frameworks.len(), 4);
     
-    let config_path = project_path.join(".reqsmith/discovered.config.js");
+    let config_path = project_path.join(".pinpath/discovered.config.js");
     assert!(config_path.exists());
     
     let config_content = fs::read_to_string(&config_path).unwrap();

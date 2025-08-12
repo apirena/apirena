@@ -2,7 +2,7 @@
 
 ## Overview
 
-The `reqsmith-parser` library follows a comprehensive testing strategy organized around Nx monorepo conventions, providing granular test execution and optimal CI/CD integration.
+The `pinpath-parser` library follows a comprehensive testing strategy organized around Nx monorepo conventions, providing granular test execution and optimal CI/CD integration.
 
 ## Test Organization
 
@@ -186,5 +186,5 @@ nx run parser:test:ci
 cargo test specific_test_name -- --nocapture
 
 # Performance profiling
-cargo bench --package reqsmith-parser
+cargo bench --package pinpath-parser
 ```

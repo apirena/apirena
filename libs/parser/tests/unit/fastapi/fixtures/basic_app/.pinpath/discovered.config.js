@@ -1,4 +1,4 @@
-// Auto-generated Reqsmith configuration
+// Auto-generated PinPath configuration
 // Generated: 2025-08-07T06:18:10.566107+00:00
 // Version: 1.0.0
 // Debug Mode: false
@@ -26,7 +26,7 @@ export default {
   // Detected frameworks
   frameworks: [
     {
-      path: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/unit/fastapi/fixtures/basic_app",
+      path: "/Users/isaiahdahl/deployment/pinpath/libs/parser/tests/unit/fastapi/fixtures/basic_app",
       framework: "fastapi",
       confidence: 1,
 

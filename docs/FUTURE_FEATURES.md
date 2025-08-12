@@ -8,7 +8,7 @@ These features are not part of the core product but represent potential future e
 Monitor public APIs for changes and learn from their patterns.
 
 ```javascript
-// .reqsmith/watch.json
+// .pinpath/watch.json
 {
   "public_apis": [
     {
@@ -43,7 +43,7 @@ Monitor public APIs for changes and learn from their patterns.
 ### Load Testing Integration
 ```typescript
 // Right-click endpoint → "Load Test"
-await reqsmith.loadTest({
+await pinpath.loadTest({
   endpoint: '/api/users',
   concurrent: 100,
   duration: '30s'

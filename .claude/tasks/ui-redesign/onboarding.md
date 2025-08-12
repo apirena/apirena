@@ -1,4 +1,4 @@
-# Reqsmith UI Redesign - Onboarding Document
+# PinPath UI Redesign - Onboarding Document
 
 ## Task Overview
 
@@ -14,7 +14,7 @@
 ## Current Architecture Understanding
 
 ### Project Structure
-Reqsmith is an NX monorepo built with:
+PinPath is an NX monorepo built with:
 - **Desktop App**: Tauri 2 + SvelteKit 5 + Tailwind CSS
 - **Core**: Rust libraries for file watching and endpoint parsing
 - **CLI**: Rust-based command-line interface
@@ -83,7 +83,7 @@ apps/desktop/
 
 #### Backend (Rust/Tauri):
 - **Tauri 2**: Native app framework
-- **Endpoint Discovery**: AST parsing via reqsmith-parser
+- **Endpoint Discovery**: AST parsing via pinpath-parser
 - **File Watching**: Real-time project monitoring
 - **HTTP Client**: reqwest for API requests
 - **Storage**: Local manifest persistence
@@ -156,7 +156,7 @@ Based on the images provided and requirements:
 **Date**: August 10, 2025
 
 ### 🎯 Final Result
-The Reqsmith UI redesign has been successfully completed and tested. The application now features:
+The PinPath UI redesign has been successfully completed and tested. The application now features:
 
 1. **✅ Top Navbar Layout**: Project selector, watch controls, environment selector, and copy button moved to top
 2. **✅ Clean Request Builder**: Simplified layout with send button at endpoint level, no duplicate controls
@@ -366,4 +366,4 @@ pnpm nx run desktop:build
 - **Maintain**: Dark mode support with true black/gray tones
 - **Update**: ShadCN/UI color tokens to use black-based theme
 
-This onboarding document provides the foundation needed to understand Reqsmith's current architecture and implement the UI redesign effectively. The modular component structure and reactive state management make the required changes straightforward while preserving existing functionality.
+This onboarding document provides the foundation needed to understand PinPath's current architecture and implement the UI redesign effectively. The modular component structure and reactive state management make the required changes straightforward while preserving existing functionality.

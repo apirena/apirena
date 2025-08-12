@@ -125,13 +125,13 @@ temp/
 # package-lock.json
 # yarn.lock
 
-# Reqsmith
+# PinPath
 # Keep generated configs for team consistency (like package.json)
-# .reqsmith/discovered.config.js   # ✅ COMMIT - team needs same patterns
-# .reqsmith/discovered.config.json # ✅ COMMIT - debug information
+# .pinpath/discovered.config.js   # ✅ COMMIT - team needs same patterns
+# .pinpath/discovered.config.json # ✅ COMMIT - debug information
 
-# Ignore user-specific Reqsmith files (when implemented)
-.reqsmith/cache/
-.reqsmith/logs/
-.reqsmith/.env
-.reqsmith/user-settings.json
+# Ignore user-specific PinPath files (when implemented)
+.pinpath/cache/
+.pinpath/logs/
+.pinpath/.env
+.pinpath/user-settings.json

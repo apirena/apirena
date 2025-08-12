@@ -9,7 +9,7 @@ use tokio::task;
 use pinpath_parser::{IncrementalParser, incremental::EndpointState, Endpoint, detect_language, LanguageParser};
 use pinpath_parser::languages::{javascript::JavaScriptParser, python::PythonParser, php::PhpParser};
 
-use crate::storage::{ReqSmithStorage, EndpointRecord};
+use crate::storage::{PinPathStorage, EndpointRecord};
 
 pub struct ProjectWatcher {
     _watcher: RecommendedWatcher,
@@ -48,7 +48,7 @@ impl WatcherRegistry {
             .map_err(|e| format!("Failed to watch directory: {}", e))?;
         
         // Initialize storage and parser
-        let storage = ReqSmithStorage::new(project_path.clone())
+        let storage = PinPathStorage::new(project_path.clone())
             .map_err(|e| format!("Failed to initialize storage: {}", e))?;
         
         // Load previous parser state
@@ -109,7 +109,7 @@ impl WatcherRegistry {
 async fn handle_file_event(
     event: Event,
     _parser: &Arc<Mutex<IncrementalParser>>,
-    storage: &ReqSmithStorage,
+    storage: &PinPathStorage,
     app_handle: &AppHandle,
     project_path: &Path,
 ) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {

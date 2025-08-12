@@ -9,13 +9,13 @@ ReqSmith is a **filesystem-native** API endpoint discovery tool that watches cod
 2. **Parse & Discover**: Recursively find and parse API endpoints from source files
 3. **Display Endpoints**: Show discovered endpoints in organized, filterable UI
 4. **Auto-Watch**: Monitor file changes and update endpoint list in real-time
-5. **Persist State**: All discoveries cached in `.reqsmith/` for instant reload
+5. **Persist State**: All discoveries cached in `.pinpath/` for instant reload
 
 ## Success Criteria (MVP)
 - **Folder Selection**: Native file picker that works with any project
 - **Multi-Language Parsing**: Support JavaScript/TypeScript, Python, PHP endpoints
 - **Real-Time Updates**: File changes reflect in UI within 100ms
-- **Filesystem State**: All data stored transparently in `.reqsmith/` directories
+- **Filesystem State**: All data stored transparently in `.pinpath/` directories
 - **Performance**: Initial scan <2s, incremental updates <50ms
 
 ## Architecture Overview - MVP Focus
@@ -102,7 +102,7 @@ fn save_last_selected_directory(app_handle: &AppHandle, dir: &Path) -> Result<()
 #### File System Structure (Unchanged)
 ````
 selected-project/
-├── .reqsmith/                  # Created automatically on first scan
+├── .pinpath/                  # Created automatically on first scan
 │   ├── config.json            # Project settings (committable)
 │   ├── endpoints/             # Discovered endpoints (optionally committable)
 │   │   ├── manifest.json      # Master index with statistics
@@ -253,7 +253,7 @@ async fn handle_file_event(
                     
                     // Process change incrementally
                     let mut parser = parser.lock().unwrap();
-                    let change_event = reqsmith_diff::ChangeEvent::from_file_change(&path, &content);
+                    let change_event = pinpath_diff::ChangeEvent::from_file_change(&path, &content);
                     let changes = parser.parse_changes(change_event).await?;
                     
                     if changes.has_changes() {
@@ -368,7 +368,7 @@ class EndpointStore {
    cargo add notify
    ````
 2. **Implement Background Event Processing** - Handle file modify/create/delete events
-3. **Incremental Change Processing** - Use reqsmith_diff for granular updates
+3. **Incremental Change Processing** - Use pinpath_diff for granular updates
 4. **UI Event Emission** - Real-time updates to frontend via Tauri events
 
 ### Phase 4: Enhanced UI Integration (2 hours)
@@ -380,14 +380,14 @@ class EndpointStore {
 ### Phase 5: State Persistence & Recovery (1 hour)
 1. **Session Restoration** - Load previous parsing state on app restart
 2. **Cache Management** - Implement size limits and cleanup for AST cache
-3. **Config Validation** - Ensure `.reqsmith/config.json` has sensible defaults
+3. **Config Validation** - Ensure `.pinpath/config.json` has sensible defaults
 4. **Git Integration** - Proper `.gitignore` handling for cache vs committable state
 
 ## Testing Strategy - MVP Validation
 ````bash
 # Test folder selection
 1. Open app → Select various project types (Node.js, Python, PHP mixed)
-2. Verify .reqsmith/ directory creation
+2. Verify .pinpath/ directory creation
 3. Check endpoints discovered and persisted to manifest.json
 
 # Test incremental parsing
@@ -402,13 +402,13 @@ class EndpointStore {
 4. Verify all changes reflected in real-time
 
 # Performance validation
-time cat .reqsmith/cache/ast/index.json   # Check cache usage
-du -h .reqsmith/                          # Monitor storage size  
-tail -f .reqsmith/watch-state.json        # Monitor watcher activity
+time cat .pinpath/cache/ast/index.json   # Check cache usage
+du -h .pinpath/                          # Monitor storage size  
+tail -f .pinpath/watch-state.json        # Monitor watcher activity
 ````
 
 ## Success Metrics - MVP Definition of Done
-- [x] `.reqsmith/` directory created automatically ✅
+- [x] `.pinpath/` directory created automatically ✅
 - [x] Endpoints persisted to filesystem manifest ✅  
 - [x] UI loads endpoints from manifest.json ✅
 - [x] **Native folder picker replaces hardcoded paths** ✅

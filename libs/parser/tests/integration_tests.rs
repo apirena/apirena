@@ -1,4 +1,4 @@
-// Reqsmith Parser Integration Tests
+// PinPath Parser Integration Tests
 // This file loads the new modular test architecture
 mod unit;
 mod projects;

@@ -1,5 +1,5 @@
-// Auto-generated Reqsmith configuration
-// Generated: 2025-08-07T06:18:10.568264+00:00
+// Auto-generated PinPath configuration
+// Generated: 2025-08-07T06:18:10.565605+00:00
 // Version: 1.0.0
 // Debug Mode: true
 
@@ -7,8 +7,8 @@ export default {
   // Metadata
   _meta: {
     version: "1.0.0",
-    generated: "2025-08-07T06:18:10.568264+00:00",
-    lastModified: "2025-08-07T06:18:10.568264+00:00",
+    generated: "2025-08-07T06:18:10.565605+00:00",
+    lastModified: "2025-08-07T06:18:10.565605+00:00",
     debugMode: true,
   },
 
@@ -19,30 +19,36 @@ export default {
   structure: {
     type: "single",
     fileCount: 4,
-    totalSize: 3954,
+    totalSize: 4336,
     roots: [],
   },
 
   // Detected frameworks
   frameworks: [
     {
-      path: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/unit/flask/fixtures/basic_app",
-      framework: "flask",
+      path: "/Users/isaiahdahl/deployment/pinpath/libs/parser/tests/unit/express/fixtures/basic_app",
+      framework: "express",
       confidence: 1,
 
       // Detection signals (debug mode)
       _signals: [
-        { type: "requirements.txt", value: "flask dependency found", confidence: 0.8, source: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/unit/flask/fixtures/basic_app/requirements.txt" },
-        { type: "code_pattern", value: "Flask(__name__) or @app.route found", confidence: 0.9, source: "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/unit/flask/fixtures/basic_app/app.py" },
+        { type: "package.json", value: "express dependency found", confidence: 0.8, source: "/Users/isaiahdahl/deployment/pinpath/libs/parser/tests/unit/express/fixtures/basic_app/package.json" },
+        { type: "code_pattern", value: "express() or app.method() found", confidence: 0.9, source: "/Users/isaiahdahl/deployment/pinpath/libs/parser/tests/unit/express/fixtures/basic_app/app.js" },
       ],
 
       // Patterns for route detection
       patterns: [
         {
-          name: "flask.decorators",
-          files: "**/*.py",
-          routes: ["@app.route('{path}', methods=['{method}'])"],
+          name: "express.basic-routes",
+          files: "**/*.{js,ts}",
+          routes: ["app.{method}('{path}', {handler})", "app.{method}('{path}', {middlewares}, {handler})"],
           confidence: 0.95,
+        },
+        {
+          name: "express.router",
+          files: "**/routes/**/*.{js,ts}",
+          routes: ["router.{method}('{path}', {handler})"],
+          confidence: 0.9,
         },
       ],
     }

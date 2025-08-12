@@ -13,7 +13,7 @@
   },
   "frameworks": [
     {
-      "path": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin",
+      "path": "/Users/isaiahdahl/deployment/pinpath/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin",
       "framework": "express",
       "confidence": 1.0,
       "signals": [
@@ -21,13 +21,13 @@
           "signal_type": "package.json",
           "value": "express dependency found",
           "confidence_boost": 0.8,
-          "source": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin/package.json"
+          "source": "/Users/isaiahdahl/deployment/pinpath/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin/package.json"
         },
         {
           "signal_type": "code_pattern",
           "value": "express() or app.method() found",
           "confidence_boost": 0.9,
-          "source": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin/app.js"
+          "source": "/Users/isaiahdahl/deployment/pinpath/libs/parser/tests/projects/startup_monorepo/express_dual/apps/admin/app.js"
         }
       ],
       "patterns": [
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "path": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api",
+      "path": "/Users/isaiahdahl/deployment/pinpath/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api",
       "framework": "express",
       "confidence": 1.0,
       "signals": [
@@ -61,19 +61,19 @@
           "signal_type": "package.json",
           "value": "express dependency found",
           "confidence_boost": 0.8,
-          "source": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/package.json"
+          "source": "/Users/isaiahdahl/deployment/pinpath/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/package.json"
         },
         {
           "signal_type": "code_pattern",
           "value": "express() or app.method() found",
           "confidence_boost": 0.9,
-          "source": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/server.js"
+          "source": "/Users/isaiahdahl/deployment/pinpath/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/server.js"
         },
         {
           "signal_type": "route_file",
           "value": "express routes found in src",
           "confidence_boost": 0.7,
-          "source": "/Users/isaiahdahl/deployment/reqsmith/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/routes/users.js"
+          "source": "/Users/isaiahdahl/deployment/pinpath/libs/parser/tests/projects/startup_monorepo/express_dual/apps/api/src/routes/users.js"
         }
       ],
       "patterns": [

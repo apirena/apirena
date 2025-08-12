@@ -1,8 +1,8 @@
-# Reqsmith Architecture
+# PinPath Architecture
 
 ## Overview
 
-Reqsmith is built as a modular, high-performance system for code-first API testing. The architecture follows these principles:
+PinPath is built as a modular, high-performance system for code-first API testing. The architecture follows these principles:
 
 1. **Code-First Design** - Implementation is the source of truth
 2. **Performance First** - Sub-10ms parsing, minimal memory usage
@@ -22,20 +22,20 @@ Reqsmith is built as a modular, high-performance system for code-first API testi
 │             Core Libraries                  │
 │  ┌─────────────────────────────────────┐   │
 │  │      File System Watcher             │   │
-│  │        (reqsmith-core)               │   │
+│  │        (pinpath-core)               │   │
 │  ├─────────────────────────────────────┤   │
 │  │    AST Parser + Smart Caching       │   │
-│  │       (reqsmith-parser)              │   │
+│  │       (pinpath-parser)              │   │
 │  ├─────────────────────────────────────┤   │
 │  │  AI Enhancement Layer + Cache       │   │
-│  │        (reqsmith-ai)                 │   │
+│  │        (pinpath-ai)                 │   │
 │  └─────────────────────────────────────┘   │
 └─────────────────────────────────────────────┘
 ```
 
 ## Core Libraries
 
-### reqsmith-core
+### pinpath-core
 
 **Responsibility**: File system monitoring and event handling
 
@@ -49,7 +49,7 @@ Reqsmith is built as a modular, high-performance system for code-first API testi
 - < 50MB memory usage
 - Support for 10,000+ files
 
-### reqsmith-parser
+### pinpath-parser
 
 **Responsibility**: AST-based endpoint discovery without annotations
 
@@ -65,7 +65,7 @@ Reqsmith is built as a modular, high-performance system for code-first API testi
 - 95%+ accuracy on real-world code
 - Zero configuration required
 
-### reqsmith-ai
+### pinpath-ai
 
 **Responsibility**: Intelligent parameter analysis with smart caching
 

@@ -14,7 +14,7 @@ use tokio::runtime::Runtime;
 
 /// Scalability benchmarks that test performance under stress:
 /// Large projects, many files, rapid changes, memory pressure
-/// These validate that Pinpath can handle enterprise-scale projects
+/// These validate that PinPath can handle enterprise-scale projects
 
 fn benchmark_large_project_discovery(c: &mut Criterion) {
     let mut group = c.benchmark_group("large_project_discovery");

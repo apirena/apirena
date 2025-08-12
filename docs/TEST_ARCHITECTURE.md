@@ -80,7 +80,7 @@ apps/
 **Solution**:
 ```rust
 // Every integration test now includes:
-let config_path = project_path.join(".reqsmith/discovered.config.js");
+let config_path = project_path.join(".pinpath/discovered.config.js");
 if config_path.exists() {
     let _ = fs::remove_file(&config_path);  // Clean before
 }

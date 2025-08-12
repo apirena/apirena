@@ -62,15 +62,15 @@ pub struct FrameworkDetection {
 ### Current CLI Interface (Fully Functional)
 ```bash
 # Endpoint discovery
-reqsmith discover /path/to/project --format json
-reqsmith discover /path/to/project --format table
+pinpath discover /path/to/project --format json
+pinpath discover /path/to/project --format table
 
 # Real-time watching  
-reqsmith watch /path/to/project
-reqsmith watch-incremental /path/to/project --state-file state.json
+pinpath watch /path/to/project
+pinpath watch-incremental /path/to/project --state-file state.json
 
 # Framework detection & config generation
-reqsmith config /path/to/project --debug --format js
+pinpath config /path/to/project --debug --format js
 ```
 
 **Output Data Structures (JSON Ready):**
@@ -105,12 +105,12 @@ reqsmith config /path/to/project --debug --format js
 // apps/desktop/src-tauri/src/commands.rs
 #[tauri::command]
 async fn discover_endpoints(path: String) -> Result<Vec<Endpoint>, String> {
-    // Use existing reqsmith_parser
+    // Use existing pinpath_parser
 }
 
 #[tauri::command] 
 async fn start_watching(path: String) -> Result<String, String> {
-    // Use existing reqsmith_core FileWatcher
+    // Use existing pinpath_core FileWatcher
 }
 
 #[tauri::command]
@@ -180,7 +180,7 @@ nx g @nx/js:library desktop-ui --directory=libs --bundler=vite
 ```
 
 3. **Connect Rust Libraries to Tauri**
-- Add reqsmith_core, reqsmith_parser as dependencies
+- Add pinpath_core, pinpath_parser as dependencies
 - Create Tauri command wrappers
 - Set up IPC (Inter-Process Communication)
 

@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-  <title>Pinpath Desktop</title>
+  <title>PinPath Desktop</title>
 </svelte:head>
 
 <div class="h-screen bg-background text-foreground flex flex-col">

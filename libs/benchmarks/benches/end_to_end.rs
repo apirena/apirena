@@ -470,7 +470,7 @@ async fn measure_config_generation_performance(project_path: &std::path::Path) -
         chrono::Utc::now().to_rfc3339()
     );
     
-    let config_path = project_path.join(".reqsmith").join("discovered.config.js");
+    let config_path = project_path.join(".pinpath").join("discovered.config.js");
     if let Some(parent) = config_path.parent() {
         fs::create_dir_all(parent).unwrap();
     }

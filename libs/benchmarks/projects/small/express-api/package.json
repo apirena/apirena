@@ -1,7 +1,7 @@
 {
   "name": "express-benchmark-api",
   "version": "1.0.0",
-  "description": "Sample Express API for Reqsmith benchmarks",
+  "description": "Sample Express API for PinPath benchmarks",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",

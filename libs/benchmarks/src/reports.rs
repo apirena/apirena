@@ -27,8 +27,8 @@ pub struct BenchmarkMetadata {
     pub branch: Option<String>,
     /// System information
     pub system_info: SystemInfo,
-    /// Reqsmith version
-    pub reqsmith_version: String,
+    /// PinPath version
+    pub pinpath_version: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -124,7 +124,7 @@ impl ReportGenerator {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Reqsmith Benchmark Report</title>
+    <title>PinPath Benchmark Report</title>
     <style>
         body {{ font-family: Arial, sans-serif; margin: 40px; }}
         .header {{ background: #f4f4f4; padding: 20px; border-radius: 8px; }}
@@ -141,7 +141,7 @@ impl ReportGenerator {
 </head>
 <body>
     <div class="header">
-        <h1>Reqsmith Benchmark Report</h1>
+        <h1>PinPath Benchmark Report</h1>
         <p><strong>Generated:</strong> {:?}</p>
         <p><strong>Commit:</strong> {}</p>
         <p><strong>System:</strong> {} - {}</p>
@@ -205,7 +205,7 @@ impl ReportGenerator {
         };
         
         format!(
-            "{} Reqsmith Benchmarks\n\
+            "{} PinPath Benchmarks\n\
             Pass Rate: {:.1}% ({}/{})\n\
             Performance Score: {:.1}/100\n\
             Avg Duration: {:.2}ms\n\
@@ -321,7 +321,7 @@ mod tests {
         let report = create_test_report();
         let summary = ReportGenerator::generate_summary_text(&report);
         
-        assert!(summary.contains("Reqsmith Benchmarks"));
+        assert!(summary.contains("PinPath Benchmarks"));
         assert!(summary.contains("Pass Rate"));
     }
     
@@ -337,7 +337,7 @@ mod tests {
                     memory_gb: 16.0,
                     rust_version: "1.70.0".to_string(),
                 },
-                reqsmith_version: "0.1.0".to_string(),
+                pinpath_version: "0.1.0".to_string(),
             },
             results: HashMap::new(),
             summary: BenchmarkSummary {

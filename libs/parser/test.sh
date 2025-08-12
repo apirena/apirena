@@ -1,10 +1,10 @@
 #!/bin/bash
-# Reqsmith Parser Test Runner
+# PinPath Parser Test Runner
 # Demonstrates granular test execution using Nx
 
 set -e
 
-echo "🧪 Reqsmith Parser Test Suite"
+echo "🧪 PinPath Parser Test Suite"
 echo "=============================="
 
 # Color codes for output

@@ -33,9 +33,9 @@ pub struct ManifestStats {
 }
 
 #[derive(Debug, Clone)]
-pub struct ReqSmithStorage {
+pub struct PinPathStorage {
     project_root: PathBuf,
-    reqsmith_dir: PathBuf,
+    pinpath_dir: PathBuf,
 }
 
 #[derive(Debug, Clone)]
@@ -50,20 +50,20 @@ impl EndpointRecord {
     }
 }
 
-impl ReqSmithStorage {
+impl PinPathStorage {
     pub fn new(project_root: PathBuf) -> Result<Self> {
-        let reqsmith_dir = project_root.join(".reqsmith");
+        let pinpath_dir = project_root.join(".pinpath");
         // Create directory structure
-        fs::create_dir_all(reqsmith_dir.join("endpoints/by-file"))?;
-        fs::create_dir_all(reqsmith_dir.join("cache/ast"))?;
+        fs::create_dir_all(pinpath_dir.join("endpoints/by-file"))?;
+        fs::create_dir_all(pinpath_dir.join("cache/ast"))?;
 
         // Ensure .gitignore exists and ignores cache/
-        let gitignore_path = reqsmith_dir.join(".gitignore");
+        let gitignore_path = pinpath_dir.join(".gitignore");
         if !gitignore_path.exists() {
             fs::write(&gitignore_path, "cache/\n*.log\nwatch-state.json\n")?;
         }
 
-        Ok(Self { project_root, reqsmith_dir })
+        Ok(Self { project_root, pinpath_dir })
     }
 
     pub fn save_endpoints(&self, endpoints: &[EndpointRecord]) -> Result<()> {
@@ -104,13 +104,13 @@ impl ReqSmithStorage {
         };
 
         // Write manifest.json
-        let manifest_path = self.reqsmith_dir.join("endpoints/manifest.json");
+        let manifest_path = self.pinpath_dir.join("endpoints/manifest.json");
         write_json_atomic(&manifest_path, &manifest)?;
 
         // Write by-file jsons
         for (file, entries) in by_file {
             let safe = file.replace('/', "-");
-            let p = self.reqsmith_dir.join(format!("endpoints/by-file/{}.json", safe));
+            let p = self.pinpath_dir.join(format!("endpoints/by-file/{}.json", safe));
             write_json_atomic(&p, &entries)?;
         }
 
@@ -119,7 +119,7 @@ impl ReqSmithStorage {
 
     /// Load parser state from cache
     pub fn load_parser_state(&self) -> Result<EndpointState> {
-        let state_path = self.reqsmith_dir.join("cache/parser-state.json");
+        let state_path = self.pinpath_dir.join("cache/parser-state.json");
         if !state_path.exists() {
             return Ok(EndpointState {
                 endpoints: std::collections::HashMap::new(),
@@ -135,7 +135,7 @@ impl ReqSmithStorage {
 
     /// Save parser state to cache
     pub fn save_parser_state(&self, state: &EndpointState) -> Result<()> {
-        let state_path = self.reqsmith_dir.join("cache/parser-state.json");
+        let state_path = self.pinpath_dir.join("cache/parser-state.json");
         write_json_atomic(&state_path, state)?;
         Ok(())
     }

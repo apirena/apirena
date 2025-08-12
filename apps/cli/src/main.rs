@@ -89,7 +89,7 @@ async fn main() -> Result<()> {
     
     match cli.command {
         Commands::Watch { path, port } => {
-            info!("Starting Pinpath watcher on {} (port {})", path.display(), port);
+            info!("Starting PinPath watcher on {} (port {})", path.display(), port);
             println!("🔍 Watching {} for API changes...", path.display());
             println!("🌐 Web interface available at http://localhost:{}", port);
             
@@ -153,7 +153,7 @@ async fn main() -> Result<()> {
                     println!("{}", serde_json::to_string_pretty(&config)?);
                 }
                 "js" => {
-                    let config_path = path.join(".reqsmith/discovered.config.js");
+                    let config_path = path.join(".pinpath/discovered.config.js");
                     if config_path.exists() {
                         println!("✅ Configuration generated at: {}", config_path.display());
                         println!("📊 Project Analysis:");
@@ -168,7 +168,7 @@ async fn main() -> Result<()> {
                         if debug {
                             println!("\n🐛 Debug files created:");
                             println!("   - {}", config_path.display());
-                            let json_path = path.join(".reqsmith/discovered.config.json");
+                            let json_path = path.join(".pinpath/discovered.config.json");
                             if json_path.exists() {
                                 println!("   - {}", json_path.display());
                             }
